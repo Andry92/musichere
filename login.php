@@ -19,12 +19,13 @@
 		  <center> <table>
 			  <tr>
 		  <form method="post" action="#">
-		  <td>Email:</td>
-		  <td><input type="text" name="email"></td> </tr>
-		  <td>Password:</td>
-		  <td><input type="password" name="password"></td> </tr>
-		  <td><input type="submit" value="Accedi!" name="submit"</td>
-		      </tr>
+			  <td>Email:</td>
+			  <td><input type="text" name="email"></td> </tr>
+			  <td>Password:</td>
+			  <td><input type="password" name="password"></td> </tr>
+			  <td></td>
+			  <td><a href="recupero.php" style="color: blue">Password dimenticata?</a></td> </tr>
+			  <td><input type="submit" value="Accedi!" name="submit"></td>
 		  </form>
 		  </table> </center>
 
@@ -41,17 +42,15 @@
 	   $result = mysql_query($query,$conn);
 	   
 	   $num_rows = mysql_num_rows($result);
-	   if($num_rows == '1') 
+	   if($num_rows == 1) 
 	   {
 	         header("Location:home.php");
 	         $array = mysql_fetch_array($result);
 	         $_SESSION ['user']=$array['id'];
 	         $_SESSION ['nome']=$array['nome'];
 		}
-		   else
-		   {
-			   echo "<center>Dati errati <a href='login.php'>Ritenta</a></center>";
-			   }
+		else
+		   echo "<center>Dati errati <a href='login.php'>Ritenta</a></center>";
 	}
 ?>
 
