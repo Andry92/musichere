@@ -3,6 +3,7 @@ $host ="localhost";
 $user = "root";
 $password= "";
 
+error_reporting(E_ALL ^ E_DEPRECATED);	// per i warning delle versioni successive di php
  //Apertura della connessione con il server MySQL
   $conn = mysql_connect($host, $user, $password) ;
 

@@ -9,7 +9,7 @@
 	<meta name="generator" content="Geany 0.20" />
 </head>
 
-<body bgcolor="#5d7477">
+<body bgcolor="#607D8B">
 	<center><img src="logo2.png" width="350" height="210"></center>
 	<?php
 		include 'connessione.php';
@@ -34,17 +34,15 @@
 			if($errore==0)
 			{
 	   			$num_rows = mysql_num_rows($result);
-	   			if($num_rows == '1') 
+	   			if($num_rows == 1) 
 	   			{	
 	        		header("Location:nuova_password.php");
 		        	$_SESSION ['user']=$row['id'];
 		      		$_SESSION ['password']=$row['password'];
 				}
-				else
-					echo "Cazzo stai combinando?";
 			}
 			else
-				echo "Cos'è 'sta roba?";
+				echo "Email non esistente.";
 		}
 	?>
 

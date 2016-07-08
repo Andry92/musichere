@@ -9,7 +9,7 @@
 	<meta name="generator" content="Geany 0.20" />
 </head>
 
-<body bgcolor="#5d7477">
+<body bgcolor="#607D8B">
 	<center><img src="logo2.png" width="350" height="210"></center>
 	<?php
 		include 'connessione.php';
@@ -18,6 +18,7 @@
 
 		$user = $_SESSION ['user'];
 		$password = $_SESSION ['password'];
+
 
 		$result=mysql_query("SELECT email FROM utenti WHERE id='$user' AND password='$password' limit 0,1",$conn);
 
@@ -30,7 +31,10 @@
 						if(strlen($_POST['new'])>0)
 						{
 							if(mysql_query("UPDATE utenti SET password='".$_POST['new']."' WHERE id='$user' AND password='$password'",$conn))
-								echo "Password modificata";
+							{
+								echo "Password modificata ";
+								echo '<a href="login.php" style="color: blue">Effettua il login</a>';
+							}
 							else
 								echo "Database error";
 						}

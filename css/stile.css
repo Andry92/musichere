@@ -7,49 +7,59 @@ font:Calibri;
 
 /* Div Testata nella parte superiore */
 #testata {
-   background:#5d7477;
+   background:#455A64;
    width:100%;
-   height:45px;
+   height:70px;
    top:0;
    left:0;
    position:fixed;
 }
 
-/* Div per i link contenuti nella testata */
+#contenuto_testata {
+   width: 1000px;
+   height: 70px;
+   top: 0px;
+}
+
+/* Div per i link contenuti in contenuto_testata */
 #link {
-   width:100px;
-   float:left;
-   text-align:left;
-   font-weight:bold;
-   margin-left:10px;
-   margin-top:10px;
+   width: 90px;
+   float: left;
+   margin-top: 0px;
 }
 
-/* Div login contenuto nella testata */
+/* Div login contenuto in contenuto_testata */
 #login {
+   float: right;
    text-align:right;
-   float:right;
+   width: 160px;
    font-weight:bold;
-   margin-right:10px;
-   margin-top:10px;
+   margin-top: 22px;
 }
 
-
-/* Div logout contenuto nella testata */
+/* Div logout contenuto in contenuto_testata */
 #logout {
+   float: right;
    text-align:right;
+   width: 150px;
    font-weight:bold;
-   margin-right:10px;
-   margin-top:10px;
+   margin-top: 22px;
 }
 
 
 /* Div Contenitore */
 #container { 
    width:1000px;
-   min-height:700px;
+   min-height:510px;
    margin-top:5px;
-   padding:50px
+   padding:50px;
+ }
+
+ #sinistra {
+   width:673px;
+   height:512px;
+   float:left;
+   margin-top:15px;
  }
 
 /* Div contenuto nella parte sinistra */
@@ -57,55 +67,56 @@ font:Calibri;
    width:673px; /*810*/
    height:512px;
    float:left;
-   background:#5d7477;
+   background:#455A64;
    border-radius:20px;
    margin-top:15px;
 }
 
-/* Div che contiene il div menu e il div testi */
-#contenuto1 {
-   width:270px;
+/* Div che contiene il logo e il div testi */
+#destra {
+   width:300px;
    height:512px;
    float:right;
-   margin-top:15px;
 }
 
 /* Div menu */
 #menu {
-   width:270px;
-   height:50px;
-   background:#5d7477;
+   width:300px;
+   height:58px;
+   background:#455A64;
    border-radius:20px;
+   margin-top: 30px;
    float:right;
 }
 
 /*Div per la ricerca contenuto nel div menu*/
 #cerca {
-   float:right;
+   float: right;
    text-align:right;
-   margin-right:12px;
+   margin-right:15px;
+   padding: 5px;
 }
 
 /* Div testi nella parte destra */
 #testi {
-   width:270px;
+   width:300px;
    height:447px;
    float:right;
-   background:#5d7477;
+   background:#455A64;
    border-radius:20px;
-   margin-top:15px;
+   margin-top:7px;
 }
 
 /* Div in basso per permettere di leggere le varie normative */
 #footer {
    width:1000px;
    height:20px;
-   background:#5d7477;
+   background:#455A64;
    padding:5px;
    text-align: center;
    border-radius:10px;
 }
 
 #discografia{
-text-align:left;
+   text-align:left;
 }

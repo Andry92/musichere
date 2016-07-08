@@ -10,11 +10,6 @@ font:20px Calibri;
 font-weight:bold;
 }
 
-h1 {
-font:35px Calibri;
-font-weight:bold;
-}
-
 /* bottone che una volta cliccato apre il lettore musicale */
 #play {
 	width:30px;
@@ -22,12 +17,16 @@ font-weight:bold;
 	cursor:pointer;  /* Codice css3 per rendere attiva l'immagine */
 	float:left;
 	}
-	
-/* Lettore musicale contenuto nel div testata */
+
+/* Lettore musicale contenuto nel div contenuto_testata */
 #lettore{
-	width:300px;
-	height:45px;
-	}
+   width:300px;
+   height:45px;
+   float: left;
+   position: absolute;
+   top:0;
+   left:300;
+}
 
 /* Contenitore per lo Sfondo dell'artista */
 #sfondo{

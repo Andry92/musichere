@@ -9,7 +9,7 @@
 	<meta name="generator" content="Geany 0.20" />
 </head>
 
-<body bgcolor="#5d7477">
+<body bgcolor="#607D8B">
 	<center><img src="logo2.png" width="350" height="210"></center>
 	<?php
 	session_start();
