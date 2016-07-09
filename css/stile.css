@@ -28,6 +28,19 @@ font:Calibri;
    margin-top: 0px;
 }
 
+/* div contenitore del carrello e del login/logout */
+#carrelloelog {
+   width: 200px;
+   float: right;
+}
+
+/*Div per il carrello in contenuto_testata*/
+#carrello{
+   width: 40px;
+   margin-top:11px;
+   float: left;
+}
+
 /* Div login contenuto in contenuto_testata */
 #login {
    float: right;

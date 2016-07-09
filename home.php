@@ -20,25 +20,29 @@
 			<div id="link">
 				<a href="home.php"> <img src="minilogo.png" width="80" height="70"></a>
 			</div>
-			
-
-			<?php                               // codice php per il controllo del login
-	           session_start();
-	           if(isset($_SESSION['user']))     // se l'utente ha effettuato il login
-	           {
-					echo "<div id='logout'>";
-							include 'connessione.php';
-							$testo = $_SESSION['nome'];
-					      	echo "$testo | <a href='logout.php'>Logout</a>";
-					echo "</div>";
-		    	}
-		    	else
-		    	{
-					echo "<div id='login'>";
-							echo "<a href='login.php'>Login</a> | <a href='index.php'>Registrati</a>";
-					echo "</div>";
-		    	}
-			?>
+			<div id="carrelloelog">
+				<div id="carrello">
+					<a href="carrello.php"> <img src="carrello.png" width="40" height="40";></a>
+				</div>
+				<?php                               // codice php per il controllo del login
+		           session_start();
+				   
+		           if(isset($_SESSION['user']))     // se l'utente ha effettuato il login
+		           {
+						echo "<div id='logout'>";
+								include 'connessione.php';
+								$testo = $_SESSION['nome'];
+						      	echo "$testo | <a href='logout.php'>Logout</a>";
+						echo "</div>";
+			    	}
+			    	else
+			    	{
+						echo "<div id='login'>";
+								echo "<a href='login.php'>Login</a> | <a href='index.php'>Registrati</a>";
+						echo "</div>";
+			    	}
+				?>
+			</div>
 		</div>
 	</div>
 
