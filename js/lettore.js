@@ -17,7 +17,7 @@ function mostra(id)
 	});
 }
 
-function showDiv()
+function showLettore()
 {
 	document.getElementById('lettore').style.display="block";
 }

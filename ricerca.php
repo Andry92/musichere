@@ -44,7 +44,7 @@ if($cerca=='1')  // ricerca per artista
 				echo "<td>".$riga['genere']."</td>";
 
 				//           nel momento in cui clicco sull'immagine, il lettore avvia la canzone con l'id corrispondente
-				echo "<td><img src='play.png' id='play' onclick='showDiv(); mostra(".$riga['id_traccia'].");'></td>"; 	// immagine del tasto play [on click è un evento di javascript]
+				echo "<td><img src='play.png' id='play' onclick='showLettore(); mostra(".$riga['id_traccia'].");'></td>"; 	// immagine del tasto play [on click è un evento di javascript]
 				
 				$risultato=$riga['id_traccia'];  // preleviamo l'id della canzone per passare il valore alla variabile $risultato che useremo per la query string per il testo della canzone
 			    echo "<td> <a href='testi.php?id=".$risultato."' target='openlink1'>Testo</a> </td>";
@@ -86,7 +86,7 @@ if($cerca=='2')  // ricerca per album
 				echo "<td>".$riga['anno']."</td>";
 				echo "<td>".$riga['genere']."</td>";
 				//                      nel momento in cui clicco nell'immagine, il lettore avvia la canzone con l'id corrispondente
-				echo "<td><img src='play.png' id='play' onclick='mostra(".$riga['id_traccia'].");'></td>";		// immagine del tasto play [on click è un evento di javascript]	
+				echo "<td><img src='play.png' id='play' onclick='showLettore(); mostra(".$riga['id_traccia'].");'></td>";		// immagine del tasto play [on click è un evento di javascript]	
 				$risultato=$riga['id_traccia'];  // preleviamo l'id della canzone per passare il valore alla variabile $risultato che useremo per la query string per il testo della canzone
 			    echo "<td><a href='testi.php?id=".$risultato."' target='openlink1'>Testo</a></td>"; 
 				echo "</tr>";
@@ -128,7 +128,7 @@ if($cerca=='3') // ricerca per traccia
 				echo "<td>".$riga['anno']."</td>";
 				echo "<td>".$riga['genere']."</td>";
 				//                      nel momento in cui clicco nell'immagine, il lettore avvia la canzone con l'id corrispondente
-				echo "<td><img src='play.png' id='play' onclick='mostra(".$riga['id_traccia'].");'></td>";		// immagine del tasto play [on click è un evento di javascript]	
+				echo "<td><img src='play.png' id='play' onclick='showLettore(); mostra(".$riga['id_traccia'].");'></td>";		// immagine del tasto play [on click è un evento di javascript]	
 				$risultato=$riga['id_traccia'];  // preleviamo l'id della canzone per passare il valore alla variabile $risultato che useremo per la query string per il testo della canzone
 			    echo "<td><a href='testi.php?id=".$risultato."' target='openlink1'>Testo</a></td>";
 				echo "</tr>";
