@@ -30,7 +30,7 @@ font:Calibri;
 
 /* div contenitore del carrello e del login/logout */
 #carrelloelog {
-   width: 200px;
+   width: 220px;
    float: right;
 }
 
@@ -54,7 +54,7 @@ font:Calibri;
 #logout {
    float: right;
    text-align:right;
-   width: 150px;
+   width: 170px;
    font-weight:bold;
    margin-top: 22px;
 }
