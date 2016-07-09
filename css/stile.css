@@ -85,7 +85,12 @@ font:Calibri;
    margin-top:15px;
 }
 
-/* Div che contiene il logo e il div testi */
+/* Tabella all'interno di contenuto */
+#discografia{
+   text-align:left;
+}
+
+/* Div che contiene la ricerca e il div testi */
 #destra {
    width:300px;
    height:512px;
@@ -128,8 +133,4 @@ font:Calibri;
    padding:5px;
    text-align: center;
    border-radius:10px;
-}
-
-#discografia{
-   text-align:left;
 }

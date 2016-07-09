@@ -4,14 +4,12 @@
 
 <head>
 	<title>MusicHere</title>
-	<link rel="stylesheet" type="text/css" href="css/stile.css" />
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-	<meta name="generator" content="Geany 0.20" />
-	<script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
-	<script language="javascript" type="text/javascript" src="js/libreria1.js"></script>
-	<script type="text/javascript" src="js/libreria2.js"></script>
-	<script  type="text/javascript" src="lettore.js"></script>
+	<meta content="utf-8" http-equiv="encoding">
+
+	<link rel="stylesheet" type="text/css" href="css/stile.css" />
+	<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/lettore.js"></script>
 </head>
 
 <body bgcolor="#607D8B">

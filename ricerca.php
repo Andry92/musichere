@@ -1,8 +1,9 @@
 <html>
-<head> <link rel="stylesheet" type="text/css" href="css/ricerca.css" /> 
+<head> 
+	<link rel="stylesheet" type="text/css" href="css/ricerca.css" /> 
 	<script language="javascript" type="text/javascript" src="js/libreria1.js"></script>
 	<script type="text/javascript" src="js/libreria2.js"></script>
-	<script  type="text/javascript" src="js/lettore.js"></script>
+	<script type="text/javascript" src="js/lettore.js"></script>
 </head>
 <body>
 	
@@ -43,7 +44,7 @@ if($cerca=='1')  // ricerca per artista
 				echo "<td>".$riga['genere']."</td>";
 
 				//           nel momento in cui clicco sull'immagine, il lettore avvia la canzone con l'id corrispondente
-				echo "<td><img src='play.png' id='play' onclick='mostra(".$riga['id_traccia'].");'></td>"; // immagine del tasto play [on click è un evento di javascript]
+				echo "<td><img src='play.png' id='play' onclick='mostra(".$riga['id_traccia'].");'></td>"; 	// immagine del tasto play [on click è un evento di javascript]
 				
 				$risultato=$riga['id_traccia'];  // preleviamo l'id della canzone per passare il valore alla variabile $risultato che useremo per la query string per il testo della canzone
 			    echo "<td> <a href='testi.php?id=".$risultato."' target='openlink1'>Testo</a> </td>";
@@ -100,7 +101,8 @@ if($cerca=='3') // ricerca per traccia
 	$ricerca=mysql_query("SELECT id_traccia,nome,album,album,num_traccia,anno,genere,copertina,titolo FROM artisti JOIN tracce ON nome=artista WHERE titolo LIKE '$testo%' ORDER BY album");
 	$riga=mysql_fetch_array($ricerca);
 	if(!$riga) echo("Nessuna traccia trovata con nome: ".$testo);
-	else {
+	else 
+	{
 		$copertina=$riga['copertina'];
 		echo "<div id='sfondo'><img src='".$riga['copertina']."'></div>";
 		echo'<div id="lettore"></div>';
@@ -134,8 +136,8 @@ if($cerca=='3') // ricerca per traccia
 			}
 			
 			echo "</table>";
-     }
     }
+}
 	mysql_close($conn);
 ?>
 
