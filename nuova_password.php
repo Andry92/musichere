@@ -54,9 +54,9 @@
 	 <form action="#" method="post">
 		<tr>
 	 		<td>Vecchia Password:</td>
-	 		<td><input type="text" name="old"></td> </tr>
+	 		<td><input type="password" name="old"></td> </tr>
 	 		<td>Nuova Password:</td>
-	 		<td><input type="text" name="new"></td> </tr>
+	 		<td><input type="password" name="new"></td> </tr>
 	 		<td><input type="submit" value="Modifica" name="submit"></td>	    
 	 </table></center>
 	 </form>

@@ -24,6 +24,7 @@ font-weight:bold;
    height:45px;
    float: left;
    left: 300px;
+   display: none;
 }
 
 /* Contenitore per lo Sfondo dell'artista */
