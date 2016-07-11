@@ -4,63 +4,76 @@
 
 <head>
 	<title>MusicHere</title>
-	<link rel="stylesheet" type="text/css" href="css/stile.css" />
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-	<meta name="generator" content="Geany 0.20" />
+	<meta content="utf-8" http-equiv="encoding">
+
+	<link rel="stylesheet" type="text/css" href="css/stile.css" />
+	<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/lettore.js"></script>
 </head>
 
 <body bgcolor="#607D8B">
-	<center><img src="logo2.png" width="350" height="210"></center>
-	<?php
-      if(!isset($_POST['submit']))
-      {
-	?>
-		<center>
-			<table>
-			 <form action="#" method="post">
-				<tr>
-		 			<td>Nome:</td>
-		 			<td><input type="text" name="nome"></td> </tr>
-		 			<td>Cognome:</td>
-		 			<td><input type="text" name="cognome"></td> </tr>
-		 			<td>Email:</td>
-		 			<td><input type="text" name="email"></td> </tr>
-		 			<td>Password:</td>
-		 			<td><input type="password" name="password"></td> </tr>
-		 			<td><input type="submit" value="Registrati!" name="submit"></td>
-	    	</table>
-	    </center>
-	 	</form>
-	 	<br />
-	 	<center>Se hai già effettuato la registrazione, effettua l'<a href="login.php">accesso!</a></center>
-	<?php
- 	 }
-  	 	else
-  	 {
-	  include 'connessione.php';
-	  
-	  $nome = mysql_real_escape_string($_POST['nome']);                   // per prevenire attacchi informatici
-      $cognome = mysql_real_escape_string($_POST['cognome']);
-      $email = mysql_real_escape_string($_POST['email']);
-      $password = mysql_real_escape_string($_POST['password']);
-      
-      $query= "INSERT INTO utenti(nome,cognome,email,password) 
-                           VALUES('$nome','$cognome','$email','$password')";	// data_nascita
-      $result = mysql_query($query,$conn);
-      
-      if(!$result)
-      {
-          die("Errore nella query.");
-	  }
-	  else
-	  {
-		  if($nome == NULL || $email == NULL || $password == NULL)
-			  echo "<center>Campo dati vuoto! <a href='index.php'>Ritenta</a></center>";
-	      else
-			  echo "<center>Registrazione Effettuata! Effettua l'<a href='login.php'>Accesso!</a><center>";
-      }
-   }  
-	?>
+	<div id="testata">
+		<div id="contenuto_testata">
+			<div id="link">
+				<a href="home.php"> <img src="minilogo.png" width="80" height="70"></a>
+			</div>
+			<div id="carrelloelog">
+				<div id="carrello">
+					<a href="carrello.php" target="openlink"> <img src="carrello.png" width="40" height="40";></a>
+				</div>
+				<?php                               // codice php per il controllo del login
+		           session_start();
+				   
+		           if(isset($_SESSION['user']))     // se l'utente ha effettuato il login
+		           {
+						echo "<div id='logout'>";
+								include 'connessione.php';
+								$testo = $_SESSION['nome'];
+						      	echo "$testo | <a href='logout.php'>Logout</a>";
+						echo "</div>";
+			    	}
+			    	else
+			    	{
+						echo "<div id='login'>";
+								echo "<a href='login.php'>Login</a> | <a href='registrazione.php'>Registrati</a>";
+						echo "</div>";
+			    	}
+				?>
+			</div>
+		</div>
+	</div>
 
- </body>
+		<div id="container">
+			<div id="sinistra">
+				<div id="contenuto">
+					  <iframe name='openlink' width='673px' height='512px' frameborder='0'>
+					  </iframe>
+				</div>
+			</div>
+
+			<div id="destra">
+				<div id="menu">
+				   	<div id="cerca">
+						<form action="ricerca.php" target='openlink' method="post">
+				  			<select name="ricerca">
+					  			<option value="1">Artista</option>
+								<option value="2">Album</option>
+					  			<option value="3">Traccia</option>
+							 </select>
+							<input type="text" name="testo"><br>
+							<input type="submit" value="Cerca">
+						</form>
+					</div>
+				</div>
+				<div id="testi">
+				   <iframe name='openlink1' width='300px' height='447px' frameborder='0'>
+				   </iframe>
+				</div>
+			</div>
+		</div>
+	<div id="footer">
+	 	<center><a href="normativa.html">Normative sulla musica online</a></center>
+	</div>
+</body>
 </html>
