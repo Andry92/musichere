@@ -44,7 +44,7 @@
 	   $num_rows = mysql_num_rows($result);
 	   if($num_rows == 1) 
 	   {
-	         header("Location:home.php");
+	         header("Location:index.php");
 	         $array = mysql_fetch_array($result);
 	         $_SESSION ['user']=$array['id'];
 	         $_SESSION ['nome']=$array['nome'];
