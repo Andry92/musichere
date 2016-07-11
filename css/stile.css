@@ -85,11 +85,6 @@ font:Calibri;
    margin-top:15px;
 }
 
-/* Tabella all'interno di contenuto */
-#discografia{
-   text-align:left;
-}
-
 /* Div che contiene la ricerca e il div testi */
 #destra {
    width:300px;

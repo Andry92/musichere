@@ -21,3 +21,8 @@ function showLettore()
 {
 	document.getElementById('lettore').style.display="block";
 }
+
+function aggiungi()
+{
+	alert("Canzone aggiunta nel carrello!");
+}
