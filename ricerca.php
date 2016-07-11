@@ -48,10 +48,7 @@ if($cerca=='1')  // ricerca per artista
 				
 				$risultato=$riga['id_traccia'];  // preleviamo l'id della canzone per passare il valore alla variabile $risultato che useremo per la query string per il testo della canzone
 			    echo "<td> <a href='testi.php?id=".$risultato."' target='openlink1'>Testo</a> </td>";
-
 			    echo "<td><img src='carrello.png' id='img_carrello' onclick='aggiungi();'></td>";
-			    //echo "<td> <a href='#' onclick='aggiunto();'> <img src='carrello.png' width=32px heigth=32px> </a> </td>";
-			    //echo "<a href="#" onClick="alert('Hello World!')"><img title="The Link" /></a>";
 				echo "</tr>";
 				$riga=mysql_fetch_array($ricerca);
 			}
@@ -90,7 +87,8 @@ if($cerca=='2')  // ricerca per album
 				//                      nel momento in cui clicco nell'immagine, il lettore avvia la canzone con l'id corrispondente
 				echo "<td><img src='play.png' id='play' onclick='mostra(".$riga['id_traccia'].");'></td>";		// immagine del tasto play [on click è un evento di javascript]	
 				$risultato=$riga['id_traccia'];  // preleviamo l'id della canzone per passare il valore alla variabile $risultato che useremo per la query string per il testo della canzone
-			    echo "<td><a href='testi.php?id=".$risultato."' target='openlink1'>Testo</a></td>"; 
+			    echo "<td><a href='testi.php?id=".$risultato."' target='openlink1'>Testo</a></td>";
+			    echo "<td><img src='carrello.png' id='img_carrello' onclick='aggiungi();'></td>";
 				echo "</tr>";
 				$riga=mysql_fetch_array($ricerca); 				    
 			}
@@ -133,6 +131,7 @@ if($cerca=='3') // ricerca per traccia
 				echo "<td><img src='play.png' id='play' onclick='mostra(".$riga['id_traccia'].");'></td>";		// immagine del tasto play [on click è un evento di javascript]	
 				$risultato=$riga['id_traccia'];  // preleviamo l'id della canzone per passare il valore alla variabile $risultato che useremo per la query string per il testo della canzone
 			    echo "<td><a href='testi.php?id=".$risultato."' target='openlink1'>Testo</a></td>";
+			    echo "<td><img src='carrello.png' id='img_carrello' onclick='aggiungi();'></td>";
 				echo "</tr>";
 				$riga=mysql_fetch_array($ricerca);
 			}
