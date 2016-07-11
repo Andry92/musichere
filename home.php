@@ -20,7 +20,7 @@
 			</div>
 			<div id="carrelloelog">
 				<div id="carrello">
-					<a href="carrello.php"> <img src="carrello.png" width="40" height="40";></a>
+					<a href="carrello.php" target="openlink"> <img src="carrello.png" width="40" height="40";></a>
 				</div>
 				<?php                               // codice php per il controllo del login
 		           session_start();
