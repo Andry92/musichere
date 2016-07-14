@@ -1,12 +1,12 @@
 /* Formato delle righe della tabella */
 tr {  
-font:15px Calibri;
+font:12px Calibri;
 font-weight:bold;
 }
 
 /* Formato dei titoli delle colonne della tabella */
 th {
-font:20px Calibri;
+font:16px Calibri;
 font-weight:bold;
 }
 
@@ -27,16 +27,15 @@ font-weight:bold;
    display: none;
 }
 
+#quantita{
+	margin: 0 auto;
+}
+
 /* pulsante carrello per aggiungere una traccia */
 #img_carrello{
 	width: 32px;
 	height: 32px;
 	cursor: pointer;
-}
-
-/* Tabella all'interno di contenuto */
-#discografia{
-   text-align:left;
 }
 
 /* Contenitore per lo Sfondo dell'artista */

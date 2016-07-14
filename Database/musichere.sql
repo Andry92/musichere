@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 11, 2016 at 07:05 PM
+-- Host: localhost
+-- Generation Time: Jul 14, 2016 at 06:14 
 -- Server version: 10.1.13-MariaDB
--- PHP Version: 5.5.37
+-- PHP Version: 5.5.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -64,8 +64,17 @@ INSERT INTO `artisti` (`id_artista`, `nome`, `biografia`, `sfondo`) VALUES
 CREATE TABLE `carrello` (
   `id_utente` int(2) NOT NULL,
   `id_traccia` int(2) NOT NULL,
-  `quantità` int(2) NOT NULL
+  `quantita` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `carrello`
+--
+
+INSERT INTO `carrello` (`id_utente`, `id_traccia`, `quantita`) VALUES
+(1, 1, 1),
+(2, 19, 1),
+(22, 91, 1);
 
 -- --------------------------------------------------------
 
@@ -94,7 +103,6 @@ CREATE TABLE `tracce` (
 INSERT INTO `tracce` (`id_traccia`, `album`, `titolo`, `artista`, `num_traccia`, `anno`, `genere`, `Canzoni`, `copertina`, `testo`, `prezzo`) VALUES
 (1, 'Il Sogno Eretico', 'Chi se ne frega della musica', 'Caparezza', 3, '2011', 'Alternative Rap', 'Tracce/Caparezza/Chi Se Ne Frega Della Musica.mp3', 'Copertine/Il Sogno Eretico.jpg', 'E chi se ne frega della musica, <br>\r\ndi tutti \r\nquesti libri sulla musica, <br>\r\ndi tutte \r\nle interviste, di tutte le riviste, <br>\r\ndi \r\ntutti gli arrivisti, gli arrivisti, <br>\r\ngli arrivisti. <br> <br>\r\n \r\nIo con la musica non \r\nc''entro niente <br>\r\ncome il mio pene davanti \r\nal wc, a luci spente <br>\r\nmi contraddico \r\nfacilmente <br>\r\nma lo faccio cosi'' spesso \r\nche questo fa di me una persona coerente  <br> \r\ned \r\nho tanto da dire <br> perche'' ho poco da \r\nfare, \r\ntu mi invidi, sorridi, mi proponi \r\nun affare: <br>\r\ncominciare con i temi di \r\ncui parla Faber <br>\r\ne finire per un mese \r\nsull''isola a far la fame. <br>\r\nQualsiasi \r\ncosa faccia mi viene riconosciuta? <br>\r\nNo \r\ne'' la mia faccia che viene riconosciuta!<br> \r\nMolti \r\ndei mie fan che fanno la schiuma <br>\r\nhanno \r\nla doppia faccia come il barone Ashura! <br>\r\nParlano \r\ncon me come con un fratello grande \r\ne \r\nmi riprendono in mutande come nel Grande \r\nFratello. <br>\r\nIl video che mi fanno mentre \r\nlecco un orinale <br>\r\ne'' cliccato piu'' del \r\nvideo ufficiale della mia label <br> <br>\r\n\r\ne \r\nchi se ne frega della musica, \r\ndi tutti \r\nquesti libri sulla musica, <br>\r\ndi tutte \r\nle interviste, di tutte le riviste \r\ndi <br>\r\ntutti gli arrivisti gli arrivisti, \r\ngli arrivisti <br>\r\nsi ma chi se ne frega \r\ndella musica <br>\r\nora che tutti parlano \r\ndi musica, <br>\r\ndi tutti questi artisti, <br>\r\ndi tutti questi dischi <br>\r\ndi tutti questi \r\nfischi, questi fischi, questi fischi! \r\n<br><br>\r\n\r\nNon \r\nho mai capito questi social network <br>\r\nper \r\nme servono solo a fare i porci a letto. <br>\r\nOgni \r\nvolta che nasce una nuova piattaforma <br>\r\nmi \r\nfa l''effetto di un libro che ho gia'' \r\nletto <br>\r\ne poi non ho tutti sti amici \r\nma molti meno <br>\r\nmi danno affetto ma poi \r\nm''affettano come Ghemon. <br>\r\nTu! E'' due \r\nore che mi parli, io sono fan di Ghandi <br> \r\ned \r\ne'' solo per questo che non ti meno! <br>\r\nIl \r\nmio cellulare squilla ogni 2 minuti,<br> \r\ngente \r\nche mi assilla e mi chiede se ho 2 \r\nminuti, <br>\r\nassessori, collettivi, sindacati, \r\ngiornalisti, <br>\r\npassa un giorno e i miei \r\ntesticoli non sono piu'' minuti. <br>\r\nMi stupisco, <br>\r\npubblico un disco <br>\r\ne mi fanno le foto \r\nin pubblico, perche''? non capisco! <br>\r\nOh, \r\nnon vi interessano le note che registro<br> \r\nvi \r\ninteressano le mie note sul registro! <br><br>\r\n\r\ne \r\nchi se ne frega della musica... <br><br>\r\n\r\nIo \r\nnon faccio musica ma il cacchio che \r\nmi pare <br>\r\nfaccio rosicare chi ama il \r\ngenere musicale, <br>\r\nnon parlo male di \r\nun collega o di un presunto tale <br>\r\nma \r\nriciclo il suo cd come regalo di Natale.<br> \r\nNon \r\nmi faccio i flash come Syd Barret, <br>\r\nnon \r\nmi piacciono i flash sul red carpet <br>\r\ne \r\nme ne frego degli artisti veri, <br>\r\ntanto \r\ngli artisti veri sono veri come i muppet.. <br>\r\nIn \r\nquesto meccanismo che non posso inceppare <br>\r\nla \r\nrete non e'' Che Guevara anche se si \r\nfinge tale, <br>\r\nal primo posto nella classifica \r\ndigitale <br>\r\nche tu ci creda o meno c''e'' \r\nsolo chi vince i talent <br>\r\ned io non so \r\ncantare, gia'', ma soprattutto non so \r\npiangere <br>\r\nin pubblico per bucare lo schermo <br> \r\ntoglimi\r\ntutto questo che magari mi fermo <br>\r\ndi \r\ncerto non mi freddo in una stanza d''albergo <br> <br>\r\n\r\ne \r\nchi se ne frega della musica, <br>\r\ndi tutti \r\nquesti libri sulla musica, <br>\r\ndi tutte \r\nle interviste, di tutte le riviste <br>\r\ndi \r\ntutti gli arrivisti, gli arrivisti,\r\ngli arrivisti <br>\r\nsi ma chi se ne frega \r\ndella musica <br>\r\nora che tutti parlano \r\ndi musica <br>\r\ndi tutti i mercenari della \r\nmusica <br>\r\nin queste trasmissioni sulla \r\nmusica <br>\r\ndi tutti questi artisti, <br>\r\ndella \r\nPizzi, di Battisti <br>\r\ndi Zanicchi, di \r\nStravinskij <br>\r\nThin Lizzy, Limp Bizkin <br>\r\ndei \r\nBeastie, degli Extreme \r\ndei Lipps inc, <br>\r\ndi Springsteen <br>\r\nma si.. Chi se ne frega \r\ndella musica!', '1.20'),
 (2, 'Il Sogno Eretico', 'La fine di Gaia', 'Caparezza', 9, '2011', 'Alternative Rap', 'Tracce/Caparezza/La Fine Di Gaia.mp3', 'Copertine/Il Sogno Eretico.jpg', 'Povera Gaia \r\nanche i Maya vogliono la tua taglia \r\npure la massaia lo sa, per la fifa tartaglia \r\ndecifra una sterpaglia di codici ma il 20-12 \r\nnon incide se non nei cinematografi. \r\nUomini retti che sono uomini rettili \r\ncon pupille da serpenti \r\npiù spille da sergenti \r\nvogliono la tua muta, Gaia \r\nti vogliono muta, Gaia \r\nla bomba è venuta a galla adesso esploderà. \r\n\r\nReti di rettiliani, andirivieni d'' alieni \r\nvelivoli di veleni, tutti in cerca di ripari ma \r\n\r\nLa fine di Gaia non arriverà \r\nla gente si sbaglia \r\nin fondo che ne sa. \r\nE'' un fuoco di paglia \r\nalla faccia dei Maya e di Cinecittà. \r\nLa fine di Gaia non arriverà! \r\nLa fine di Gaia non arriverà! \r\n\r\nAnche E.T. è qui, mamma che condanna! \r\nE'' un pervertito, ha rapito Gaia per fecondarla \r\ncon alieni adepti che scuoiano coniglietti \r\ne li mostrano alle TV spacciandoli per feti extraterrestri. \r\nC''è chi vuole farsi Gaia con fumi sparsi in aria \r\nda un aereo che la ingabbia come all''Asinara. \r\nSi narra che gaia sniffi, \r\nabbaia anche Brian Griffin. \r\nE'' Clyro come i Biffy che gaia Gaia non è. \r\nTra San Giovanni, Nostradamus e millennium bug \r\nsulla sua bara chiunque metterebbe una tag. \r\n\r\nMa la fine di Gaia non arriverà \r\nla gente si sbaglia \r\nin fondo che ne sa. \r\nE'' un fuoco di paglia \r\nalla faccia dei Maya e di Cinecittà. \r\nLa fine di Gaia non arriverà! \r\nLa fine di Gaia non arriverà! \r\n\r\nNé con i passi di Godzilla né coi passi della Bibbia, \r\nGaia sopravviverà \r\na questi cazzo di asteroidi che non hanno mai schiacciato \r\nneanche una farfalla. \r\nSei tu che tratti Gaia come una recluta a naja \r\nami il petrolio ma la baia non è una caldaia \r\nla tua mannaia lima l''aria mica l''Himalaia! \r\nGaia si salverà, chi salverà il soldato Ryan? \r\n\r\nNon i marziani ma te dovrò respingere \r\nnon i marziani ma te dovrò respingere e vedrai.. \r\n\r\nLa fine di Gaia non arriverà \r\nla gente si sbaglia \r\nin fondo che ne sa. \r\nE'' un fuoco di paglia \r\nalla faccia dei Maya e di Cinecittà. \r\nLa fine di Gaia non arriverà! \r\nLa fine di Gaia non arriverà! \r\nLa fine di Gaia non arriverà! \r\n2012: nemmeno un temporale!', '1.20'),
-(3, 'Verita'' Supposte', 'Jodellavitanonhocapitouncazzo', 'Caparezza', 14, '2005', 'Alternative Rap', 'Tracce/Caparezza/Jodellavitanonhocapitouncazzo.mp3', 'Copertine/verita supposte.jpg', NULL, '1.20'),
 (4, 'Dark Horse', 'Something In Your Mouth', 'Nickelback', 1, '2008', 'Alternative Metal', 'Tracce/Nickelback/Something In Your Mouth.mp3', 'Copertine/dark horse.jpg', NULL, '1.20'),
 (5, 'A Rush Of Blood To The Head', 'The Scientist', 'Coldplay', 4, '2002', 'Alternative Rock', 'Tracce/Coldplay/The Scientist.mp3', 'Copertine/a rush of blood to the head.jpg', NULL, '1.20'),
 (6, 'A Rush Of Blood To The Head', 'Clocks', 'Coldplay', 5, '2002', 'Alternative Rock', 'Tracce/Coldplay/Clocks.mp3', 'Copertine/a rush of blood to the head.jpg', NULL, '1.20'),
@@ -190,8 +198,8 @@ INSERT INTO `utenti` (`id`, `nome`, `cognome`, `email`, `password`) VALUES
 (2, 'Fabrizio', 'Di Benedetto', 'fabridbn@hotmail.it', 'asd'),
 (3, 'marco', 'pazzo', '34ds', 'ciao'),
 (19, 'Silvio', 'Valenti', 'valenti1091@gmail.com', 'ciao'),
-(20, '', '', '', ''),
-(21, 'pinco', 'pallino', 'ciaosuca@hotmail.it', 'ciao');
+(21, 'pinco', 'pallino', 'ciaosuca@hotmail.it', 'ciao'),
+(22, 'Andrea', 'Di Benedetto', 'andreadibenedetto92@gmail.com', 'ciao');
 
 --
 -- Indexes for dumped tables
@@ -207,7 +215,8 @@ ALTER TABLE `artisti`
 -- Indexes for table `carrello`
 --
 ALTER TABLE `carrello`
-  ADD PRIMARY KEY (`id_utente`,`id_traccia`);
+  ADD PRIMARY KEY (`id_utente`,`id_traccia`),
+  ADD KEY `link_track` (`id_traccia`);
 
 --
 -- Indexes for table `tracce`
@@ -239,7 +248,18 @@ ALTER TABLE `tracce`
 -- AUTO_INCREMENT for table `utenti`
 --
 ALTER TABLE `utenti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `carrello`
+--
+ALTER TABLE `carrello`
+  ADD CONSTRAINT `link_track` FOREIGN KEY (`id_traccia`) REFERENCES `tracce` (`id_traccia`),
+  ADD CONSTRAINT `link_user` FOREIGN KEY (`id_utente`) REFERENCES `utenti` (`id`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

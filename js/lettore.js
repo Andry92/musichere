@@ -21,8 +21,3 @@ function showDiv()
 {
 	document.getElementById('lettore').style.display="block";
 }
-
-function aggiungi()
-{
-	alert("Canzone aggiunta nel carrello!");
-}

@@ -16,7 +16,7 @@
 	<div id="testata">
 		<div id="contenuto_testata">
 			<div id="link">
-				<a href="home.php"> <img src="minilogo.png" width="80" height="70"></a>
+				<a href="index.php"> <img src="minilogo.png" width="80" height="70"></a>
 			</div>
 			<div id="carrelloelog">
 				<div id="carrello">
