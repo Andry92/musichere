@@ -1,19 +1,45 @@
+<html>
+<head> 
+	<link rel="stylesheet" type="text/css" href="css/ricerca.css" /> 
+</head>
+<body>
+
 <?php 
-include 'connessione.php';
 session_start();
+include 'connessione.php';
+
 
  if(isset($_SESSION['user']))     // se l'utente ha effettuato il login
  {
-echo "<table id='discografia' cellspacing='3'>";
+	$user=$_SESSION['user'];
+	$ricerca= mysql_query("SELECT copertina,album,num_traccia,titolo,anno,genere,prezzo FROM tracce JOIN carrello WHERE id_utente=$user AND carrello.id_traccia=tracce.id_traccia");
+	$riga=mysql_fetch_array($ricerca);
+ if($riga){
+ echo "<table id='discografia' cellspacing='3'>";
 			echo "<caption>  
 					<th></th>
-					<th>Album</th>
-					<th>Num.</th>
-					<th>Titolo</th>
-					<th>Anno</th>
-					<th>Genere</th>
+					<th>Carrello</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
 					<th>Prezzo</th>
+					<th>Quantità</th>
 				</caption>";
+while($riga)
+			{
+				echo "<tr>";
+				$copertina=$riga['copertina'];
+				echo "<td><img src='$copertina' width='32px' heigth='32px'></td>";
+				echo "<td>".$riga['album']."</td>";
+				echo "<td>".$riga['num_traccia']."</td>";
+				echo "<td>".$riga['titolo']."</td>";
+				echo "<td>".$riga['anno']."</td>";
+				echo "<td>".$riga['genere']."</td>";
+				echo "<td>".$riga['prezzo']."</td>";				
+				$riga=mysql_fetch_array($ricerca);
+		}
+	}
  }
  else
 	echo "Non hai effettuato l'accesso!";
@@ -38,3 +64,6 @@ $query= mysql_query("SELECT testo FROM tracce WHERE id_traccia='$id'");*/
 						</form> </td>"; */
 
 ?>
+
+</body>
+</html>
