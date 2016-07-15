@@ -155,7 +155,7 @@ if($cerca=='3') // ricerca per traccia
 				$risultato=$riga['id_traccia'];  // preleviamo l'id della canzone per passare il valore alla variabile $risultato che useremo per la query string per il testo della canzone
 			    echo "<td><a href='testi.php?id=".$risultato."' target='openlink1'>Testo</a></td>";
 			    echo "<td>".$riga['prezzo']."</td>";
-			    echo "<td><img src='carrello.png' id='img_carrello' onclick='aggiungi();'></td>";
+			    echo "<td> <img src='carrello.png' id='img_carrello' onclick='aggiungi(".$riga['id_traccia'].",".$user.");'> </td>";
 				echo "</tr>";
 				$riga=mysql_fetch_array($ricerca);
 			}

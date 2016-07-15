@@ -9,8 +9,8 @@ if(!$query)  // controllo se la query è stata eseguita
 
 $riga=mysql_fetch_array($query);
 
-if($riga)  // controllo se l'attributo testo è stato trovato
-	echo $riga['testo'];  // stampa del testo della canzone
-elseif($riga == '' || !$riga) 
-	echo "Nessun testo trovato";
+if($riga['testo']==NULL)
+	echo "Nessun testo trovato nel database";
+else
+	echo $riga['testo'];
 ?>
