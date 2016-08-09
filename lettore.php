@@ -15,8 +15,21 @@
 	{
 		// stampiamo il player
 		echo "<marquee behavior='scroll' direction='left'>$artista - $song</marquee>";
-		echo " <audio controls='controls' autoplay='autoplay'>
-			    <source src='".$url."'  type='audio/mpeg' />
-			  </audio> ";
+		echo "<audio id='sample' controls='controls' autoplay='autoplay'>
+			    <source src='".$url."' type='audio/mpeg' />
+			  </audio>";
 	}
+
+	echo "<script>
+			audio=document.getElementById('sample');
+			audio.addEventListener('timeupdate',
+			function()
+			{
+				if(this.currentTime >= 30)
+				{
+					this.currentTime=0;
+				}
+				this.play();
+			});
+		  </script>";
 ?>

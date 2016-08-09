@@ -1,3 +1,5 @@
+/* CSS relativo sia a ricerca.php che a carrello.php */
+
 /* Formato delle righe della tabella */
 tr {  
 font:12px Calibri;
@@ -57,4 +59,8 @@ font-weight:bold;
 	filter:alpha(opacity=25);  
 	border-radius:20px;
 	}
+
+#quantita {
+	width: 40px;
+}
 
