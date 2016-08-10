@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 14, 2016 at 06:14 
+-- Generation Time: Aug 10, 2016 at 11:37 
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.5.34
 
@@ -63,18 +63,39 @@ INSERT INTO `artisti` (`id_artista`, `nome`, `biografia`, `sfondo`) VALUES
 
 CREATE TABLE `carrello` (
   `id_utente` int(2) NOT NULL,
-  `id_traccia` int(2) NOT NULL,
-  `quantita` int(2) NOT NULL
+  `id_traccia` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `carrello`
 --
 
-INSERT INTO `carrello` (`id_utente`, `id_traccia`, `quantita`) VALUES
-(1, 1, 1),
-(2, 19, 1),
-(22, 91, 1);
+INSERT INTO `carrello` (`id_utente`, `id_traccia`) VALUES
+(1, 1),
+(1, 2),
+(1, 99),
+(2, 19),
+(22, 91),
+(22, 108);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `commenti`
+--
+
+CREATE TABLE `commenti` (
+  `id` int(5) UNSIGNED NOT NULL,
+  `commento` varchar(200) DEFAULT NULL,
+  `data` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `commenti`
+--
+
+INSERT INTO `commenti` (`id`, `commento`, `data`) VALUES
+(1, 'Questo sito Ã¨ bello', '2016/08/09');
 
 -- --------------------------------------------------------
 
@@ -219,6 +240,12 @@ ALTER TABLE `carrello`
   ADD KEY `link_track` (`id_traccia`);
 
 --
+-- Indexes for table `commenti`
+--
+ALTER TABLE `commenti`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tracce`
 --
 ALTER TABLE `tracce`
@@ -239,6 +266,11 @@ ALTER TABLE `utenti`
 --
 ALTER TABLE `artisti`
   MODIFY `id_artista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+--
+-- AUTO_INCREMENT for table `commenti`
+--
+ALTER TABLE `commenti`
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tracce`
 --
