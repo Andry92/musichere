@@ -59,7 +59,8 @@ if($cerca=='1')  // ricerca per artista
 				echo "<td><img src='play.png' title='Play!' id='play' onclick='showDiv(); mostra(".$riga['id_traccia'].");'></td>"; 	// immagine del tasto play [on click è un evento di javascript]
 				
 				$risultato=$riga['id_traccia'];  // preleviamo l'id della canzone per passare il valore alla variabile $risultato che useremo per la query string per il testo della canzone
-			    echo "<td> 	<a href='testi.php?id=".$risultato."' target='openlink1'>Testo</a> </td>";
+			    echo "<td> 	<a id='testo' href='testi.php?id=".$risultato."' target='openlink1'>Testo</a> </td>";
+
 			    echo "<td>".$riga['prezzo']."</td>";
 
 			    echo "<td> <img src='carrello.png' title='Aggiungi al carrello!' id='img_carrello' 

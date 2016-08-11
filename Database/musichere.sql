@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 10, 2016 at 11:37 
+-- Generation Time: Aug 11, 2016 at 06:50 
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.5.34
 
@@ -95,7 +95,16 @@ CREATE TABLE `commenti` (
 --
 
 INSERT INTO `commenti` (`id`, `commento`, `data`) VALUES
-(1, 'Questo sito Ã¨ bello', '2016/08/09');
+(1, 'Questo sito Ã¨ bello', '2016/08/09'),
+(2, 'Questo sito hhmhphf', '2016/08/10'),
+(6, 'ciaoooo', '2016/08/10'),
+(8, 'kkkk', '2016/08/10'),
+(9, 'ciaociao', '2016/08/10'),
+(10, 'non male sto sito', '2016/08/10'),
+(11, 'ciaociao', '2016/08/10'),
+(12, 'ciaociao', '2016/08/10'),
+(13, 'bel sito', '2016/08/10'),
+(14, 'ottimo sito', '2016/08/10');
 
 -- --------------------------------------------------------
 
@@ -169,9 +178,9 @@ INSERT INTO `tracce` (`id_traccia`, `album`, `titolo`, `artista`, `num_traccia`,
 (103, 'Dark Side Of The Moon', 'Eclipse', 'Pink Floyd', 9, '1973', 'Rock', 'Tracce/Pink Floyd/Dark Side Of The Moon/09 - Eclipse.mp3', 'Copertine/dark side of the moon.jpg', NULL, '1.20'),
 (104, 'The Wall', 'In The Flesh', 'Pink Floyd', 1, '1979', 'Rock', 'Tracce/Pink Floyd/The Wall/1 - 01 - In The Flesh.mp3', 'Copertine/the wall.jpg', NULL, '1.20'),
 (105, 'The Wall', 'The Thin Ice', 'Pink Floyd', 2, '1979', 'Rock', 'Tracce/Pink Floyd/The Wall/1 - 02 - The Thin Ice.mp3', 'Copertine/the wall.jpg', NULL, '1.20'),
-(106, 'The Wall', 'Another Brick In The Wall, Pt.1', 'Pink Floyd', 3, '1979', 'Rock', 'Tracce/Pink Floyd/The Wall/1 - 03 - Another Brick In The Wall, Pt.1.mp3', 'Copertine/the wall.jpg', NULL, '1.20'),
+(106, 'The Wall', 'Another Brick In The Wall, Pt.1', 'Pink Floyd', 3, '1979', 'Rock', 'Tracce/Pink Floyd/The Wall/1 - 03 - Another Brick in the Wall, Pt.1.mp3', 'Copertine/the wall.jpg', NULL, '1.20'),
 (107, 'The Wall', 'The Happiest Days Of Our Lives', 'Pink Floyd', 4, '1979', 'Rock', 'Tracce/Pink Floyd/The Wall/1 - 04 - The Happiest Days Of Our Lives.mp3', 'Copertine/the wall.jpg', NULL, '1.20'),
-(108, 'The Wall', 'Another Brick In The Wall, Pt.2', 'Pink Floyd', 5, '1979', 'Rock', 'Tracce/Pink Floyd/The Wall/1 - 05 - Another Brick In The Wall, Pt.2.mp3', 'Copertine/the wall.jpg', 'We don''t need no education <br>\r\nWe don''t need no thought control <br> \r\nNo dark sarcasm in the classroom <br>\r\nTeachers leave the kids alone <br>\r\nHey teacher leave us kids alone <br>\r\nAll in all it''s just another brick in <br> the wall <br> \r\nAll in all you''re just another brick in <br> the wall <br>\r\n\r\nWe don''t need no education <br>\r\nWe don''t need no thought control <br> \r\nNo dark sarcasm in the classroom <br>\r\nTeachers leave the kids alone <br>\r\nHey teacher leave us kids alone <br>\r\nAll in all you''re just another brick in <br> the wall <br> \r\nAll in all you''re just another brick in <br> the wall. <br>', '1.20'),
+(108, 'The Wall', 'Another Brick In The Wall, Pt.2', 'Pink Floyd', 5, '1979', 'Rock', 'Tracce/Pink Floyd/The Wall/1 - 05 - Another Brick in the Wall, Pt.2.mp3', 'Copertine/the wall.jpg', 'We don''t need no education <br>\r\nWe don''t need no thought control <br> \r\nNo dark sarcasm in the classroom <br>\r\nTeachers leave the kids alone <br>\r\nHey teacher leave us kids alone <br>\r\nAll in all it''s just another brick in <br> the wall <br> \r\nAll in all you''re just another brick in <br> the wall <br>\r\n\r\nWe don''t need no education <br>\r\nWe don''t need no thought control <br> \r\nNo dark sarcasm in the classroom <br>\r\nTeachers leave the kids alone <br>\r\nHey teacher leave us kids alone <br>\r\nAll in all you''re just another brick in <br> the wall <br> \r\nAll in all you''re just another brick in <br> the wall. <br>', '1.20'),
 (109, 'The Wall', 'Mother', 'Pink Floyd', 6, '1979', 'Rock', 'Tracce/Pink Floyd/The Wall/1 - 06 - Mother.mp3', 'Copertine/the wall.jpg', NULL, '1.20'),
 (110, 'The Wall', 'Goodbye Blue Sky', 'Pink Floyd', 7, '1979', 'Rock', 'Tracce/Pink Floyd/The Wall/1 - 07 - Goodbye Blue Sky.mp3', 'Copertine/the wall.jpg', NULL, '1.20'),
 (111, 'The Wall', 'Empty Spaces', 'Pink Floyd', 8, '1979', 'Rock', 'Tracce/Pink Floyd/The Wall/1 - 08 - Empty Spaces.mp3', 'Copertine/the wall.jpg', NULL, '1.20'),
@@ -215,7 +224,7 @@ CREATE TABLE `utenti` (
 --
 
 INSERT INTO `utenti` (`id`, `nome`, `cognome`, `email`, `password`) VALUES
-(1, 'Andrea', 'Di Benedetto', 'andrydbn@hotmail.it', 'eutanasia'),
+(1, 'Andrea', 'Di Benedetto', 'andrydbn@hotmail.it', 'ciao1'),
 (2, 'Fabrizio', 'Di Benedetto', 'fabridbn@hotmail.it', 'asd'),
 (3, 'marco', 'pazzo', '34ds', 'ciao'),
 (19, 'Silvio', 'Valenti', 'valenti1091@gmail.com', 'ciao'),
@@ -270,7 +279,7 @@ ALTER TABLE `artisti`
 -- AUTO_INCREMENT for table `commenti`
 --
 ALTER TABLE `commenti`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `tracce`
 --

@@ -29,10 +29,6 @@ font-weight:bold;
    display: none;
 }
 
-#quantita{
-	margin: 0 auto;
-}
-
 /* pulsante carrello per aggiungere una traccia */
 #img_carrello{
 	width: 32px;
@@ -59,8 +55,3 @@ font-weight:bold;
 	filter:alpha(opacity=25);  
 	border-radius:20px;
 	}
-
-#quantita {
-	width: 40px;
-}
-

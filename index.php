@@ -67,26 +67,18 @@
 					</div>
 				</div>
 				<div id="testi">
-					<iframe name='openlink1' src='leggi.php' width='300px' height='365px' frameborder='0'>
+					<iframe name='openlink1' id="id_openlink1" src="leggi.php" width='300px' height='365px' frameborder='0'>
 			          </iframe>
-			           
-			           <?php 
-				        if(isset($_POST['invia'])) {
-				        	echo "<script> parent.window.location.reload(); </script>";
-			           }
-			           else{
-			           ?>
-			             <form action='salva.php' target='openlink1' method='post'>
-				          	<textarea name='commento'></textarea><br>
-				          	<input name='invia' type='submit' value='Invia commento'>
-				          </form>
-			          
-			          <?php 
-			           }
-			          ?>
+			         
+			        <script>
+			        		// provo a vedere se riesco a non fare visualizzare il form quando visualizzo un testo
+			           		id_testo=document.getElementById('id_openlink1').src;
 
-				   <iframe name='openlink1' width='300px' height='447px' frameborder='0'>
-				   </iframe>
+			           		if(id_testo == 'http://localhost/musichere/leggi.php')
+			           		{
+			           			document.write("<form action='salva.php' target='openlink1' method='post'> <textarea name='commento'></textarea> <br> <input type='submit' name='invia' value='Invia commento'> </form>");
+				        	}
+			         </script>
 				</div>
 			</div>
 		</div>
