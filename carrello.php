@@ -1,6 +1,9 @@
 <html>
 <head> 
-	<link rel="stylesheet" type="text/css" href="css/ricerca.css" /> 
+	<link rel="stylesheet" type="text/css" href="css/ricerca.css" />
+	<script language="javascript" type="text/javascript" src="js/libreria1.js"></script>
+	<script type="text/javascript" src="js/libreria2.js"></script>
+	<script type="text/javascript" src="js/carrello.js"></script>
 </head>
 <body>
 
@@ -39,7 +42,9 @@ include 'connessione.php';
 				echo "<td>".$riga['anno']."</td>";
 				echo "<td>".$riga['genere']."</td>";
 				echo "<td>".$riga['prezzo']."</td>";
-
+				echo "<td> <img src='x.png' title='Elimina dal carrello!' id='img_x' 
+						onclick='elimina(".$riga['id_traccia'].",".$user.");'> </td>";
+						
 				$riga=mysql_fetch_array($ricerca);
 			}
 		echo "</table>";
