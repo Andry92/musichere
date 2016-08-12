@@ -36,6 +36,13 @@ font-weight:bold;
 	cursor: pointer;
 }
 
+/* pulsante x per eliminare una traccia dal carrello*/
+#img_x{
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+
 /* Contenitore per lo Sfondo dell'artista */
 #sfondo{
 	top:0;
