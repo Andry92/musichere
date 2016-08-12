@@ -15,7 +15,7 @@ include 'connessione.php';
  if(isset($_SESSION['user']))     // se l'utente ha effettuato il login
  {
 	$user=$_SESSION['user'];
-	$ricerca= mysql_query("SELECT copertina,album,num_traccia,titolo,anno,genere,prezzo FROM tracce JOIN carrello WHERE id_utente=$user AND carrello.id_traccia=tracce.id_traccia");
+	$ricerca= mysql_query("SELECT copertina,album,num_traccia,titolo,anno,genere,prezzo,tracce.id_traccia FROM tracce JOIN carrello WHERE id_utente=$user AND carrello.id_traccia=tracce.id_traccia");
 	$riga=mysql_fetch_array($ricerca);
 	if($riga)
 	{
