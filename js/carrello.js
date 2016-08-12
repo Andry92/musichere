@@ -21,3 +21,26 @@ function aggiungi(id_traccia,id_user)
 	}
 }
 
+function elimina(id_traccia,id_user)
+{
+	if(id_user==0)
+		window.alert("Devi effettuare il login per eliminare tracce al carrello.");
+	else
+	{
+		$.ajax({
+				/* Metodo con cui viene mandata la variabile alla pagina */
+				type:"POST",
+				/* Pagina a cui viene inviata la variabile id */
+				url:"elimina_traccia.php",
+				
+				/* Valori che vengono inviati alla pagina "elimina_traccia.php" */
+				data:"id_traccia="+id_traccia+"&id_user="+id_user,
+
+				success:function(msg)
+				{
+						window.alert("Canzone eliminata dal carrello!");
+				},
+		});	
+	}
+}
+
