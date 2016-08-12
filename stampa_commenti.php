@@ -1,7 +1,7 @@
 <?php 
 	include 'connessione.php';
 
-     $testo="SELECT commento,data,ora,nome FROM commenti JOIN utenti WHERE id_utente=utenti.id"; 
+     $testo="SELECT commento,data,ora,nome FROM commenti JOIN utenti WHERE id_utente=utenti.id ORDER BY data asc, ora asc"; 
      if(!$query = mysql_query($testo)) /* eseguo la query e controllo se va a buon fine*/ 
           echo('Errore: non riesco a eseguire la query');
 

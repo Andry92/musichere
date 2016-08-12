@@ -6,5 +6,6 @@
 	$query=mysql_query("DELETE FROM carrello WHERE id_utente='$id_user' AND id_traccia='$id_traccia'",$conn);
 	if (!$query)
 		echo "Errore di eliminazione dei dati nel database: ".$query;
-	header("Location: carrello.php");
+
+	mysql_close($conn);
 ?>

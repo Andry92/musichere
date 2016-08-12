@@ -69,17 +69,13 @@
 				<div id="testi">
 					<iframe name='openlink1' id="id_openlink1" src="stampa_commenti.php" width='300px' height='365px' 				frameborder='0'>
 			          </iframe>
-			         
-			        <script>
-			        		// provo a vedere se riesco a non fare visualizzare il form quando visualizzo un testo
-			           		id_testo=document.getElementById('id_openlink1').src;
+			       	
+			       	<form action='ins_commenti.php' target='openlink1' method='post'> 
+				        <textarea name='commento'></textarea> <br> 
+				        <input type='submit' name='invia' value='Invia commento'> 
+				    </form>
 
-			           		if(id_testo == 'http://localhost/musichere/stampa_commenti.php')
-			           		{
-			           			document.write("<form action='ins_commenti.php' target='openlink1' method='post'> <textarea name='commento'></textarea> <br> <input type='submit' name='invia' value='Invia commento'> </form>");
-				        	}
-			         </script>
-				</div>
+			    </div>
 			</div>
 		</div>
 	<div id="footer">
