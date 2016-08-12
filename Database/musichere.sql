@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 11, 2016 at 06:50 
+-- Generation Time: Aug 12, 2016 at 05:39 
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.5.34
 
@@ -74,6 +74,7 @@ INSERT INTO `carrello` (`id_utente`, `id_traccia`) VALUES
 (1, 1),
 (1, 2),
 (1, 99),
+(1, 108),
 (2, 19),
 (22, 91),
 (22, 108);
@@ -87,24 +88,20 @@ INSERT INTO `carrello` (`id_utente`, `id_traccia`) VALUES
 CREATE TABLE `commenti` (
   `id` int(5) UNSIGNED NOT NULL,
   `commento` varchar(200) DEFAULT NULL,
-  `data` varchar(10) DEFAULT NULL
+  `data` varchar(10) DEFAULT NULL,
+  `ora` time NOT NULL,
+  `id_utente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `commenti`
 --
 
-INSERT INTO `commenti` (`id`, `commento`, `data`) VALUES
-(1, 'Questo sito Ã¨ bello', '2016/08/09'),
-(2, 'Questo sito hhmhphf', '2016/08/10'),
-(6, 'ciaoooo', '2016/08/10'),
-(8, 'kkkk', '2016/08/10'),
-(9, 'ciaociao', '2016/08/10'),
-(10, 'non male sto sito', '2016/08/10'),
-(11, 'ciaociao', '2016/08/10'),
-(12, 'ciaociao', '2016/08/10'),
-(13, 'bel sito', '2016/08/10'),
-(14, 'ottimo sito', '2016/08/10');
+INSERT INTO `commenti` (`id`, `commento`, `data`, `ora`, `id_utente`) VALUES
+(36, 'Non male ''sto sito dai', '2016/08/12', '05:27:15', 2),
+(37, 'Va bene ok, forse cafudda ma senza fudda', '2016/08/12', '05:27:44', 1),
+(38, 'Tu che dici?', '2016/08/12', '05:28:05', 1),
+(39, 'PerchÃ¨?', '2016/08/12', '05:28:34', 1);
 
 -- --------------------------------------------------------
 
@@ -226,9 +223,7 @@ CREATE TABLE `utenti` (
 INSERT INTO `utenti` (`id`, `nome`, `cognome`, `email`, `password`) VALUES
 (1, 'Andrea', 'Di Benedetto', 'andrydbn@hotmail.it', 'ciao1'),
 (2, 'Fabrizio', 'Di Benedetto', 'fabridbn@hotmail.it', 'asd'),
-(3, 'marco', 'pazzo', '34ds', 'ciao'),
 (19, 'Silvio', 'Valenti', 'valenti1091@gmail.com', 'ciao'),
-(21, 'pinco', 'pallino', 'ciaosuca@hotmail.it', 'ciao'),
 (22, 'Andrea', 'Di Benedetto', 'andreadibenedetto92@gmail.com', 'ciao');
 
 --
@@ -252,7 +247,8 @@ ALTER TABLE `carrello`
 -- Indexes for table `commenti`
 --
 ALTER TABLE `commenti`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `index` (`id_utente`);
 
 --
 -- Indexes for table `tracce`
@@ -279,7 +275,7 @@ ALTER TABLE `artisti`
 -- AUTO_INCREMENT for table `commenti`
 --
 ALTER TABLE `commenti`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 --
 -- AUTO_INCREMENT for table `tracce`
 --
@@ -300,6 +296,12 @@ ALTER TABLE `utenti`
 ALTER TABLE `carrello`
   ADD CONSTRAINT `link_track` FOREIGN KEY (`id_traccia`) REFERENCES `tracce` (`id_traccia`),
   ADD CONSTRAINT `link_user` FOREIGN KEY (`id_utente`) REFERENCES `utenti` (`id`);
+
+--
+-- Constraints for table `commenti`
+--
+ALTER TABLE `commenti`
+  ADD CONSTRAINT `commenti_ibfk_1` FOREIGN KEY (`id_utente`) REFERENCES `utenti` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
