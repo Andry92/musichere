@@ -20,7 +20,7 @@ else
 								// utilizzo per il controllo in carrello.js 
 
 $cerca=$_POST['ricerca'];
-$testo=$_POST['testo'];
+$testo=mysql_real_escape_string($_POST['testo']);
 
 if($cerca=='1')  // ricerca per artista
 {   //                                    utilizzo il join per unire le tabelle tracce e artista tramite il nome dell'artista che deve essere quello inserito dall'utente.    Asc sta per crescente
@@ -112,7 +112,8 @@ if($cerca=='2')  // ricerca per album
 				$risultato=$riga['id_traccia'];  // preleviamo l'id della canzone per passare il valore alla variabile $risultato che useremo per la query string per il testo della canzone
 			    echo "<td><a href='testi.php?id=".$risultato."' target='openlink1'>Testo</a></td>";
 			    echo "<td>".$riga['prezzo']."</td>";
-			    echo "<td><img src='carrello.png' id='img_carrello' onclick='aggiungi();'></td>";
+			    echo "<td> <img src='carrello.png' title='Aggiungi al carrello!' id='img_carrello' 
+			    		onclick='aggiungi(".$riga['id_traccia'].",".$user.");'> </td>";
 				echo "</tr>";
 				$riga=mysql_fetch_array($ricerca); 				    
 			}

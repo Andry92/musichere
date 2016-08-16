@@ -10,6 +10,7 @@
 <?php 
 session_start();
 include 'connessione.php';
+$tot=0;		// variabile utilizzata per calcolare il totale del prezzo
 
 
  if(isset($_SESSION['user']))     // se l'utente ha effettuato il login
@@ -42,16 +43,20 @@ include 'connessione.php';
 				echo "<td>".$riga['anno']."</td>";
 				echo "<td>".$riga['genere']."</td>";
 				echo "<td>".$riga['prezzo']."</td>";
+				$tot=$tot+$riga['prezzo'];
 				echo "<td> <img src='x.png' title='Elimina dal carrello!' id='img_x' 
 						onclick='elimina(".$riga['id_traccia'].",".$user.");'> </td>";
-						
+				echo "</tr>";
 				$riga=mysql_fetch_array($ricerca);
 			}
 		echo "</table>";
+		echo "<h2>TOTALE: <i>$tot</i></h2>";
 	}
+	else
+		echo "Il carrello è vuoto! Scegli i brani o gli album che desideri ed aggiungili al carrello.";
  }
  else
-	echo "Non hai effettuato l'accesso!";
+ 	echo "Non hai effettuato l'accesso!";
 ?>
 
 </body>

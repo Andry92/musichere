@@ -15,7 +15,7 @@
 	{
 		// stampiamo il player
 		echo "<marquee behavior='scroll' direction='left'>$artista - $song</marquee>";
-		echo "<audio id='sample' controls='controls' autoplay='loop'>
+		echo "<audio id='sample' controls='controls' autoplay='autoplay'>
 			    <source src='".$url."' type='audio/mpeg' />
 			  </audio>";
 	}
