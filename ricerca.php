@@ -69,14 +69,13 @@ if($cerca=='1')  // ricerca per artista
 				echo "</tr>";
 				$riga=mysql_fetch_array($ricerca);
 			}
-			
 			echo "</table>";
 	}
 }
 
 if($cerca=='2')  // ricerca per album
 {
-	$ricerca=mysql_query("SELECT id_traccia,album,nome,copertina,num_traccia,genere,anno,titolo,prezzo FROM artisti JOIN tracce ON nome=artista WHERE album LIKE '$testo%' ORDER BY num_traccia");
+	$ricerca=mysql_query("SELECT id_traccia,album,nome,copertina,num_traccia,genere,anno,titolo,prezzo FROM artisti JOIN tracce ON nome=artista WHERE album LIKE '$testo' ORDER BY num_traccia");
 	$riga=mysql_fetch_array($ricerca);
 	if(!$riga) echo("Nessun album trovato con nome: ".$testo);
 	else
@@ -105,9 +104,10 @@ if($cerca=='2')  // ricerca per album
 				echo "<td>".$riga['anno']."</td>";
 				echo "<td>".$riga['genere']."</td>";
 
-				//                      nel momento in cui clicco nell'immagine, il lettore avvia la canzone con l'id corrispondente
-				echo "<td><img src='play.png' title='Play!' id='play' onclick='showDiv(); mostra(".$riga['id_traccia'].");'></td>";	
-				// immagine del tasto play [on click è un evento di javascript]	
+				// nel momento in cui clicco nell'immagine, il lettore avvia la canzone con l'id corrispondente
+				echo "<td><img src='play.png' title='Play!' id='play' onclick='showDiv(); mostra(".$riga['id_traccia'].");'>
+					</td>";	
+				// immagine del tasto play [onclick è un evento di javascript]	
 
 				$risultato=$riga['id_traccia'];  // preleviamo l'id della canzone per passare il valore alla variabile $risultato che useremo per la query string per il testo della canzone
 			    echo "<td><a href='testi.php?id=".$risultato."' target='openlink1'>Testo</a></td>";
@@ -117,8 +117,11 @@ if($cerca=='2')  // ricerca per album
 				echo "</tr>";
 				$riga=mysql_fetch_array($ricerca); 				    
 			}
-	}	
 			echo "</table>";
+			echo "<b>Aggiungi l'album al carrello!</b>";
+			echo ' <img src="carrello.png" title="Aggiungi album al carrello!" id="img_carrello" 
+			    		onclick="aggiungi_album(\''.$testo.'\','.$user.');"> ';	// il carattere di escape serve per il passaggio del parametro stringa
+	}	
 }
 
 if($cerca=='3') // ricerca per traccia
@@ -166,7 +169,6 @@ if($cerca=='3') // ricerca per traccia
 				echo "</tr>";
 				$riga=mysql_fetch_array($ricerca);
 			}
-			
 			echo "</table>";
     }
 }

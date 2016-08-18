@@ -61,7 +61,7 @@
 								<option value="2">Album</option>
 					  			<option value="3">Traccia</option>
 							 </select>
-							<input type="text" name="testo"><br>
+							<input type="text" name="testo">
 							<input type="submit" value="Cerca">
 						</form>
 					</div>
@@ -71,7 +71,7 @@
 			          </iframe>
 			       	
 			       	<form action='ins_commenti.php' target='openlink1' method='post'> 
-				        <textarea name='commento'></textarea> <br> 
+				        <textarea name='commento'></textarea> <br>
 				        <input type='submit' name='invia' value='Invia commento'> 
 				    </form>
 

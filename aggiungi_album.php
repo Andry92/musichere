@@ -1,10 +1,10 @@
 <?php
 	include 'connessione.php';
-	$id_traccia=$_POST['id_traccia'];
+	$id_album=$_POST['id_album'];
 	$id_user=$_POST['id_user'];
 	
 	$query=mysql_query("INSERT INTO carrello(id_utente,id_traccia,flag)
-								VALUES('$id_user','$id_traccia',0)",$conn);
+								SELECT'$id_user',id_traccia,1 FROM tracce WHERE album LIKE '$id_album'");
 
 	if (!$query)
 		echo "Errore di inserimento dei dati nel database";

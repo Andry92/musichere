@@ -50,7 +50,7 @@ $tot=0;		// variabile utilizzata per calcolare il totale del prezzo
 				$riga=mysql_fetch_array($ricerca);
 			}
 		echo "</table>";
-		echo "<h2>TOTALE: <i>$tot</i></h2>";
+		echo "<h2>TOTALE: <i>$tot</i>€</h2>";
 	}
 	else
 		echo "Il carrello è vuoto! Scegli i brani o gli album che desideri ed aggiungili al carrello.";

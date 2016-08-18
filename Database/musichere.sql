@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 12, 2016 at 05:39 
+-- Generation Time: Aug 18, 2016 at 05:06 
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.5.34
 
@@ -63,21 +63,32 @@ INSERT INTO `artisti` (`id_artista`, `nome`, `biografia`, `sfondo`) VALUES
 
 CREATE TABLE `carrello` (
   `id_utente` int(2) NOT NULL,
-  `id_traccia` int(2) NOT NULL
+  `id_traccia` int(2) NOT NULL,
+  `flag` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `carrello`
 --
 
-INSERT INTO `carrello` (`id_utente`, `id_traccia`) VALUES
-(1, 1),
-(1, 2),
-(1, 99),
-(1, 108),
-(2, 19),
-(22, 91),
-(22, 108);
+INSERT INTO `carrello` (`id_utente`, `id_traccia`, `flag`) VALUES
+(1, 95, 0),
+(1, 98, 0),
+(1, 99, 0),
+(1, 101, 0),
+(1, 102, 0),
+(1, 103, 0),
+(22, 86, 1),
+(22, 87, 1),
+(22, 95, 1),
+(22, 96, 1),
+(22, 97, 1),
+(22, 98, 1),
+(22, 99, 1),
+(22, 100, 1),
+(22, 101, 1),
+(22, 102, 1),
+(22, 103, 1);
 
 -- --------------------------------------------------------
 
@@ -100,8 +111,7 @@ CREATE TABLE `commenti` (
 INSERT INTO `commenti` (`id`, `commento`, `data`, `ora`, `id_utente`) VALUES
 (36, 'Non male ''sto sito dai', '2016/08/12', '05:27:15', 2),
 (37, 'Va bene ok, forse cafudda ma senza fudda', '2016/08/12', '05:27:44', 1),
-(38, 'Tu che dici?', '2016/08/12', '05:28:05', 1),
-(39, 'PerchÃ¨?', '2016/08/12', '05:28:34', 1);
+(38, 'Apposto!', '2016/08/16', '05:07:27', 1);
 
 -- --------------------------------------------------------
 
@@ -275,7 +285,7 @@ ALTER TABLE `artisti`
 -- AUTO_INCREMENT for table `commenti`
 --
 ALTER TABLE `commenti`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT for table `tracce`
 --
