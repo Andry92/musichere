@@ -68,9 +68,9 @@
 				</div>
 				<div id="testi">
 					<iframe name='openlink1' id="id_openlink1" src="stampa_commenti.php" width='300px' height='365px' 				frameborder='0'>
-			          </iframe>
+			        </iframe>
 			       	
-			       	<form action='ins_commenti.php' target='openlink1' method='post'> 
+			       	<form action='ins_commenti.php' target='openlink1' method='post' style='margin-left: 8px;'> 
 				        <textarea name='commento'></textarea> <br>
 				        <input type='submit' name='invia' value='Invia commento'> 
 				    </form>

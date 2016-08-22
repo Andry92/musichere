@@ -6,6 +6,6 @@
 	$query=mysql_query("INSERT INTO carrello(id_utente,id_traccia,flag)
 								VALUES('$id_user','$id_traccia',0)",$conn);
 
-	if (!$query)
+	if(!$query)
 		echo "Errore di inserimento dei dati nel database";
 ?>

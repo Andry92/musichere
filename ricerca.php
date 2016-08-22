@@ -24,7 +24,7 @@ $testo=mysql_real_escape_string($_POST['testo']);
 
 if($cerca=='1')  // ricerca per artista
 {   //                                    utilizzo il join per unire le tabelle tracce e artista tramite il nome dell'artista che deve essere quello inserito dall'utente.    Asc sta per crescente
-	$ricerca=mysql_query("SELECT id_traccia,Sfondo,copertina,album,nome,titolo,num_traccia,anno,genere,prezzo FROM artisti JOIN tracce ON nome=artista WHERE nome LIKE '$testo%' ORDER BY album asc ,num_traccia asc");
+	$ricerca=mysql_query("SELECT id_traccia,Sfondo,copertina,album,nome,titolo,num_traccia,anno,genere,prezzo FROM artisti JOIN tracce ON nome=artista WHERE nome LIKE '$testo%' ORDER BY album asc, num_traccia asc");
 	$riga=mysql_fetch_array($ricerca);                // seleziono la prima riga
 	if(!$riga) echo("Nessun artista trovato con nome: ".$testo);   // controllo se l'artista è stato trovato
 	else
@@ -56,7 +56,8 @@ if($cerca=='1')  // ricerca per artista
 				echo "<td>".$riga['genere']."</td>";
 
 				//           nel momento in cui clicco sull'immagine, il lettore avvia la canzone con l'id corrispondente
-				echo "<td><img src='play.png' title='Play!' id='play' onclick='showDiv(); mostra(".$riga['id_traccia'].");'></td>"; 	// immagine del tasto play [on click è un evento di javascript]
+				echo "<td><img src='play.png' title='Play!' id='play' onclick='showDiv(); mostra(".$riga['id_traccia'].");'>
+				</td>"; 	// immagine del tasto play [on click è un evento di javascript]
 				
 				$risultato=$riga['id_traccia'];  // preleviamo l'id della canzone per passare il valore alla variabile $risultato che useremo per la query string per il testo della canzone
 			    echo "<td> 	<a id='testo' href='testi.php?id=".$risultato."' target='openlink1'>Testo</a> </td>";
@@ -120,7 +121,7 @@ if($cerca=='2')  // ricerca per album
 			echo "</table>";
 			echo "<b>Aggiungi l'album al carrello!</b>";
 			echo ' <img src="carrello.png" title="Aggiungi album al carrello!" id="img_carrello" 
-			    		onclick="aggiungi_album(\''.$testo.'\','.$user.');"> ';	// il carattere di escape serve per il passaggio del parametro stringa
+			    		onclick="aggiungi_album(\''.$testo.'\','.$user.');"> ';	// i caratteri di escape servono per il passaggio del parametro di tipo stringa
 	}	
 }
 

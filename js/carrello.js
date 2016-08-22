@@ -9,7 +9,7 @@ function aggiungi(id_traccia,id_user)
 				/* Metodo con cui viene mandata la variabile alla pagina */
 				type:"POST",
 
-				/* Pagina a cui viene inviata la variabile id */
+				/* Pagina a cui vengono inviate le variabili id */
 				url:"aggiungi_traccia.php",
 				
 				/* Valori che vengono inviati alla pagina "aggiungi_traccia.php" */
@@ -17,8 +17,8 @@ function aggiungi(id_traccia,id_user)
 
 				success:function(msg)
 				{
-						window.alert("Canzone aggiunta nel carrello!");
-				},
+					window.alert('Canzone aggiunta al carrello');
+				}
 		});
 	}
 }
@@ -38,8 +38,8 @@ function elimina(id_traccia,id_user)
 
 				success:function(msg)
 				{
-						window.alert("Canzone eliminata dal carrello!");
-						window.location = 'carrello.php';
+					window.alert("Canzone eliminata dal carrello!");
+					window.location = 'carrello.php';
 				},
 		});	
 }
@@ -55,15 +55,15 @@ function aggiungi_album(id_album,id_user)
 				/* Metodo con cui viene mandata la variabile alla pagina */
 				type:"POST",
 				
-				/* Pagina a cui viene inviata la variabile id */
+				/* Pagina a cui vengono inviate le variabili id */
 				url:"aggiungi_album.php",
 				
-				/* Valori che vengono inviati alla pagina "aggiungi_traccia.php" */
+				/* Valori che vengono inviati alla pagina "aggiungi_album.php" */
 				data:"id_album="+id_album+"&id_user="+id_user,
 
 				success:function(msg)
 				{
-						window.alert("Album aggiunto nel carrello!");
+					window.alert("Album aggiunto nel carrello!");
 				},
 		});
 	}

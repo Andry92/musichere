@@ -7,5 +7,10 @@
 								SELECT'$id_user',id_traccia,1 FROM tracce WHERE album LIKE '$id_album'");
 
 	if (!$query)
+	{
+		echo "<script> 
+			alert('Prima di inserire album, togli dal carrello le canzoni che hai inserito del album in considerazione.');
+			</script>";
 		echo "Errore di inserimento dei dati nel database";
+	}
 ?>
