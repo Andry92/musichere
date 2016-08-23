@@ -15,10 +15,13 @@ function aggiungi(id_traccia,id_user)
 				/* Valori che vengono inviati alla pagina "aggiungi_traccia.php" */
 				data:"id_traccia="+id_traccia+"&id_user="+id_user,
 
-				success:function(msg)
+				success:function(data)
 				{
-					window.alert('Canzone aggiunta al carrello');
-				}
+					if(data=='ok')
+						window.alert("Canzone aggiunta nel carrello!");
+					else
+						window.alert('Canzone già aggiunta nel carrello!');
+				},
 		});
 	}
 }
@@ -36,10 +39,15 @@ function elimina(id_traccia,id_user)
 				/* Valori che vengono inviati alla pagina "elimina_traccia.php" */
 				data:"id_traccia="+id_traccia+"&id_user="+id_user,
 
-				success:function(msg)
+				success:function(data)
 				{
-					window.alert("Canzone eliminata dal carrello!");
-					window.location = 'carrello.php';
+					if(data=='ok')
+					{
+						window.alert('Canzone eliminata dal carrello!');
+						window.location = 'carrello.php';
+					}
+					else
+						window.alert('Errore');
 				},
 		});	
 }
@@ -61,9 +69,14 @@ function aggiungi_album(id_album,id_user)
 				/* Valori che vengono inviati alla pagina "aggiungi_album.php" */
 				data:"id_album="+id_album+"&id_user="+id_user,
 
-				success:function(msg)
+				success:function(data)
 				{
-					window.alert("Album aggiunto nel carrello!");
+					if(data=='delete')
+						window.alert("Carrello aggiornato!");
+					else if(data=='ok')
+						window.alert('Album aggiunto nel carrello!');
+					else if(data=='error')
+						window.alert('Album già aggiunto nel carrello!');
 				},
 		});
 	}

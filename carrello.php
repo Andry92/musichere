@@ -15,7 +15,7 @@ $tot=0;		// variabile utilizzata per calcolare il totale del prezzo
 if(isset($_SESSION['user']))     // se l'utente ha effettuato il login
 {
 	$user=$_SESSION['user'];
-	$ricerca= mysql_query("SELECT copertina,album,num_traccia,titolo,anno,genere,prezzo,tracce.id_traccia FROM tracce JOIN carrello WHERE id_utente=$user AND carrello.id_traccia=tracce.id_traccia ORDER BY flag,album");
+	$ricerca= mysql_query("SELECT copertina,album,num_traccia,titolo,anno,genere,prezzo,tracce.id_traccia FROM tracce JOIN carrello WHERE id_utente=$user AND carrello.id_traccia=tracce.id_traccia ORDER BY num_traccia,album");
 	$riga=mysql_fetch_array($ricerca);
 	if($riga)
 	{

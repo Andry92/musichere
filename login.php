@@ -37,7 +37,7 @@
 		    $email = mysql_real_escape_string($_POST['email']);
 		    $password = mysql_real_escape_string($_POST['password']);
 		   
-		    $query = "SELECT id,nome FROM utenti WHERE email='$email' AND password='$password'";
+		    $query = "SELECT id,nome,cognome FROM utenti WHERE email='$email' AND password='$password'";
 		    $result = mysql_query($query,$conn);
 		   
 		    $num_rows = mysql_num_rows($result);
@@ -47,6 +47,8 @@
 		        $array = mysql_fetch_array($result);
 		        $_SESSION ['user']=$array['id'];
 		        $_SESSION ['nome']=$array['nome'];
+		        $_SESSION ['cognome']=$array['cognome']; // utilizzato per acquisto.php
+		        $_SESSION ['email']=$email; // utilizzato per acquisto.php
 			}
 			else
 				echo "<center>Dati errati <a href='login.php'>Ritenta</a></center>";

@@ -6,42 +6,46 @@
 	<title>MusicHere</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<meta content="utf-8" http-equiv="encoding">
-
-	<link rel="stylesheet" type="text/css" href="css/stile.css" />
-	<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-	<script type="text/javascript" src="js/lettore.js"></script>
 </head>
 
 <body bgcolor="#607D8B">
-	<div id="testata">
+
+	<div id="testata" style="background:#455A64;width:100%;height:230px;top:0;left:0;position:fixed;">
 		<div id="contenuto_testata">
 			<div id="link">
-				<a href="index.php"> <img src="minilogo.png" width="80" height="70"></a>
+				<a href="index.php"><img src="logo2.png" title="Torna alla Home" width="350" height="210" 
+					style="margin-top: 15px; margin-left:200px; float:left;"></a>
 			</div>
-			<div id="carrelloelog">
-				<div id="carrello">
-					<a href="carrello.php" target="openlink"> <img src="carrello.png" title="Carrello" width="40" height="40";></a>
-				</div>
-				<?php                               // codice php per il controllo del login
-		           session_start();
+			<div id="utente" style="width: 220px;float: right;margin-top:80px; margin-right:200px;">
+				<?php
+		            session_start();
+		            include 'connessione.php'; 
 				   
-		           if(isset($_SESSION['user']))     // se l'utente ha effettuato il login
-		           {
-						echo "<div id='logout'>";
-								include 'connessione.php';
-								$testo = $_SESSION['nome'];
-						      	echo "$testo | <a href='logout.php'>Logout</a>";
-						echo "</div>";
-			    	}
-			    	else
-			    	{
-						echo "<div id='login'>";
-								echo "<a href='login.php'>Login</a> | <a href='registrazione.php'>Registrati</a>";
-						echo "</div>";
-			    	}
+					$name = $_SESSION['nome'];
+					$surname = $_SESSION['cognome'];
+					$email = $_SESSION['email'];
+					echo "<b>$name $surname</b><br>";
+					echo $email;
 				?>
 			</div>
 		</div>
 	</div>
+
+	<div id="contenuto_acquisto" style="position:fixed;">
+
+		<tr>
+			<form method="post" action="#">
+			    <td>Inserisci il metodo di pagamento:</td>
+			    <td><select name="tipo_pagamento">
+  				<option value="">Seleziona...</option>
+  				<option value="CDC">Carta di credito</option>
+  				<option value="PP">Paypal</option>
+				</select></td> </tr>
+
+			</form>
+
+	</div>
+
+
 </body>
 </html>
