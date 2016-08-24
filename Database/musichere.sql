@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 18, 2016 at 05:06 
+-- Generation Time: Aug 24, 2016 at 01:34 
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.5.34
 
@@ -72,23 +72,41 @@ CREATE TABLE `carrello` (
 --
 
 INSERT INTO `carrello` (`id_utente`, `id_traccia`, `flag`) VALUES
-(1, 95, 0),
-(1, 98, 0),
-(1, 99, 0),
-(1, 101, 0),
-(1, 102, 0),
-(1, 103, 0),
-(22, 86, 1),
+(1, 7, 0),
+(1, 95, 1),
+(1, 96, 1),
+(1, 97, 1),
+(1, 98, 1),
+(1, 99, 1),
+(1, 100, 1),
+(1, 101, 1),
+(1, 102, 1),
+(1, 103, 1),
+(19, 1, 0),
+(19, 12, 0),
+(19, 95, 0),
+(22, 4, 1),
+(22, 11, 1),
+(22, 31, 1),
+(22, 51, 1),
 (22, 87, 1),
-(22, 95, 1),
-(22, 96, 1),
-(22, 97, 1),
-(22, 98, 1),
-(22, 99, 1),
-(22, 100, 1),
-(22, 101, 1),
-(22, 102, 1),
-(22, 103, 1);
+(22, 96, 0),
+(22, 111, 0),
+(22, 118, 1),
+(22, 119, 1),
+(22, 120, 1),
+(22, 121, 1),
+(22, 122, 1),
+(22, 123, 1),
+(22, 124, 1),
+(22, 125, 1),
+(22, 126, 1),
+(22, 127, 1),
+(22, 128, 1),
+(22, 129, 1),
+(22, 130, 1),
+(22, 131, 1),
+(22, 133, 1);
 
 -- --------------------------------------------------------
 
@@ -112,6 +130,21 @@ INSERT INTO `commenti` (`id`, `commento`, `data`, `ora`, `id_utente`) VALUES
 (36, 'Non male ''sto sito dai', '2016/08/12', '05:27:15', 2),
 (37, 'Va bene ok, forse cafudda ma senza fudda', '2016/08/12', '05:27:44', 1),
 (38, 'Apposto!', '2016/08/16', '05:07:27', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fattura`
+--
+
+CREATE TABLE `fattura` (
+  `id` int(11) NOT NULL,
+  `id_utente` int(11) NOT NULL,
+  `metodo` varchar(20) NOT NULL,
+  `totale` int(5) NOT NULL,
+  `data` datetime NOT NULL,
+  `cod_carta` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -169,7 +202,7 @@ INSERT INTO `tracce` (`id_traccia`, `album`, `titolo`, `artista`, `num_traccia`,
 (87, 'The Resistance', 'Resistance', 'Muse', 2, '2009', 'Progressive Rock', 'Tracce/Muse/resistance.mp3', 'Copertine/the resistance.jpg', NULL, '1.20'),
 (88, 'Here And Now', 'This Means War', 'Nickelback', 1, '2011', 'Rock', 'Tracce/Nickelback/This Means War.mp3', 'Copertine/this means war.jpg', NULL, '1.20'),
 (89, 'Here And Now', 'When We Stand Together', 'Nickelback', 3, '2011', 'Rock', 'Tracce/Nickelback/When We Stand Together.mp3', 'Copertine/this means war.jpg', NULL, '1.20'),
-(90, 'Verita'' Supposte', 'Il Secondo Secondo me', 'Caparezza', 1, '2003', 'Alternative Rap', 'Tracce/Caparezza/Il secondo secondo me.mp3', 'Copertine/verita supposte.jpg', NULL, '1.20'),
+(90, 'Verità Supposte', 'Il Secondo Secondo me', 'Caparezza', 1, '2003', 'Alternative Rap', 'Tracce/Caparezza/Il secondo secondo me.mp3', 'Copertine/verita supposte.jpg', NULL, '1.20'),
 (91, 'Viva La Vida or Death and All His Friends', 'Viva La Vida', 'Coldplay', 7, '2008', 'Alternative', 'Tracce/Coldplay/Viva La Vida.mp3', 'Copertine/viva la vida.jpg', NULL, '1.20'),
 (92, 'Viva La Vida or Death and All His Friends', 'Violet Hill', 'Coldplay', 8, '2008', 'Alternative', 'Tracce/Coldplay/Violet Hill.mp3', 'Copertine/viva la vida.jpg', NULL, '1.20'),
 (93, 'Warning', 'Warning', 'Green Day', 1, '2000', 'Rock', 'Tracce/Green Day/Warning.mp3', 'Copertine/warning.jpg', NULL, '1.20'),
@@ -261,6 +294,13 @@ ALTER TABLE `commenti`
   ADD KEY `index` (`id_utente`);
 
 --
+-- Indexes for table `fattura`
+--
+ALTER TABLE `fattura`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_utente` (`id_utente`);
+
+--
 -- Indexes for table `tracce`
 --
 ALTER TABLE `tracce`
@@ -312,6 +352,12 @@ ALTER TABLE `carrello`
 --
 ALTER TABLE `commenti`
   ADD CONSTRAINT `commenti_ibfk_1` FOREIGN KEY (`id_utente`) REFERENCES `utenti` (`id`);
+
+--
+-- Constraints for table `fattura`
+--
+ALTER TABLE `fattura`
+  ADD CONSTRAINT `fattura_ibfk_1` FOREIGN KEY (`id_utente`) REFERENCES `utenti` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
