@@ -39,13 +39,13 @@
   	 {
 	  include 'connessione.php';
 	  
-	  $nome = mysql_real_escape_string($_POST['nome']);                   // per prevenire attacchi informatici
+	  $nome = mysql_real_escape_string($_POST['nome']);
       $cognome = mysql_real_escape_string($_POST['cognome']);
       $email = mysql_real_escape_string($_POST['email']);
       $password = mysql_real_escape_string($_POST['password']);
       
       $query= "INSERT INTO utenti(nome,cognome,email,password) 
-                           VALUES('$nome','$cognome','$email','$password')";	// data_nascita
+                           VALUES('$nome','$cognome','$email','$password')";
       $result = mysql_query($query,$conn);
       
       if(!$result)

@@ -15,7 +15,7 @@ $tot=0;		// variabile utilizzata per calcolare il totale del prezzo
 if(isset($_SESSION['user']))     // se l'utente ha effettuato il login
 {
 	$user=$_SESSION['user'];
-	$ricerca= mysql_query("SELECT copertina,album,num_traccia,titolo,anno,genere,prezzo,tracce.id_traccia FROM tracce JOIN carrello WHERE id_utente=$user AND carrello.id_traccia=tracce.id_traccia ORDER BY num_traccia,album");
+	$ricerca= mysql_query("SELECT copertina,album,num_traccia,titolo,anno,genere,prezzo,tracce.id_traccia FROM tracce JOIN carrello WHERE id_utente=$user AND carrello.id_traccia=tracce.id_traccia ORDER BY id_traccia,album");
 	$riga=mysql_fetch_array($ricerca);
 	if($riga)
 	{
@@ -72,7 +72,7 @@ if(isset($_SESSION['user']))     // se l'utente ha effettuato il login
 					echo "<h3 style='margin-bottom: 0px;'>TOTALE: <i>$tot</i>€</h3>";
 
 					echo "<form action='acquisto.php' target='_top' method='post' style='text-align: center;'>";
-						echo "<button class='acquisto' type='submit' name='acquisto' value='acquisto'>
+						echo "<button class='acquisto' type='submit' name='acquisto' value='$tot'>
 								<b>Acquista</b></button>";
 					echo "</form>";
 

@@ -11,7 +11,6 @@
 	$count2=mysql_query("SELECT COUNT(id_traccia) AS totale FROM tracce WHERE album LIKE '$id_album'");
 	$row2 = mysql_fetch_assoc($count2);
 
-	//echo "$row1['totale'] $row2['totale']";
 	if($row1['totale'] == $row2['totale'])
 		$bandiera=1;
 

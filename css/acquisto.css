@@ -1,0 +1,58 @@
+h2{
+	margin-bottom: 0px;
+}
+
+h3{
+	margin:0;
+}
+
+body{
+	font:Calibri;
+	margin: 0px auto;
+}
+
+table{
+	margin:auto;
+}
+
+tr {  
+font:12px Calibri;
+font-weight:bold;
+}
+
+#testata{
+	background:#455A64;
+	width:100%;
+	height:230px;
+}
+
+#logo2{
+	margin-top: 15px;
+	margin-left:200px;
+	float:left;
+}
+
+#utente{
+	width: 300px;
+	float: right;
+	margin-top:80px;
+	margin-right:200px;
+}
+
+#contenuto_acquisto{
+	text-align: center;
+}
+
+.acquisto{
+	background-color: #455A64;
+	border:none;
+	color: white;
+	padding: 15px 32px;
+	text-align: right;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	margin-top:15px;
+}
