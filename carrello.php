@@ -86,7 +86,6 @@ if(isset($_SESSION['user']))     // se l'utente ha effettuato il login
 }
 else
 	echo "Non hai effettuato l'accesso!";
-
 ?>
 
 </body>

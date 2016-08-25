@@ -20,7 +20,7 @@
 				<?php
 		            session_start();
 		            include 'connessione.php'; 
-				   
+				    $id_user = $_SESSION ['user'];
 					$name = $_SESSION['nome'];
 					$surname = $_SESSION['cognome'];
 					$email = $_SESSION['email'];
@@ -37,7 +37,7 @@
 	?>
 		<div id="contenuto_acquisto">
 			<center>
-					<table>
+					<table id="pagamento">
 						<tr> <td><h1>Totale: <?php echo  $_POST['acquisto'].'€'; ?></h1></td> </tr>
 					    <form method="post" action="#">
 					    	<tr> <td><h3>Metodo di pagamento</h3></td>
@@ -70,11 +70,13 @@
 	}
 	else
 	{
-	        $query=mysql_query("SELECT copertina,album,num_traccia,titolo,anno,genere,prezzo FROM carrello JOIN tracce WHERE id_utente=1 AND carrello.id_traccia=tracce.id_traccia");
+	        $query=mysql_query("SELECT copertina,album,num_traccia,titolo,anno,genere,prezzo FROM carrello JOIN tracce WHERE id_utente='$id_user' AND carrello.id_traccia=tracce.id_traccia");
 	      	$riga = mysql_fetch_array($query);
 	      
 	      	echo "<h2><center>Riepilogo Ordine</center></h2>";
-	      	echo "<table cellspacing='3'>";
+	      	echo "<table style='margin-left: 200px;' cellspacing='3'>";
+	      	echo "<h3 style='margin-left: 200px; float: left;'>Lista tracce</h3>";
+	      	echo "<h3 style='margin-left: 856px;'>Dettagli pagamento</h3>";
 	        while($riga)
 			{
 				echo "<tr>";
