@@ -34,32 +34,32 @@
 	 	<br />
 	 	<center>Se hai già effettuato la registrazione, effettua l'<a href="login.php">accesso!</a></center>
 	<?php
- 	 }
-  	 	else
-  	 {
-	  include 'connessione.php';
+ 	}
+  	else
+  	{
+		include 'connessione.php';
 	  
-	  $nome = mysql_real_escape_string($_POST['nome']);
-      $cognome = mysql_real_escape_string($_POST['cognome']);
-      $email = mysql_real_escape_string($_POST['email']);
-      $password = mysql_real_escape_string($_POST['password']);
+		$nome = mysql_real_escape_string($_POST['nome']);
+    	$cognome = mysql_real_escape_string($_POST['cognome']);
+    	$email = mysql_real_escape_string($_POST['email']);
+    	$password = mysql_real_escape_string($_POST['password']);
       
-      $query= "INSERT INTO utenti(nome,cognome,email,password) 
-                           VALUES('$nome','$cognome','$email','$password')";
-      $result = mysql_query($query,$conn);
-      
-      if(!$result)
-      {
-          die("Errore nella query.");
-	  }
-	  else
-	  {
-		  if($nome == NULL || $email == NULL || $password == NULL)
-			  echo "<center>Campo dati vuoto! <a href='registrazione.php'>Ritenta</a></center>";
-	      else
-			  echo "<center>Registrazione Effettuata! Effettua l'<a href='login.php'>Accesso!</a><center>";
-      }
-   }  
+		if($nome == NULL || $cognome == NULL || $email == NULL || $password == NULL)
+		{
+			echo "<script>alert('Devi inserire tutti i campi!');
+					window.location='registrazione.php';</script>";
+		}
+		else
+		{
+			$query= "INSERT INTO utenti(nome,cognome,email,password) 
+	                    VALUES('$nome','$cognome','$email','$password')";
+	      	$result = mysql_query($query,$conn);
+	      	if($result)
+				echo "<center>Registrazione Effettuata! Effettua l'<a href='login.php'>Accesso!</a><center>";
+		    else
+		      	die("Errore nella query.");
+	    }
+    }  
 	?>
 
  </body>

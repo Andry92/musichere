@@ -51,7 +51,8 @@
 		        $_SESSION ['email']=$email; // utilizzato per acquisto.php
 			}
 			else
-				echo "<center>Dati errati <a href='login.php'>Ritenta</a></center>";
+				echo "<script>alert('Devi inserire tutti i campi!');
+					window.location='login.php';</script>";
 		}
 	?>
 

@@ -62,7 +62,7 @@ if($cerca=='1')  // ricerca per artista
 				$risultato=$riga['id_traccia'];  // preleviamo l'id della canzone per passare il valore alla variabile $risultato che useremo per la query string per il testo della canzone
 			    echo "<td> 	<a id='testo' href='testi.php?id=".$risultato."' target='openlink1'>Testo</a> </td>";
 
-			    echo "<td>".$riga['prezzo']."</td>";
+			    echo "<td>".$riga['prezzo']."€</td>";
 
 			    echo "<td> <img src='carrello.png' title='Aggiungi al carrello!' id='img_carrello' 
 			    		onclick='aggiungi(".$riga['id_traccia'].",".$user.");'> </td>";
@@ -112,7 +112,7 @@ if($cerca=='2')  // ricerca per album
 
 				$risultato=$riga['id_traccia'];  // preleviamo l'id della canzone per passare il valore alla variabile $risultato che useremo per la query string per il testo della canzone
 			    echo "<td><a href='testi.php?id=".$risultato."' target='openlink1'>Testo</a></td>";
-			    echo "<td>".$riga['prezzo']."</td>";
+			    echo "<td>".$riga['prezzo']."€</td>";
 			    echo "<td> <img src='carrello.png' title='Aggiungi al carrello!' id='img_carrello' 
 			    		onclick='aggiungi(".$riga['id_traccia'].",".$user.");'> </td>";
 				echo "</tr>";
@@ -164,7 +164,7 @@ if($cerca=='3') // ricerca per traccia
 				// immagine del tasto play [on click è un evento di javascript]	
 				$risultato=$riga['id_traccia'];  // preleviamo l'id della canzone per passare il valore alla variabile $risultato che useremo per la query string per il testo della canzone
 			    echo "<td><a href='testi.php?id=".$risultato."' target='openlink1'>Testo</a></td>";
-			    echo "<td>".$riga['prezzo']."</td>";
+			    echo "<td>".$riga['prezzo']."€</td>";
 			    echo "<td> <img src='carrello.png' title='Aggiungi al carrello!' id='img_carrello' 
 			    		onclick='aggiungi(".$riga['id_traccia'].",".$user.");'> </td>";
 				echo "</tr>";

@@ -69,15 +69,13 @@ if(isset($_SESSION['user']))     // se l'utente ha effettuato il login
 					echo "</form>";
 
 				echo "<div id='Tot+Acquista' style='float:right;'>";
-					echo "<h3 style='margin-bottom: 0px;'>TOTALE: <i>$tot</i>€</h3>";
+					echo "<h3 style='margin-bottom: 0px;'>TOTALE: ";
+					echo '<i>'.number_format($tot,2).'€</i>';
 
 					echo "<form action='acquisto.php' target='_top' method='post' style='text-align: center;'>";
 						echo "<button class='acquisto' type='submit' name='acquisto' value='$tot'>
 								<b>Acquista</b></button>";
 					echo "</form>";
-
-
-
 				echo "</div>";
 		
 	}

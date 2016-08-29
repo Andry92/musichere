@@ -27,9 +27,11 @@
 			{
 				if(audio.currentTime >= 30)
 				{
+					audio.pause();
 					audio.currentTime=0;
+					//alert('Acquista la canzone!');
+					//_stop.addEventListener();
 				}
-				audio.play();
 			});
 		  </script>";
 ?>
