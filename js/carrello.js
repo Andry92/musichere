@@ -19,8 +19,10 @@ function aggiungi(id_traccia,id_user)
 				{
 					if(data=='ok')
 						window.alert("Canzone aggiunta nel carrello!");
-					else
+					else if(data=='error')
 						window.alert('Canzone già aggiunta nel carrello!');
+					else if(data=='acquistato')
+						window.alert('Canzone già acquistata!');
 				},
 		});
 	}
@@ -42,10 +44,7 @@ function elimina(id_traccia,id_user)
 				success:function(data)
 				{
 					if(data=='ok')
-					{
-						window.alert('Canzone eliminata dal carrello!');
 						window.location = 'carrello.php';
-					}
 					else
 						window.alert('Errore');
 				},

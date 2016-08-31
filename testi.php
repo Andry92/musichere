@@ -12,5 +12,15 @@ $riga=mysql_fetch_array($query);
 if($riga['testo']==NULL)
 	echo "Nessun testo trovato nel database";
 else
+{
+	echo "<form action='stampa_commenti.php' style='text-align: left;'>";
+			echo "<button style='background-color: #607D8B;border:none;color: white;padding: 8px 20px;text-decoration: none;display: inline-block;font-size: 16px;cursor:pointer; border-radius: 10px;'
+					type='submit' name='commenti'>
+						<b>Torna ai commenti</b></button>";
+	echo "</form>";
+
+	//echo "<a href='stampa_commenti.php'>Torna ai commenti</a><br>";
 	echo $riga['testo'];
+}
+
 ?>

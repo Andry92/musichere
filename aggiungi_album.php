@@ -25,7 +25,7 @@
 		if($query_delete)
 		{
 			$query_album=mysql_query("INSERT INTO carrello(id_utente,id_traccia,flag)
-									SELECT'$id_user',id_traccia,1 FROM tracce WHERE album LIKE '$id_album'");
+									SELECT'$id_user',id_traccia,0 FROM tracce WHERE album LIKE '$id_album'");
 			echo "delete";
 		}
 		else
@@ -38,7 +38,7 @@
 	else
 	{
 		$query_album=mysql_query("INSERT INTO carrello(id_utente,id_traccia,flag)
-			SELECT'$id_user',id_traccia,1 FROM tracce WHERE album LIKE '$id_album'");
+			SELECT'$id_user',id_traccia,0 FROM tracce WHERE album LIKE '$id_album'");
 
 		if($query_album)
 			echo "ok";

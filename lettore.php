@@ -1,8 +1,12 @@
 <?php
+	session_start();
 	include 'connessione.php';
+
+	$user=$_SESSION['user'];
 	$id=$_POST['id'];
+
 	// effettuiamo la query per prelevare l'id della canzone scelta dall'utente
-	$search_traccia=mysql_query("select Canzoni,artista,titolo from tracce where id_traccia='$id'");
+	$search_traccia=mysql_query("SELECT Canzoni,artista,titolo FROM tracce WHERE id_traccia='$id'");
 	$canzone=mysql_fetch_array($search_traccia);
 	// preleviamo il percorso della canzone
 	$url=$canzone['Canzoni'];
@@ -18,9 +22,8 @@
 		echo "<audio id='sample' controls='controls' autoplay='autoplay'>
 			    <source src='".$url."' type='audio/mpeg' />
 			  </audio>";
-	}
 
-	echo "<script>
+		echo "<script>
 			audio=document.getElementById('sample');
 			audio.addEventListener('timeupdate',
 			function()
@@ -34,4 +37,7 @@
 				}
 			});
 		  </script>";
+	}
+
+	
 ?>

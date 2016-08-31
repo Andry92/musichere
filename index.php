@@ -30,7 +30,7 @@
 						echo "<div id='logout'>";
 								include 'connessione.php';
 								$testo = $_SESSION['nome'];
-						      	echo "$testo | <a href='logout.php'>Logout</a>";
+						      	echo "<a href='profilo.php' target='openlink'>$testo</a> | <a href='logout.php'>Logout</a>";
 						echo "</div>";
 			    	}
 			    	else
@@ -46,12 +46,11 @@
 
 		<div id="container">
 			<div id="sinistra">
-				<div id="contenuto">
-					  <iframe name='openlink' width='673px' height='512px' frameborder='0'>
+				<div id="contenuto"> 
+					  <iframe name='openlink' width='673px' height='512px' frameborder='0' src='benvenuto.html'>
 					  </iframe>
 				</div>
 			</div>
-
 			<div id="destra">
 				<div id="menu">
 				   	<div id="cerca">

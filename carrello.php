@@ -15,7 +15,7 @@ $tot=0;		// variabile utilizzata per calcolare il totale del prezzo
 if(isset($_SESSION['user']))     // se l'utente ha effettuato il login
 {
 	$user=$_SESSION['user'];
-	$ricerca= mysql_query("SELECT copertina,album,num_traccia,titolo,anno,genere,prezzo,tracce.id_traccia FROM tracce JOIN carrello WHERE id_utente=$user AND carrello.id_traccia=tracce.id_traccia ORDER BY id_traccia,album");
+	$ricerca= mysql_query("SELECT copertina,album,num_traccia,titolo,anno,genere,prezzo,tracce.id_traccia FROM tracce JOIN carrello WHERE id_utente=$user AND carrello.id_traccia=tracce.id_traccia AND flag=0 ORDER BY album,num_traccia asc");
 	$riga=mysql_fetch_array($ricerca);
 	if($riga)
 	{
@@ -35,7 +35,7 @@ if(isset($_SESSION['user']))     // se l'utente ha effettuato il login
 				// if posizionato qui per conflitti con la funzione elimina (che a sua volta contiene un location)
 				if(isset($_POST['svuota_carrello']))
 				{
-				  	$query=mysql_query("DELETE FROM carrello WHERE id_utente='$user'",$conn);
+				  	$query=mysql_query("DELETE FROM carrello WHERE id_utente='$user' AND flag=0",$conn);
 				  	if($query)
 				  		header("Location:carrello.php");
 				  	else
@@ -44,19 +44,20 @@ if(isset($_SESSION['user']))     // se l'utente ha effettuato il login
 
 				while($riga)
 				{
-					echo "<tr>";
-					$copertina=$riga['copertina'];
-					echo "<td><img src='$copertina' width='32px' heigth='32px'></td>";
-					echo "<td>".$riga['album']."</td>";
-					echo "<td>".$riga['num_traccia']."</td>";
-					echo "<td>".$riga['titolo']."</td>";
-					echo "<td>".$riga['anno']."</td>";
-					echo "<td>".$riga['genere']."</td>";
-					echo "<td>".$riga['prezzo']."</td>";
-					$tot=$tot+$riga['prezzo'];
-					echo "<td> <img src='x.png' title='Elimina dal carrello!' id='img_x' 
-							onclick='elimina(".$riga['id_traccia'].",".$user.");'> </td>";
-					echo "</tr>";
+						echo "<tr>";
+							$copertina=$riga['copertina'];
+							echo "<td><img src='$copertina' width='32px' heigth='32px'></td>";
+							echo "<td>".$riga['album']."</td>";
+							echo "<td>".$riga['num_traccia']."</td>";
+							echo "<td>".$riga['titolo']."</td>";
+							echo "<td>".$riga['anno']."</td>";
+							echo "<td>".$riga['genere']."</td>";
+							echo "<td>".$riga['prezzo']."</td>";
+							$tot=$tot+$riga['prezzo'];
+							echo "<td> <img src='x.png' title='Elimina dal carrello!' id='img_x' 
+									onclick='elimina(".$riga['id_traccia'].",".$user.");'> </td>";
+						echo "</tr>";
+
 					$riga=mysql_fetch_array($ricerca);
 				}
 

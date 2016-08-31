@@ -18,13 +18,15 @@ if(isset($_SESSION['user']))	// controllo se l'utente è loggato
 else
 	$user=0;					// se non è loggato assegno 0 alla variabile che poi
 								// utilizzo per il controllo in carrello.js 
+$check=0;	// variabile che utilizzo per controllare se l'utente ha acquistato un album
+
 
 $cerca=$_POST['ricerca'];
 $testo=mysql_real_escape_string($_POST['testo']);
 
 if($cerca=='1')  // ricerca per artista
 {   //                                    utilizzo il join per unire le tabelle tracce e artista tramite il nome dell'artista che deve essere quello inserito dall'utente.    Asc sta per crescente
-	$ricerca=mysql_query("SELECT id_traccia,Sfondo,copertina,album,nome,titolo,num_traccia,anno,genere,prezzo FROM artisti JOIN tracce ON nome=artista WHERE nome LIKE '$testo%' ORDER BY album asc, num_traccia asc");
+	$ricerca=mysql_query("SELECT id_traccia,Sfondo,copertina,album,nome,titolo,num_traccia,anno,genere,prezzo FROM artisti JOIN tracce ON nome=artista WHERE nome LIKE '$testo%' ORDER BY album,num_traccia asc");
 	$riga=mysql_fetch_array($ricerca);                // seleziono la prima riga
 	if(!$riga) echo("Nessun artista trovato con nome: ".$testo);   // controllo se l'artista è stato trovato
 	else
@@ -119,9 +121,25 @@ if($cerca=='2')  // ricerca per album
 				$riga=mysql_fetch_array($ricerca); 				    
 			}
 			echo "</table>";
-			echo "<b>Aggiungi l'album al carrello!</b>";
-			echo ' <img src="carrello.png" title="Aggiungi album al carrello!" id="img_carrello" 
+
+			$check_carrello=mysql_query("SELECT flag FROM carrello JOIN tracce WHERE id_utente='$user' 
+				AND carrello.id_traccia=tracce.id_traccia AND album LIKE '$testo' ");
+			$riga=mysql_fetch_array($check_carrello);
+
+			while ($riga) 
+			{
+				if($riga['flag']==1)
+					$check=1;
+
+				$riga=mysql_fetch_array($check_carrello);
+			}
+
+			if($check==0)
+			{
+				echo "<b>Aggiungi l'album al  carrello!</b>";
+				echo ' <img src="carrello.png" title="Aggiungi album al carrello!" id="img_carrello" 
 			    		onclick="aggiungi_album(\''.$testo.'\','.$user.');"> ';	// i caratteri di escape servono per il passaggio del parametro di tipo stringa
+			}
 	}	
 }
 

@@ -92,7 +92,7 @@
 	}
 	else
 	{
-	    $query=mysql_query("SELECT copertina,album,num_traccia,titolo,anno,genere,prezzo FROM carrello JOIN tracce WHERE id_utente='$id_user' AND carrello.id_traccia=tracce.id_traccia");
+	    $query=mysql_query("SELECT copertina,album,num_traccia,titolo,anno,genere,prezzo FROM carrello JOIN tracce WHERE id_utente='$id_user' AND carrello.id_traccia=tracce.id_traccia AND flag=0");
 	    $riga = mysql_fetch_array($query);
 		echo "<div id='tracceedutente'>";
 			echo "<h2><center>Riepilogo Ordine</center></h2>";
@@ -129,29 +129,18 @@
 
 				echo "<tr>";
     				$cod_carta=$_POST['cod_carta'];
-				    $data=date('Y/m/d h:i:sa');
 				    $metodo=$_POST['tipo_pagamento'];
-				    $totale=$_POST['submit'];
-				    
-				    $query=mysql_query("INSERT INTO fattura(id_utente,metodo,totale,data,cod_carta)
-				          VALUES('$id_user','$metodo','$totale','$data','$cod_carta')");
-				    
+				    $totale=$_POST['submit'];				    
 				    
 				    echo "<form action='conferma.php' method='post'>";
-				    echo "<td><button class='acquisto' type='submit' name='conferma' value='<?php echo $query ?>'>
-				             <b>Conferma</b></button></td>";
-				             
+					    echo "<input type='hidden' name='cod_carta' value='$cod_carta'>";
+					    echo "<input type='hidden' name='tipo_pagamento' value='$metodo'>";
+					    echo "<input type='hidden' name='totale' value='$totale'>";
+					    echo "<td><button class='acquisto' type='submit' name='conferma' value='submit'>
+					             <b>Conferma</b></button></td>";
 				    echo "</form>";
 			echo "</table>";
 		echo"</div>";
-	
-		$cod_carta=$_POST['cod_carta'];
-		$data=date('Y/m/d h:i:sa');
-		$metodo=$_POST['tipo_pagamento'];
-		$totale=$_POST['submit'];
-			
-		$query=mysql_query("INSERT INTO fattura(cod_carta,data,id_utente,metodo,totale)
-						VALUES('$cod_carta','$data',$id_user,'$metodo','$totale')");
 	}
 	?>
 
