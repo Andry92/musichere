@@ -16,16 +16,6 @@
 	           return false;
 	       	});        
    		});
-
-   		$(function()
-   		{
-   			//$('.group').hide();
-        	$("a").click(function(e)
-	        {
-	        	e.preventDefault();
-	        	$("#" + $(this).attr("id")).show().siblings('div').hide();
-	       	});        
-   		});
 </script>
 </head>
 <body>
@@ -100,39 +90,29 @@ echo "<h2><a href='profilo.php'>Profilo</a> | <a href='profilo.php' id='fatture'
 </div>
 
 <div id="div_fatture" class="group" style="display:none;">
-<?php 
+	<?php 
 
-$query=mysql_query("SELECT id,metodo,totale,data,cod_carta FROM fattura WHERE id_utente='$user'");
-$riga=mysql_fetch_array($query);
+	$query=mysql_query("SELECT id FROM fattura WHERE id_utente='$user'");
+	$riga=mysql_fetch_array($query);
 
-if(!$riga)
-	echo "Non hai effettuato acquisti!";
-else{
-
-	echo "<table>";
-	while($riga){
-		echo "<tr>";
-		echo "<td> <a href='profilo.php' id=".$riga['id'].">Fattura # ".$riga['id']." </a> </td>";
-
-		//echo "<td>".$riga['metodo']."</td>";
-		//echo "<td>".$riga['totale']."</td>";
-		//echo "<td>".$riga['data']."</td>";
-		//echo "<td>".$riga['cod_carta']."</td>";
-		echo "</tr>";
-		$riga=mysql_fetch_array($query);
+	if(!$riga)
+		echo "Non hai effettuato acquisti!";
+	else
+	{
+		echo "<table>";
+		while($riga)
+		{
+			echo "<tr>";
+				echo "<td> <a href=fatture.php?id_fattura=".$riga['id'].">Fattura # ".$riga['id']." </a> </td>";
+			echo "</tr>";
+			$riga=mysql_fetch_array($query);
 		}
 
-	echo "</table>";
+		echo "</table>";
 	}
 
-?>
+	?>
 </div>
-
-<?php
-	echo "<div id='dettagli_fattura' style='display:none;'>
-		CIAOOOOOOO DETTAGLIIIIIIIIII
-	</div>";
- ?>
 
 
 
