@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 01, 2016 at 11:18 
+-- Generation Time: Sep 04, 2016 at 09:01 
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.5.34
 
@@ -19,6 +19,38 @@ SET time_zone = "+00:00";
 --
 -- Database: `musichere`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `acquisto`
+--
+
+CREATE TABLE `acquisto` (
+  `id` int(11) NOT NULL,
+  `id_utente` int(11) NOT NULL,
+  `id_traccia` int(11) NOT NULL,
+  `data` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `acquisto`
+--
+
+INSERT INTO `acquisto` (`id`, `id_utente`, `id_traccia`, `data`) VALUES
+(1, 1, 1, '2016-09-03 03:54:54'),
+(2, 1, 111, '2016-09-04 06:24:42'),
+(3, 1, 95, '2016-09-04 06:25:21'),
+(4, 1, 96, '2016-09-04 06:25:21'),
+(5, 1, 97, '2016-09-04 06:25:21'),
+(6, 1, 98, '2016-09-04 06:25:21'),
+(7, 1, 99, '2016-09-04 06:25:21'),
+(8, 1, 100, '2016-09-04 06:25:21'),
+(9, 1, 101, '2016-09-04 06:25:21'),
+(10, 1, 102, '2016-09-04 06:25:21'),
+(11, 1, 103, '2016-09-04 06:25:21'),
+(18, 19, 1, '2016-09-04 06:35:42'),
+(19, 19, 2, '2016-09-04 06:35:42');
 
 -- --------------------------------------------------------
 
@@ -67,6 +99,27 @@ CREATE TABLE `carrello` (
   `flag` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `carrello`
+--
+
+INSERT INTO `carrello` (`id_utente`, `id_traccia`, `flag`) VALUES
+(1, 1, 1),
+(1, 9, 0),
+(1, 10, 0),
+(1, 95, 1),
+(1, 96, 1),
+(1, 97, 1),
+(1, 98, 1),
+(1, 99, 1),
+(1, 100, 1),
+(1, 101, 1),
+(1, 102, 1),
+(1, 103, 1),
+(1, 111, 1),
+(19, 1, 1),
+(19, 2, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -108,6 +161,16 @@ CREATE TABLE `fattura` (
   `data` datetime NOT NULL,
   `cod_carta` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fattura`
+--
+
+INSERT INTO `fattura` (`id`, `id_utente`, `metodo`, `totale`, `data`, `cod_carta`) VALUES
+(122, 1, 'Carta di credito', 1.20, '2016-09-03 03:54:54', 5675777777777777),
+(123, 1, 'Carta di credito', 1.20, '2016-09-04 06:24:42', 5666565666666666),
+(124, 1, 'Paypal', 10.80, '2016-09-04 06:25:21', 6436436436436346),
+(125, 19, 'Carta di credito', 2.40, '2016-09-04 06:35:42', 5675777777777777);
 
 -- --------------------------------------------------------
 
@@ -227,7 +290,7 @@ CREATE TABLE `utenti` (
 --
 
 INSERT INTO `utenti` (`id`, `nome`, `cognome`, `email`, `password`) VALUES
-(1, 'Andrea', 'Di Benedetto', 'andrydbn@hotmail.it', 'ciao1'),
+(1, 'Andrea', 'Di Benedetto', 'andrydbn@hotmail.it', 'ciao'),
 (2, 'Fabrizio', 'Di Benedetto', 'fabridbn@hotmail.it', 'asd'),
 (19, 'Silvio', 'Valenti', 'valenti1091@gmail.com', 'ciao'),
 (22, 'Andrea', 'Di Benedetto', 'andreadibenedetto92@gmail.com', 'ciao'),
@@ -236,6 +299,14 @@ INSERT INTO `utenti` (`id`, `nome`, `cognome`, `email`, `password`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `acquisto`
+--
+ALTER TABLE `acquisto`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_utente` (`id_utente`),
+  ADD KEY `id_traccia` (`id_traccia`);
 
 --
 -- Indexes for table `artisti`
@@ -281,6 +352,11 @@ ALTER TABLE `utenti`
 --
 
 --
+-- AUTO_INCREMENT for table `acquisto`
+--
+ALTER TABLE `acquisto`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+--
 -- AUTO_INCREMENT for table `artisti`
 --
 ALTER TABLE `artisti`
@@ -294,7 +370,7 @@ ALTER TABLE `commenti`
 -- AUTO_INCREMENT for table `fattura`
 --
 ALTER TABLE `fattura`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
 --
 -- AUTO_INCREMENT for table `tracce`
 --
@@ -308,6 +384,13 @@ ALTER TABLE `utenti`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `acquisto`
+--
+ALTER TABLE `acquisto`
+  ADD CONSTRAINT `acquisto_ibfk_1` FOREIGN KEY (`id_traccia`) REFERENCES `carrello` (`id_traccia`),
+  ADD CONSTRAINT `acquisto_ibfk_2` FOREIGN KEY (`id_utente`) REFERENCES `fattura` (`id_utente`);
 
 --
 -- Constraints for table `carrello`

@@ -8,7 +8,17 @@
 	<meta content="utf-8" http-equiv="encoding">
 	<link rel="stylesheet" type="text/css" href="css/acquisto.css" />
 
+	<script language="javascript" type="text/javascript" src="js/libreria1.js"></script>
+	<script type="text/javascript" src="js/libreria2.js"></script>
 	<script type="text/javascript">
+		function showDiv(elem)
+		{
+        	if(elem.value == 'Carta di credito')
+        		document.getElementById('Carta di credito').style.display = "block";
+        	else
+        		document.getElementById('Paypal').style.display = "block";
+    	}
+    	
 		function validateForm()
 		{
 		    var x = document.forms["ins_dati"]["tipo_pagamento"].value;
@@ -18,7 +28,7 @@
 
 		    if (x == "" || y.length < 16 || z == "" || j.length < 3)
 		    {
-		        alert("Inserisci tutti i campi!");
+		        alert("Devi inserire tutti i campi! Il codice della carta deve essere composto da 16 cifre e il CVC/CVV da 3 cifre.");
 		        return false;
 		    }
 		}
@@ -60,25 +70,33 @@
 					    	<tr> 
 					    		<td><h3>Metodo di pagamento</h3></td>
 								<td>
-								    <select name="tipo_pagamento">
-						  			<option value="">Seleziona...</option>
-						  			<option value="Carta di credito">Carta di credito</option>
-						  			<option value="Paypal">Paypal</option>
+								    <select name="tipo_pagamento" id="tipologia_pagamento" onchange="showDiv(this)">
+							  			<!-- <option value="">Seleziona...</option> -->
+							  			<option value="Carta di credito">Carta di credito</option>
+							  			<option value="Paypal">Paypal</option>
 									</select>
 								</td>
 							</tr>
-							<tr> 
-								<td><h3>Codice Carta</h3></td>
-								<td><input type="text" name="cod_carta" maxlength="16" size="16"></td> 
-							</tr>
-							<tr> 
-								<td><h3>Data Scadenza</h3></td>
-								<td><input type="month" name="scadenza"></td> 
-							</tr>
-							<tr> 
-								<td><h3>CVC/CVV</h3></td>
-								<td><input type="password" name="cvc" maxlength="3" size="3"></td> 
-							</tr>
+
+							<div id="Carta di credito" style="display:none;">
+								<tr> 
+									<td><h3>Codice Carta</h3></td>
+									<td><input type="text" name="cod_carta" maxlength="16" size="16"></td> 
+								</tr>
+								<tr> 
+									<td><h3>Data Scadenza</h3></td>
+									<td><input type="month" name="scadenza"></td> 
+								</tr>
+								<tr> 
+									<td><h3>CVC/CVV</h3></td>
+									<td><input type="password" name="cvc" maxlength="3" size="3"></td> 
+								</tr>
+							</div>
+
+							<div id="Paypal" style="display:none;">
+								CIAAAAAOOOOO
+							</div>
+
 							<tr> 
 								<td><button class='acquisto' type='submit' name='submit' 
 										value='<?php echo $_POST['acquisto']?>'><b>Continua Acquisto</b></button>
@@ -88,6 +106,7 @@
 					</table>
 			</center>
 		</div>
+
 	<?php
 	}
 	else

@@ -11,11 +11,14 @@
 	mysql_query("INSERT INTO fattura(id_utente,metodo,totale,data,cod_carta)
 					     VALUES('$id_user','$metodo','$totale','$data','$cod_carta')");
 
-	mysql_query("UPDATE carrello SET flag=1");
+	/* Utilizzo la data per associare le tracce acquistate alla determinata fattura */
+	mysql_query("INSERT INTO acquisto(id_utente,id_traccia,data)
+						SELECT '$id_user',id_traccia,'$data' FROM carrello WHERE flag=0 AND id_utente='$id_user'");
 
-     echo "<script>
-       window.alert('Transazione completata con successo! Troverai le tue canzoni e le fatture sul tuo profilo! Ritorno nella home');
-       window.location='index.php';
-      </script>";
-    
+	$aggiorna=mysql_query("UPDATE carrello SET flag=1");
+
+	echo "<script>
+	   		window.alert('Transazione completata con successo! Troverai le tue canzoni e le fatture sul tuo profilo! Ritorno nella home');
+	   		window.location='index.php';
+	    </script>";
 ?>

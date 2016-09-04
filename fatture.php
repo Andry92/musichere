@@ -16,15 +16,40 @@
 		echo "<h2>FATTURA #$id_fattura</h2>";
 		while($riga)
 		{
-			echo "<tr> <td>Metodo di Pagamento: ".$riga['metodo']."</td> </tr>";
-			echo "<tr> <td>Totale: ".$riga['totale']."</td> </tr>";
-			echo "<tr> <td>Data: ".$riga['data']."</td> </tr>";
-			echo "<tr> <td>Numero della carta: ".$riga['cod_carta']."</td> </tr>";
-
+			echo "<tr> <td><b>Numero della carta: </b></td><td>".$riga['cod_carta']." </td></tr>";
+			echo "<tr> <td><b>Metodo di Pagamento: </b></td><td>".$riga['metodo']." </td></tr>";
+			echo "<tr> <td><b>Data di fatturazione: </b></td><td>".$riga['data']." </td></tr>";
+			echo "<tr> <td><b>Totale: </b></td><td>".$riga['totale']."€ </td></tr>";
+			
 			$riga=mysql_fetch_array($query);
 		}
-
 		echo "</table>";
+		
+		$query=mysql_query("SELECT album,num_traccia,titolo,anno,genere 
+			FROM tracce JOIN carrello JOIN acquisto JOIN fattura 
+			WHERE acquisto.id_utente=fattura.id_utente AND fattura.id_utente='$user' AND carrello.id_utente='$user' AND acquisto.id_traccia=carrello.id_traccia AND carrello.id_traccia=tracce.id_traccia AND fattura.id='$id_fattura' AND acquisto.data=fattura.data 
+			ORDER BY album,num_traccia asc");
+			
+		$riga=mysql_fetch_array($query);			
+			if(!$riga)
+				echo "La query non è andata a buon fine.";
+			else
+			{
+				echo "<table>";
+				echo "<br>";
+				echo "<b>Lista dei brani</b>";
+				while($riga)
+					{
+						echo "<tr>";
+						echo "<td>".$riga['album']."</td>";
+						echo "<td>".$riga['num_traccia']."</td>";
+						echo "<td>".$riga['titolo']."</td>";
+						echo "<td>".$riga['anno']."</td>";
+						echo "</tr>";
+						$riga=mysql_fetch_array($query);
+					}			
+		echo "</table>";
+			}
 	}
 
 	echo "<br><br><a href='profilo.php'>Torna indietro</a>";

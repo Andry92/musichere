@@ -36,23 +36,31 @@
 		   
 		    $email = mysql_real_escape_string($_POST['email']);
 		    $password = mysql_real_escape_string($_POST['password']);
-		   
-		    $query = "SELECT id,nome,cognome FROM utenti WHERE email='$email' AND password='$password'";
-		    $result = mysql_query($query,$conn);
-		   
-		    $num_rows = mysql_num_rows($result);
-		    if($num_rows == 1) 
+
+		    if($email == NULL || $password == NULL)
 		    {
-		        header("Location:index.php");
-		        $array = mysql_fetch_array($result);
-		        $_SESSION ['user']=$array['id'];
-		        $_SESSION ['nome']=$array['nome'];
-		        $_SESSION ['cognome']=$array['cognome']; // utilizzato per acquisto.php
-		        $_SESSION ['email']=$email; // utilizzato per acquisto.php
-			}
-			else
-				echo "<script>alert('Devi inserire tutti i campi!');
+		    	echo "<script>alert('Devi inserire tutti i campi!');
 					window.location='login.php';</script>";
+		    }
+		    else
+		    {
+				$query = "SELECT id,nome,cognome FROM utenti WHERE email='$email' AND password='$password'";
+			    $result = mysql_query($query,$conn);
+			   
+			    $num_rows = mysql_num_rows($result);
+			    if($num_rows == 1) 
+			    {
+			        header("Location:index.php");
+			        $array = mysql_fetch_array($result);
+			        $_SESSION ['user']=$array['id'];
+			        $_SESSION ['nome']=$array['nome'];
+			        $_SESSION ['cognome']=$array['cognome']; // utilizzato per acquisto.php
+			        $_SESSION ['email']=$email; // utilizzato per acquisto.php
+				}
+				else
+					echo "<script>alert('Email o password errati.');
+						window.location='login.php';</script>";
+			}
 		}
 	?>
 
