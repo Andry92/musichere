@@ -12,8 +12,8 @@
 					     VALUES('$id_user','$metodo','$totale','$data','$cod_carta')");
 
 	/* Utilizzo la data per associare le tracce acquistate alla determinata fattura */
-	mysql_query("INSERT INTO acquisto(id_utente,id_traccia,data)
-						SELECT '$id_user',id_traccia,'$data' FROM carrello WHERE flag=0 AND id_utente='$id_user'");
+	mysql_query("INSERT INTO acquisto(id_utente,id_traccia,data,prezzo)
+						SELECT '$id_user',carrello.id_traccia,'$data',prezzo FROM carrello JOIN tracce WHERE carrello.id_traccia=tracce.id_traccia AND flag=0 AND id_utente='$id_user'");
 
 	$aggiorna=mysql_query("UPDATE carrello SET flag=1");
 

@@ -27,7 +27,7 @@
 		}
 		echo "</table>";
 		
-		$query=mysql_query("SELECT album,num_traccia,titolo,anno,genere 
+		$query=mysql_query("SELECT album,num_traccia,titolo,anno,acquisto.prezzo 
 			FROM tracce JOIN carrello JOIN acquisto JOIN fattura 
 			WHERE acquisto.id_utente=fattura.id_utente AND fattura.id_utente='$user' AND carrello.id_utente='$user' AND acquisto.id_traccia=carrello.id_traccia AND carrello.id_traccia=tracce.id_traccia AND fattura.id='$id_fattura' AND acquisto.data=fattura.data 
 			ORDER BY album,num_traccia asc");
@@ -39,14 +39,22 @@
 			{
 				echo "<table>";
 				echo "<br>";
-				echo "<b>Lista dei brani</b>";
+				echo "<caption>  
+						<th>Lista dei brani</th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th>Prezzo</th>
+					</caption>";
+
 				while($riga)
 					{
 						echo "<tr>";
-						echo "<td>".$riga['album']."</td>";
-						echo "<td>".$riga['num_traccia']."</td>";
-						echo "<td>".$riga['titolo']."</td>";
-						echo "<td>".$riga['anno']."</td>";
+							echo "<td>".$riga['album']."</td>";
+							echo "<td>".$riga['num_traccia']."</td>";
+							echo "<td>".$riga['titolo']."</td>";
+							echo "<td>".$riga['anno']."</td>";
+							echo "<td>&nbsp;".$riga['prezzo'].'€'."</td>";
 						echo "</tr>";
 						$riga=mysql_fetch_array($query);
 					}			
