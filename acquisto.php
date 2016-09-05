@@ -11,26 +11,53 @@
 	<script language="javascript" type="text/javascript" src="js/libreria1.js"></script>
 	<script type="text/javascript" src="js/libreria2.js"></script>
 	<script type="text/javascript">
-		function showDiv(elem)
-		{
-        	if(elem.value == 'Carta di credito')
-        		document.getElementById('Carta di credito').style.display = "block";
-        	else
-        		document.getElementById('Paypal').style.display = "block";
-    	}
+	var msg="Devi inserire tutti i campi! Il codice della carta deve essere composto da 16 cifre e il CVC/CVV da 3 cifre.";
+
+    	$(function()
+    	{
+        	$('#tipologia_pagamento').change(function()
+        	{
+	            	$('.metodo').toggle();
+	            	//$('#' + $(this).val()).show();
+	            	if($('#Cartadicredito').is(":visible"))
+	            	{
+	            		msg="Devi inserire tutti i campi! Il codice della carta deve essere composto da 16 cifre e il CVC/CVV da 3 cifre.";
+	            	}
+	            	else
+	            	{
+	            		msg="Inserisci email e password";
+	            	}
+
+	        });
+    	});
     	
 		function validateForm()
 		{
-		    var x = document.forms["ins_dati"]["tipo_pagamento"].value;
-		    var y = document.forms["ins_dati"]["cod_carta"].value;
-		    var z = document.forms["ins_dati"]["scadenza"].value;
-		    var j = document.forms["ins_dati"]["cvc"].value;
+			if($('#Cartadicredito').is(":visible"))
+			{
+			    var x = document.forms["ins_dati"]["tipo_pagamento"].value;
+			    var y = document.forms["ins_dati"]["cod_carta"].value;
+			    var z = document.forms["ins_dati"]["scadenza"].value;
+			    var j = document.forms["ins_dati"]["cvc"].value;
 
-		    if (x == "" || y.length < 16 || z == "" || j.length < 3)
-		    {
-		        alert("Devi inserire tutti i campi! Il codice della carta deve essere composto da 16 cifre e il CVC/CVV da 3 cifre.");
-		        return false;
-		    }
+			    if (x == "" || y.length < 16 || z == "" || j.length < 3)
+			    {
+			        alert(msg);
+			        return false;
+			    }
+			}
+			else
+			{
+				var x = document.forms["ins_dati"]["email"].value;
+			    var y = document.forms["ins_dati"]["password"].value;
+
+			    if(x == "" || y == "")
+			    {
+			    	alert(msg);
+			        return false;
+			    }
+			}
+
 		}
 	</script>
 </head>
@@ -70,15 +97,15 @@
 					    	<tr> 
 					    		<td><h3>Metodo di pagamento</h3></td>
 								<td>
-								    <select name="tipo_pagamento" id="tipologia_pagamento" onchange="showDiv(this)">
-							  			<!-- <option value="">Seleziona...</option> -->
-							  			<option value="Carta di credito">Carta di credito</option>
+								    <select name="tipo_pagamento" id="tipologia_pagamento">
+							  			<!-- <option value="Seleziona">Seleziona...</option> -->
+							  			<option value="Cartadicredito">Carta di credito</option>
 							  			<option value="Paypal">Paypal</option>
 									</select>
 								</td>
 							</tr>
 
-							<div id="Carta di credito" style="display:none;">
+							<tbody id="Cartadicredito" class="metodo" style="display: table-row-group;"> 
 								<tr> 
 									<td><h3>Codice Carta</h3></td>
 									<td><input type="text" name="cod_carta" maxlength="16" size="16"></td> 
@@ -91,15 +118,22 @@
 									<td><h3>CVC/CVV</h3></td>
 									<td><input type="password" name="cvc" maxlength="3" size="3"></td> 
 								</tr>
-							</div>
+							</tbody>
 
-							<div id="Paypal" style="display:none;">
-								CIAAAAAOOOOO
-							</div>
+							<tbody id="Paypal" class="metodo" style="display:none;">
+								<tr> 
+									<td><h3>Email</h3></td>
+									<td><input type="text" name="email" size="16"></td> 
+								</tr>
+								<tr> 
+									<td><h3>Password</h3></td>
+									<td><input type="password" name="password" size="16"></td> 
+								</tr>
+							</tbody>
 
 							<tr> 
 								<td><button class='acquisto' type='submit' name='submit' 
-										value='<?php echo $_POST['acquisto']?>'><b>Continua Acquisto</b></button>
+									value='<?php echo $_POST['acquisto']?>'><b>Continua Acquisto</b></button>
 								</td> 
 							</tr>
 						</form>
@@ -135,11 +169,17 @@
 			echo "</table>";
 				
 			echo "<table style='float: left; margin-left: 291px;' cellspacing='3'>";
-				echo "<td>Tipo di pagamento: </td>";
-				echo "<td>".$_POST['tipo_pagamento']."</td>";
-				echo "<tr>";
-				echo "<td>Codice della carta: </td>";
-				echo "<td>".$_POST['cod_carta']."</td>";
+				$metodo=$_POST['tipo_pagamento'];
+				if($metodo == 'Cartadicredito')
+					$metodo = 'Carta di credito';
+				echo "<td>Metodo di pagamento: </td>";
+				echo "<td>".$metodo."</td>";
+				if($_POST['cod_carta'])
+				{
+					echo "<tr>";
+						echo "<td>Codice della carta: </td>";
+						echo "<td>".$_POST['cod_carta']."</td>";
+				}
 				echo "<tr>";
 				echo "<td>Totale: </td>";
 				echo "<td>".number_format($_POST['submit'],2)."€</td>";
@@ -148,7 +188,6 @@
 
 				echo "<tr>";
     				$cod_carta=$_POST['cod_carta'];
-				    $metodo=$_POST['tipo_pagamento'];
 				    $totale=$_POST['submit'];				    
 				    
 				    echo "<form action='conferma.php' method='post'>";

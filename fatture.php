@@ -16,7 +16,9 @@
 		echo "<h2>FATTURA #$id_fattura</h2>";
 		while($riga)
 		{
-			echo "<tr> <td><b>Numero della carta: </b></td><td>".$riga['cod_carta']." </td></tr>";
+			if($riga['cod_carta'])
+				echo "<tr> <td><b>Numero della carta: </b></td><td>".$riga['cod_carta']." </td></tr>";
+
 			echo "<tr> <td><b>Metodo di Pagamento: </b></td><td>".$riga['metodo']." </td></tr>";
 			echo "<tr> <td><b>Data di fatturazione: </b></td><td>".$riga['data']." </td></tr>";
 			echo "<tr> <td><b>Totale: </b></td><td>".$riga['totale']."€ </td></tr>";

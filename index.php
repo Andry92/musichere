@@ -31,6 +31,9 @@
 								include 'connessione.php';
 								$testo = $_SESSION['nome'];
 						      	echo "<a href='profilo.php' target='openlink'>$testo</a> | <a href='logout.php'>Logout</a>";
+								if($_SESSION['admin']==1){
+									echo "<a href='admin.php'> <img src='admin.png' title='Amministratore' width='40' height='40' style='margin: -15px -30px -10px 10px;';></a>";
+								}
 						echo "</div>";
 			    	}
 			    	else

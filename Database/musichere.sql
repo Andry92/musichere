@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 04, 2016 at 09:01 
+-- Generation Time: Sep 05, 2016 at 04:42 
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.5.34
 
@@ -50,7 +50,11 @@ INSERT INTO `acquisto` (`id`, `id_utente`, `id_traccia`, `data`) VALUES
 (10, 1, 102, '2016-09-04 06:25:21'),
 (11, 1, 103, '2016-09-04 06:25:21'),
 (18, 19, 1, '2016-09-04 06:35:42'),
-(19, 19, 2, '2016-09-04 06:35:42');
+(19, 19, 2, '2016-09-04 06:35:42'),
+(20, 1, 9, '2016-09-05 04:24:19'),
+(21, 1, 10, '2016-09-05 04:24:19'),
+(23, 1, 19, '2016-09-05 04:27:29'),
+(24, 1, 90, '2016-09-05 04:27:29');
 
 -- --------------------------------------------------------
 
@@ -105,8 +109,11 @@ CREATE TABLE `carrello` (
 
 INSERT INTO `carrello` (`id_utente`, `id_traccia`, `flag`) VALUES
 (1, 1, 1),
-(1, 9, 0),
-(1, 10, 0),
+(1, 4, 0),
+(1, 9, 1),
+(1, 10, 1),
+(1, 19, 1),
+(1, 90, 1),
 (1, 95, 1),
 (1, 96, 1),
 (1, 97, 1),
@@ -159,7 +166,7 @@ CREATE TABLE `fattura` (
   `metodo` varchar(20) NOT NULL,
   `totale` float(4,2) NOT NULL,
   `data` datetime NOT NULL,
-  `cod_carta` bigint(20) NOT NULL
+  `cod_carta` char(17) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -167,10 +174,12 @@ CREATE TABLE `fattura` (
 --
 
 INSERT INTO `fattura` (`id`, `id_utente`, `metodo`, `totale`, `data`, `cod_carta`) VALUES
-(122, 1, 'Carta di credito', 1.20, '2016-09-03 03:54:54', 5675777777777777),
-(123, 1, 'Carta di credito', 1.20, '2016-09-04 06:24:42', 5666565666666666),
-(124, 1, 'Paypal', 10.80, '2016-09-04 06:25:21', 6436436436436346),
-(125, 19, 'Carta di credito', 2.40, '2016-09-04 06:35:42', 5675777777777777);
+(122, 1, 'Carta di credito', 1.20, '2016-09-03 03:54:54', '5675777777777777'),
+(123, 1, 'Carta di credito', 1.20, '2016-09-04 06:24:42', '5666565666666666'),
+(124, 1, 'Paypal', 10.80, '2016-09-04 06:25:21', '6436436436436346'),
+(125, 19, 'Carta di credito', 2.40, '2016-09-04 06:35:42', '5675777777777777'),
+(126, 1, 'Paypal', 2.40, '2016-09-05 04:24:19', '0'),
+(127, 1, 'Paypal', 2.40, '2016-09-05 04:27:29', '0');
 
 -- --------------------------------------------------------
 
@@ -197,7 +206,7 @@ CREATE TABLE `tracce` (
 --
 
 INSERT INTO `tracce` (`id_traccia`, `album`, `titolo`, `artista`, `num_traccia`, `anno`, `genere`, `Canzoni`, `copertina`, `testo`, `prezzo`) VALUES
-(1, 'Il Sogno Eretico', 'Chi se ne frega della musica', 'Caparezza', 3, '2011', 'Alternative Rap', 'Tracce/Caparezza/Chi Se Ne Frega Della Musica.mp3', 'Copertine/Il Sogno Eretico.jpg', 'E chi se ne frega della musica, <br>\r\ndi tutti \r\nquesti libri sulla musica, <br>\r\ndi tutte \r\nle interviste, di tutte le riviste, <br>\r\ndi \r\ntutti gli arrivisti, gli arrivisti, <br>\r\ngli arrivisti. <br> <br>\r\n \r\nIo con la musica non \r\nc''entro niente <br>\r\ncome il mio pene davanti \r\nal wc, a luci spente <br>\r\nmi contraddico \r\nfacilmente <br>\r\nma lo faccio cosi'' spesso \r\nche questo fa di me una persona coerente  <br> \r\ned \r\nho tanto da dire <br> perche'' ho poco da \r\nfare, \r\ntu mi invidi, sorridi, mi proponi \r\nun affare: <br>\r\ncominciare con i temi di \r\ncui parla Faber <br>\r\ne finire per un mese \r\nsull''isola a far la fame. <br>\r\nQualsiasi \r\ncosa faccia mi viene riconosciuta? <br>\r\nNo \r\ne'' la mia faccia che viene riconosciuta!<br> \r\nMolti \r\ndei mie fan che fanno la schiuma <br>\r\nhanno \r\nla doppia faccia come il barone Ashura! <br>\r\nParlano \r\ncon me come con un fratello grande \r\ne \r\nmi riprendono in mutande come nel Grande \r\nFratello. <br>\r\nIl video che mi fanno mentre \r\nlecco un orinale <br>\r\ne'' cliccato piu'' del \r\nvideo ufficiale della mia label <br> <br>\r\n\r\ne \r\nchi se ne frega della musica, \r\ndi tutti \r\nquesti libri sulla musica, <br>\r\ndi tutte \r\nle interviste, di tutte le riviste \r\ndi <br>\r\ntutti gli arrivisti gli arrivisti, \r\ngli arrivisti <br>\r\nsi ma chi se ne frega \r\ndella musica <br>\r\nora che tutti parlano \r\ndi musica, <br>\r\ndi tutti questi artisti, <br>\r\ndi tutti questi dischi <br>\r\ndi tutti questi \r\nfischi, questi fischi, questi fischi! \r\n<br><br>\r\n\r\nNon \r\nho mai capito questi social network <br>\r\nper \r\nme servono solo a fare i porci a letto. <br>\r\nOgni \r\nvolta che nasce una nuova piattaforma <br>\r\nmi \r\nfa l''effetto di un libro che ho gia'' \r\nletto <br>\r\ne poi non ho tutti sti amici \r\nma molti meno <br>\r\nmi danno affetto ma poi \r\nm''affettano come Ghemon. <br>\r\nTu! E'' due \r\nore che mi parli, io sono fan di Ghandi <br> \r\ned \r\ne'' solo per questo che non ti meno! <br>\r\nIl \r\nmio cellulare squilla ogni 2 minuti,<br> \r\ngente \r\nche mi assilla e mi chiede se ho 2 \r\nminuti, <br>\r\nassessori, collettivi, sindacati, \r\ngiornalisti, <br>\r\npassa un giorno e i miei \r\ntesticoli non sono piu'' minuti. <br>\r\nMi stupisco, <br>\r\npubblico un disco <br>\r\ne mi fanno le foto \r\nin pubblico, perche''? non capisco! <br>\r\nOh, \r\nnon vi interessano le note che registro<br> \r\nvi \r\ninteressano le mie note sul registro! <br><br>\r\n\r\ne \r\nchi se ne frega della musica... <br><br>\r\n\r\nIo \r\nnon faccio musica ma il cacchio che \r\nmi pare <br>\r\nfaccio rosicare chi ama il \r\ngenere musicale, <br>\r\nnon parlo male di \r\nun collega o di un presunto tale <br>\r\nma \r\nriciclo il suo cd come regalo di Natale.<br> \r\nNon \r\nmi faccio i flash come Syd Barret, <br>\r\nnon \r\nmi piacciono i flash sul red carpet <br>\r\ne \r\nme ne frego degli artisti veri, <br>\r\ntanto \r\ngli artisti veri sono veri come i muppet.. <br>\r\nIn \r\nquesto meccanismo che non posso inceppare <br>\r\nla \r\nrete non e'' Che Guevara anche se si \r\nfinge tale, <br>\r\nal primo posto nella classifica \r\ndigitale <br>\r\nche tu ci creda o meno c''e'' \r\nsolo chi vince i talent <br>\r\ned io non so \r\ncantare, gia'', ma soprattutto non so \r\npiangere <br>\r\nin pubblico per bucare lo schermo <br> \r\ntoglimi\r\ntutto questo che magari mi fermo <br>\r\ndi \r\ncerto non mi freddo in una stanza d''albergo <br> <br>\r\n\r\ne \r\nchi se ne frega della musica, <br>\r\ndi tutti \r\nquesti libri sulla musica, <br>\r\ndi tutte \r\nle interviste, di tutte le riviste <br>\r\ndi \r\ntutti gli arrivisti, gli arrivisti,\r\ngli arrivisti <br>\r\nsi ma chi se ne frega \r\ndella musica <br>\r\nora che tutti parlano \r\ndi musica <br>\r\ndi tutti i mercenari della \r\nmusica <br>\r\nin queste trasmissioni sulla \r\nmusica <br>\r\ndi tutti questi artisti, <br>\r\ndella \r\nPizzi, di Battisti <br>\r\ndi Zanicchi, di \r\nStravinskij <br>\r\nThin Lizzy, Limp Bizkin <br>\r\ndei \r\nBeastie, degli Extreme \r\ndei Lipps inc, <br>\r\ndi Springsteen <br>\r\nma si.. Chi se ne frega \r\ndella musica!', 1.20),
+(1, 'Il Sogno Eretico', 'Chi se ne frega della musica', 'Caparezza', 3, '2011', 'Alternative Rap', 'Tracce/Caparezza/Chi Se Ne Frega Della Musica.mp3', 'Copertine/Il Sogno Eretico.jpg', 'E chi se ne frega della musica, <br>\r\ndi tutti \r\nquesti libri sulla musica, <br>\r\ndi tutte \r\nle interviste, di tutte le riviste, <br>\r\ndi \r\ntutti gli arrivisti, gli arrivisti, <br>\r\ngli arrivisti. <br> <br>\r\n \r\nIo con la musica non \r\nc''entro niente <br>\r\ncome il mio pene davanti \r\nal wc, a luci spente <br>\r\nmi contraddico \r\nfacilmente <br>\r\nma lo faccio cosi'' spesso \r\nche questo fa di me una persona coerente  <br> \r\ned \r\nho tanto da dire <br> perche'' ho poco da \r\nfare, \r\ntu mi invidi, sorridi, mi proponi \r\nun affare: <br>\r\ncominciare con i temi di \r\ncui parla Faber <br>\r\ne finire per un mese \r\nsull''isola a far la fame. <br>\r\nQualsiasi \r\ncosa faccia mi viene riconosciuta? <br>\r\nNo \r\ne'' la mia faccia che viene riconosciuta!<br> \r\nMolti \r\ndei mie fan che fanno la schiuma <br>\r\nhanno \r\nla doppia faccia come il barone Ashura! <br>\r\nParlano \r\ncon me come con un fratello grande \r\ne \r\nmi riprendono in mutande come nel Grande \r\nFratello. <br>\r\nIl video che mi fanno mentre \r\nlecco un orinale <br>\r\ne'' cliccato piu'' del \r\nvideo ufficiale della mia label <br> <br>\r\n\r\ne \r\nchi se ne frega della musica, \r\ndi tutti \r\nquesti libri sulla musica, <br>\r\ndi tutte \r\nle interviste, di tutte le riviste \r\ndi <br>\r\ntutti gli arrivisti gli arrivisti, \r\ngli arrivisti <br>\r\nsi ma chi se ne frega \r\ndella musica <br>\r\nora che tutti parlano \r\ndi musica, <br>\r\ndi tutti questi artisti, <br>\r\ndi tutti questi dischi <br>\r\ndi tutti questi \r\nfischi, questi fischi, questi fischi! \r\n<br><br>\r\n\r\nNon \r\nho mai capito questi social network <br>\r\nper \r\nme servono solo a fare i porci a letto. <br>\r\nOgni \r\nvolta che nasce una nuova piattaforma <br>\r\nmi \r\nfa l''effetto di un libro che ho gia'' \r\nletto <br>\r\ne poi non ho tutti sti amici \r\nma molti meno <br>\r\nmi danno affetto ma poi \r\nm''affettano come Ghemon. <br>\r\nTu! E'' due \r\nore che mi parli, io sono fan di Ghandi <br> \r\ned \r\ne'' solo per questo che non ti meno! <br>\r\nIl \r\nmio cellulare squilla ogni 2 minuti,<br> \r\ngente \r\nche mi assilla e mi chiede se ho 2 \r\nminuti, <br>\r\nassessori, collettivi, sindacati, \r\ngiornalisti, <br>\r\npassa un giorno e i miei \r\ntesticoli non sono piu'' minuti. <br>\r\nMi stupisco, <br>\r\npubblico un disco <br>\r\ne mi fanno le foto \r\nin pubblico, perche''? non capisco! <br>\r\nOh, \r\nnon vi interessano le note che registro<br> \r\nvi \r\ninteressano le mie note sul registro! <br><br>\r\n\r\ne \r\nchi se ne frega della musica... <br><br>\r\n\r\nIo \r\nnon faccio musica ma il cacchio che \r\nmi pare <br>\r\nfaccio rosicare chi ama il \r\ngenere musicale, <br>\r\nnon parlo male di \r\nun collega o di un presunto tale <br>\r\nma \r\nriciclo il suo cd come regalo di Natale.<br> \r\nNon \r\nmi faccio i flash come Syd Barret, <br>\r\nnon \r\nmi piacciono i flash sul red carpet <br>\r\ne \r\nme ne frego degli artisti veri, <br>\r\ntanto \r\ngli artisti veri sono veri come i muppet.. <br>\r\nIn \r\nquesto meccanismo che non posso inceppare <br>\r\nla \r\nrete non e'' Che Guevara anche se si \r\nfinge tale, <br>\r\nal primo posto nella classifica \r\ndigitale <br>\r\nche tu ci creda o meno c''e'' \r\nsolo chi vince i talent <br>\r\ned io non so \r\ncantare, gia'', ma soprattutto non so \r\npiangere <br>\r\nin pubblico per bucare lo schermo <br> \r\ntoglimi\r\ntutto questo che magari mi fermo <br>\r\ndi \r\ncerto non mi freddo in una stanza d''albergo <br> <br>\r\n\r\ne \r\nchi se ne frega della musica, <br>\r\ndi tutti \r\nquesti libri sulla musica, <br>\r\ndi tutte \r\nle interviste, di tutte le riviste <br>\r\ndi \r\ntutti gli arrivisti, gli arrivisti,\r\ngli arrivisti <br>\r\nsi ma chi se ne frega \r\ndella musica <br>\r\nora che tutti parlano \r\ndi musica <br>\r\ndi tutti i mercenari della \r\nmusica <br>\r\nin queste trasmissioni sulla \r\nmusica <br>\r\ndi tutti questi artisti, <br>\r\ndella \r\nPizzi, di Battisti <br>\r\ndi Zanicchi, di \r\nStravinskij <br>\r\nThin Lizzy, Limp Bizkin <br>\r\ndei \r\nBeastie, degli Extreme \r\ndei Lipps inc, <br>\r\ndi Springsteen <br>\r\nma si.. Chi se ne frega \r\ndella musica!', 5.20),
 (2, 'Il Sogno Eretico', 'La fine di Gaia', 'Caparezza', 9, '2011', 'Alternative Rap', 'Tracce/Caparezza/La Fine Di Gaia.mp3', 'Copertine/Il Sogno Eretico.jpg', 'Povera Gaia \r\nanche i Maya vogliono la tua taglia \r\npure la massaia lo sa, per la fifa tartaglia \r\ndecifra una sterpaglia di codici ma il 20-12 \r\nnon incide se non nei cinematografi. \r\nUomini retti che sono uomini rettili \r\ncon pupille da serpenti \r\npiù spille da sergenti \r\nvogliono la tua muta, Gaia \r\nti vogliono muta, Gaia \r\nla bomba è venuta a galla adesso esploderà. \r\n\r\nReti di rettiliani, andirivieni d'' alieni \r\nvelivoli di veleni, tutti in cerca di ripari ma \r\n\r\nLa fine di Gaia non arriverà \r\nla gente si sbaglia \r\nin fondo che ne sa. \r\nE'' un fuoco di paglia \r\nalla faccia dei Maya e di Cinecittà. \r\nLa fine di Gaia non arriverà! \r\nLa fine di Gaia non arriverà! \r\n\r\nAnche E.T. è qui, mamma che condanna! \r\nE'' un pervertito, ha rapito Gaia per fecondarla \r\ncon alieni adepti che scuoiano coniglietti \r\ne li mostrano alle TV spacciandoli per feti extraterrestri. \r\nC''è chi vuole farsi Gaia con fumi sparsi in aria \r\nda un aereo che la ingabbia come all''Asinara. \r\nSi narra che gaia sniffi, \r\nabbaia anche Brian Griffin. \r\nE'' Clyro come i Biffy che gaia Gaia non è. \r\nTra San Giovanni, Nostradamus e millennium bug \r\nsulla sua bara chiunque metterebbe una tag. \r\n\r\nMa la fine di Gaia non arriverà \r\nla gente si sbaglia \r\nin fondo che ne sa. \r\nE'' un fuoco di paglia \r\nalla faccia dei Maya e di Cinecittà. \r\nLa fine di Gaia non arriverà! \r\nLa fine di Gaia non arriverà! \r\n\r\nNé con i passi di Godzilla né coi passi della Bibbia, \r\nGaia sopravviverà \r\na questi cazzo di asteroidi che non hanno mai schiacciato \r\nneanche una farfalla. \r\nSei tu che tratti Gaia come una recluta a naja \r\nami il petrolio ma la baia non è una caldaia \r\nla tua mannaia lima l''aria mica l''Himalaia! \r\nGaia si salverà, chi salverà il soldato Ryan? \r\n\r\nNon i marziani ma te dovrò respingere \r\nnon i marziani ma te dovrò respingere e vedrai.. \r\n\r\nLa fine di Gaia non arriverà \r\nla gente si sbaglia \r\nin fondo che ne sa. \r\nE'' un fuoco di paglia \r\nalla faccia dei Maya e di Cinecittà. \r\nLa fine di Gaia non arriverà! \r\nLa fine di Gaia non arriverà! \r\nLa fine di Gaia non arriverà! \r\n2012: nemmeno un temporale!', 1.20),
 (4, 'Dark Horse', 'Something In Your Mouth', 'Nickelback', 1, '2008', 'Alternative Metal', 'Tracce/Nickelback/Something In Your Mouth.mp3', 'Copertine/dark horse.jpg', NULL, 1.20),
 (5, 'A Rush Of Blood To The Head', 'The Scientist', 'Coldplay', 4, '2002', 'Alternative Rock', 'Tracce/Coldplay/The Scientist.mp3', 'Copertine/a rush of blood to the head.jpg', NULL, 1.20),
@@ -282,19 +291,20 @@ CREATE TABLE `utenti` (
   `nome` varchar(30) NOT NULL,
   `cognome` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL
+  `password` varchar(30) NOT NULL,
+  `admin` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `utenti`
 --
 
-INSERT INTO `utenti` (`id`, `nome`, `cognome`, `email`, `password`) VALUES
-(1, 'Andrea', 'Di Benedetto', 'andrydbn@hotmail.it', 'ciao'),
-(2, 'Fabrizio', 'Di Benedetto', 'fabridbn@hotmail.it', 'asd'),
-(19, 'Silvio', 'Valenti', 'valenti1091@gmail.com', 'ciao'),
-(22, 'Andrea', 'Di Benedetto', 'andreadibenedetto92@gmail.com', 'ciao'),
-(23, 'Miguel Alberto Juan', 'De la Roca y Fernando Lorena y', 'email.email@email.email.com', 'Peto');
+INSERT INTO `utenti` (`id`, `nome`, `cognome`, `email`, `password`, `admin`) VALUES
+(1, 'Andrea', 'Di Benedetto', 'andrydbn@hotmail.it', 'ciao', 1),
+(2, 'Fabrizio', 'Di Benedetto', 'fabridbn@hotmail.it', 'asd', 0),
+(19, 'Silvio', 'Valenti', 'valenti1091@gmail.com', 'ciao', 0),
+(22, 'Andrea', 'Di Benedetto', 'andreadibenedetto92@gmail.com', 'ciao', 0),
+(23, 'Miguel Alberto Juan', 'De la Roca y Fernando Lorena y', 'email.email@email.email.com', 'Peto', 0);
 
 --
 -- Indexes for dumped tables
@@ -355,7 +365,7 @@ ALTER TABLE `utenti`
 -- AUTO_INCREMENT for table `acquisto`
 --
 ALTER TABLE `acquisto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT for table `artisti`
 --
@@ -370,7 +380,7 @@ ALTER TABLE `commenti`
 -- AUTO_INCREMENT for table `fattura`
 --
 ALTER TABLE `fattura`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
 --
 -- AUTO_INCREMENT for table `tracce`
 --

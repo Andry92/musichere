@@ -44,7 +44,7 @@
 		    }
 		    else
 		    {
-				$query = "SELECT id,nome,cognome FROM utenti WHERE email='$email' AND password='$password'";
+				$query = "SELECT id,nome,cognome,admin FROM utenti WHERE email='$email' AND password='$password'";
 			    $result = mysql_query($query,$conn);
 			   
 			    $num_rows = mysql_num_rows($result);
@@ -56,6 +56,7 @@
 			        $_SESSION ['nome']=$array['nome'];
 			        $_SESSION ['cognome']=$array['cognome']; // utilizzato per acquisto.php
 			        $_SESSION ['email']=$email; // utilizzato per acquisto.php
+			        $_SESSION ['admin']=$array['admin'];
 				}
 				else
 					echo "<script>alert('Email o password errati.');
