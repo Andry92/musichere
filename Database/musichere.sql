@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 05, 2016 at 08:08 
+-- Generation Time: Sep 06, 2016 at 07:30 
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.5.34
 
@@ -50,42 +50,9 @@ INSERT INTO `acquisto` (`id`, `id_utente`, `id_traccia`, `data`, `prezzo`) VALUE
 (34, 1, 100, '2016-09-05 08:08:15', 1.20),
 (35, 1, 101, '2016-09-05 08:08:15', 1.20),
 (36, 1, 102, '2016-09-05 08:08:15', 1.20),
-(37, 1, 103, '2016-09-05 08:08:15', 1.20);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `artisti`
---
-
-CREATE TABLE `artisti` (
-  `id_artista` int(11) NOT NULL,
-  `nome` varchar(30) NOT NULL,
-  `biografia` text,
-  `sfondo` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `artisti`
---
-
-INSERT INTO `artisti` (`id_artista`, `nome`, `biografia`, `sfondo`) VALUES
-(1, 'Caparezza', 'Michele Salvemini, in arte Caparezza (Molfetta, 9 ottobre 1973), è un cantautore e \r\nrapper italiano.\r\nIniziò la sua carriera come rapper col nome di "Mikimix", componendo canzoni melodiche \r\ne musica minimalista, ma con scarsa valenza artistica e con poco successo. \r\nConduce in televisione Segnali di fumo, programma musicale di Videomusic in compagnia \r\ndi Paola Maugeri. Dopo alcune serate nei locali di Milano esordì al Festival di Castrocaro.\r\nPartecipò al Sanremo Giovani 1995 con la canzone Succede solo nei film ed al Festival \r\ndi Sanremo 1997, nella categoria "Nuove proposte" con E la notte se ne va, \r\npubblicando successivamente un album dal nome La mia buona stella, prodotto dalla casa \r\ndiscografica Sony.\r\nCaparezza divenne famoso per aver composto alcuni brani quali Il secondo secondo me \r\ne Fuori dal tunnel (2003), Vengo dalla Luna e Jodellavitanonhocapitouncazzo (2004) \r\n(anche se il primo singolo estratto è Follie preferenziali che è passato quasi inosservato \r\npresso i principali canali di musica), che sono tutti singoli estratti dall''album Verità \r\nsupposte (2003).', 'Sfondo/caparezza.jpg'),
-(2, 'Nickelback', 'I Nickelback sono un gruppo rock canadese, formatosi nel 1995 ad Hanna (Alberta). \r\nHanno venduto più di 35 milioni di copie dei loro dischi in tutto il mondo. Hanno vinto \r\n11 Juno Awards, 1 American Music Award, 2 Video Music Awards ed un premio su MTV per il \r\n"Miglior Video da un Film" (Hero). Nel 2006 ottengono il prestigioso World Music Award \r\ncome miglior gruppo rock. Sono stati lanciati nel 2001 dal singolo How You Remind Me, \r\nche fa parte del loro terzo album Silver Side Up.', 'Sfondo/nickelback.jpg'),
-(3, 'Coldplay', 'I Coldplay sono un gruppo alternative rock britannico formatosi a Londra nel 1997.\r\nLa band è composta da Chris Martin (voce, tastiere, chitarra), Jonny Buckland (chitarra), \r\nGuy Berryman (basso) e Will Champion (batteria). I Coldplay raggiunsero la fama mondiale \r\ncon il loro singolo Yellow, contenuto nel loro album di debutto Parachutes (2000). \r\nIl brano diventò presto una hit e nel luglio 2000 arrivò a piazzarsi alla quarta posizione \r\ndella classfica dei singoli britannica. Il loro secondo album A Rush of Blood to the Head \r\n(2002) segna la loro consacrazione e consente alla band di acquisire notorietà in tutto \r\nil mondo. L''album si piazzò direttamente al 1º posto della UK Albums Chart e al 5º posto \r\ndella Billboard 200. La loro successiva pubblicazione, X&Y (2005) ricevette una \r\nfredda accoglienza da parte della critica, ma riuscì comunque a tenere i ritmi di \r\nvendita dei precedenti album. Con il loro quarto album in studio Viva la Vida or Death \r\nand All His Friends, trainato dalla hit Viva la Vida e prodotto da Brian Eno, \r\nla band ottenne numerose recensioni favorevoli, oltre alla vittoria di tre Grammy.\r\nI Coldplay con il loro quarto album in studio hanno raggiunto il traguardo dei \r\n50 milioni totali di dischi venduti.', 'Sfondo/coldplay.jpg'),
-(4, 'Eminem', 'bla bla', NULL),
-(5, 'Green Day', 'I Green Day sono un gruppo musicale pop punk statunitense, formatosi a Berkeley nel 1987 \r\ne composto da tre membri: Billie Joe Armstrong (chitarra e voce), Mike Dirnt \r\n(basso e voce secondaria) e Tre Cool (batteria).\r\nTra i gruppi di punta della scena punk revival, hanno anche contribuito al successo \r\ndel loro genere negli anni novanta, insieme a blink-182, Offspring e Rancid.', 'Sfondo/greenday.jpg'),
-(6, 'Jimi Hendrix', 'James Marshall "Jimi" Hendrix (Seattle, 27 novembre 1942 – Londra, 18 settembre 1970) è stato un chitarrista e cantautore statunitense. È stato uno dei maggiori innovatori nell''ambito della chitarra elettrica: durante la sua parabola artistica, tanto breve quanto intensa, si è reso precursore di molte strutture e del sound di quelle che sarebbero state le future evoluzioni del rock attraverso un''inedita fusione di blues, rhythm and blues/soul, hard rock, psichedelia e funky.\r\nSecondo la classifica stilata nel 2011, dalla rivista Rolling Stone, è stato il più grande chitarrista di tutti i tempi, precedendo in questa speciale classifica Eric Clapton e Jimmy Page.\r\nLa sua esibizione in chiusura del festival di Woodstock del 1969 è divenuta un vero e proprio simbolo: l''immagine del chitarrista che, con dissacrante visionarietà artistica, suona l''inno nazionale statunitense in modo provocatoriamente distorto è entrata di prepotenza nell''immaginario collettivo musicale.\r\nHendrix è stato introdotto nella Rock and Roll Hall of Fame nel 1992.', 'Sfondo/jimihendrix.jpg'),
-(7, 'Led Zeppelin', 'bla bla', NULL),
-(8, 'Linkin Park', 'bla bla', NULL),
-(9, 'Litfiba', 'bla bla', NULL),
-(10, 'Lucio Battisti', 'bla bla', NULL),
-(11, 'Michael Bublè', 'bla bla', NULL),
-(12, 'Michael Jackson', 'bla bla', NULL),
-(13, 'Muse', 'I Muse sono un gruppo musicale alternative rock britannico di Teignmouth (Devon).\r\nLe loro esibizioni dal vivo sono molto energiche e stravaganti. Sono riconosciuti per \r\nuno stile musicale molto eclettico che raccoglie influenze di più generi come elettronica, \r\nprogressive rock, spesso segnati da una vena sinfonica e orchestrale. La maggior parte \r\ndei testi delle loro canzoni, composte principalmente dal frontman Matthew Bellamy, \r\ntrattano temi riguardanti apocalisse, ufo, guerra, vita, universo, politica e religione.', 'Sfondo/muse.jpg'),
-(14, 'Nirvana', 'bla bla', NULL),
-(15, 'Pink Floyd', 'I Pink Floyd sono stati una rock band britannica formatasi nella seconda metà degli \r\nanni sessanta che, nel corso di una lunga e travagliata carriera, è riuscita a \r\nriscrivere le tendenze musicali della propria epoca e a diventare uno dei gruppi \r\npiù importanti della storia.\r\nSebbene agli inizi siano stati influenzati prevalentemente dal rock psichedelico \r\ne dallo space rock, il genere che meglio rappresenta la maggior parte dell''opera \r\ndei Pink Floyd, caratterizzata da testi filosofici, esperimenti sonori, grafiche \r\ninnovative e spettacolari concerti, è il rock progressivo.\r\nNel 2008 si è stimato che abbiano venduto circa 250 milioni di dischi in tutto il \r\nmondo, di cui 74,5 milioni nei soli Stati Uniti d''America.', 'Sfondo/pinkfloyd.jpg'),
-(16, 'Red Hot Chili Peppers', 'I Red Hot Chili Peppers (talvolta abbreviato semplicemente in RHCP) sono un gruppo rock \r\nstatunitense, formatosi a Los Angeles nel 1983. Sono stati introdotti nella Rock and Roll \r\nHall of Fame nel 2012.\r\nNella loro carriera hanno mescolato con successo vari generi, \r\ntra cui soprattutto funk, rap, hard rock, heavy metal, punk rock e successivamente \r\nalternative rock e pop rock. Hanno venduto più di 70 milioni di dischi, di cui 22 milioni \r\nnei soli Stati Uniti; inoltre detengono il record per il maggior numero di singoli \r\nal primo posto della Modern Rock Tracks, classifica stilata dalla rivista Billboard.', 'Sfondo/redhotchilipeppers.jpg');
+(37, 1, 103, '2016-09-05 08:08:15', 1.20),
+(38, 29, 113, '2016-09-06 10:58:08', 1.20),
+(39, 1, 136, '2016-09-06 03:13:21', 5.70);
 
 -- --------------------------------------------------------
 
@@ -107,6 +74,7 @@ INSERT INTO `carrello` (`id_utente`, `id_traccia`, `flag`) VALUES
 (1, 1, 1),
 (1, 2, 1),
 (1, 18, 1),
+(1, 90, 0),
 (1, 95, 1),
 (1, 96, 1),
 (1, 97, 1),
@@ -115,7 +83,9 @@ INSERT INTO `carrello` (`id_utente`, `id_traccia`, `flag`) VALUES
 (1, 100, 1),
 (1, 101, 1),
 (1, 102, 1),
-(1, 103, 1);
+(1, 103, 1),
+(1, 136, 1),
+(29, 113, 1);
 
 -- --------------------------------------------------------
 
@@ -166,7 +136,9 @@ CREATE TABLE `fattura` (
 INSERT INTO `fattura` (`id`, `id_utente`, `metodo`, `totale`, `data`, `cod_carta`) VALUES
 (128, 1, 'Paypal', 5.20, '2016-09-05 07:33:40', ''),
 (129, 1, 'Paypal', 2.40, '2016-09-05 07:34:40', ''),
-(130, 1, 'Carta di credito', 10.80, '2016-09-05 08:08:15', '5675777777777777');
+(130, 1, 'Carta di credito', 10.80, '2016-09-05 08:08:15', '5675777777777777'),
+(131, 29, 'Paypal', 1.20, '2016-09-06 10:58:08', ''),
+(132, 1, 'Paypal', 5.70, '2016-09-06 03:13:21', '');
 
 -- --------------------------------------------------------
 
@@ -193,9 +165,9 @@ CREATE TABLE `tracce` (
 --
 
 INSERT INTO `tracce` (`id_traccia`, `album`, `titolo`, `artista`, `num_traccia`, `anno`, `genere`, `Canzoni`, `copertina`, `testo`, `prezzo`) VALUES
-(1, 'Il Sogno Eretico', 'Chi se ne frega della musica', 'Caparezza', 3, '2011', 'Alternative Rap', 'Tracce/Caparezza/Chi Se Ne Frega Della Musica.mp3', 'Copertine/Il Sogno Eretico.jpg', 'E chi se ne frega della musica, <br>\r\ndi tutti \r\nquesti libri sulla musica, <br>\r\ndi tutte \r\nle interviste, di tutte le riviste, <br>\r\ndi \r\ntutti gli arrivisti, gli arrivisti, <br>\r\ngli arrivisti. <br> <br>\r\n \r\nIo con la musica non \r\nc''entro niente <br>\r\ncome il mio pene davanti \r\nal wc, a luci spente <br>\r\nmi contraddico \r\nfacilmente <br>\r\nma lo faccio cosi'' spesso \r\nche questo fa di me una persona coerente  <br> \r\ned \r\nho tanto da dire <br> perche'' ho poco da \r\nfare, \r\ntu mi invidi, sorridi, mi proponi \r\nun affare: <br>\r\ncominciare con i temi di \r\ncui parla Faber <br>\r\ne finire per un mese \r\nsull''isola a far la fame. <br>\r\nQualsiasi \r\ncosa faccia mi viene riconosciuta? <br>\r\nNo \r\ne'' la mia faccia che viene riconosciuta!<br> \r\nMolti \r\ndei mie fan che fanno la schiuma <br>\r\nhanno \r\nla doppia faccia come il barone Ashura! <br>\r\nParlano \r\ncon me come con un fratello grande \r\ne \r\nmi riprendono in mutande come nel Grande \r\nFratello. <br>\r\nIl video che mi fanno mentre \r\nlecco un orinale <br>\r\ne'' cliccato piu'' del \r\nvideo ufficiale della mia label <br> <br>\r\n\r\ne \r\nchi se ne frega della musica, \r\ndi tutti \r\nquesti libri sulla musica, <br>\r\ndi tutte \r\nle interviste, di tutte le riviste \r\ndi <br>\r\ntutti gli arrivisti gli arrivisti, \r\ngli arrivisti <br>\r\nsi ma chi se ne frega \r\ndella musica <br>\r\nora che tutti parlano \r\ndi musica, <br>\r\ndi tutti questi artisti, <br>\r\ndi tutti questi dischi <br>\r\ndi tutti questi \r\nfischi, questi fischi, questi fischi! \r\n<br><br>\r\n\r\nNon \r\nho mai capito questi social network <br>\r\nper \r\nme servono solo a fare i porci a letto. <br>\r\nOgni \r\nvolta che nasce una nuova piattaforma <br>\r\nmi \r\nfa l''effetto di un libro che ho gia'' \r\nletto <br>\r\ne poi non ho tutti sti amici \r\nma molti meno <br>\r\nmi danno affetto ma poi \r\nm''affettano come Ghemon. <br>\r\nTu! E'' due \r\nore che mi parli, io sono fan di Ghandi <br> \r\ned \r\ne'' solo per questo che non ti meno! <br>\r\nIl \r\nmio cellulare squilla ogni 2 minuti,<br> \r\ngente \r\nche mi assilla e mi chiede se ho 2 \r\nminuti, <br>\r\nassessori, collettivi, sindacati, \r\ngiornalisti, <br>\r\npassa un giorno e i miei \r\ntesticoli non sono piu'' minuti. <br>\r\nMi stupisco, <br>\r\npubblico un disco <br>\r\ne mi fanno le foto \r\nin pubblico, perche''? non capisco! <br>\r\nOh, \r\nnon vi interessano le note che registro<br> \r\nvi \r\ninteressano le mie note sul registro! <br><br>\r\n\r\ne \r\nchi se ne frega della musica... <br><br>\r\n\r\nIo \r\nnon faccio musica ma il cacchio che \r\nmi pare <br>\r\nfaccio rosicare chi ama il \r\ngenere musicale, <br>\r\nnon parlo male di \r\nun collega o di un presunto tale <br>\r\nma \r\nriciclo il suo cd come regalo di Natale.<br> \r\nNon \r\nmi faccio i flash come Syd Barret, <br>\r\nnon \r\nmi piacciono i flash sul red carpet <br>\r\ne \r\nme ne frego degli artisti veri, <br>\r\ntanto \r\ngli artisti veri sono veri come i muppet.. <br>\r\nIn \r\nquesto meccanismo che non posso inceppare <br>\r\nla \r\nrete non e'' Che Guevara anche se si \r\nfinge tale, <br>\r\nal primo posto nella classifica \r\ndigitale <br>\r\nche tu ci creda o meno c''e'' \r\nsolo chi vince i talent <br>\r\ned io non so \r\ncantare, gia'', ma soprattutto non so \r\npiangere <br>\r\nin pubblico per bucare lo schermo <br> \r\ntoglimi\r\ntutto questo che magari mi fermo <br>\r\ndi \r\ncerto non mi freddo in una stanza d''albergo <br> <br>\r\n\r\ne \r\nchi se ne frega della musica, <br>\r\ndi tutti \r\nquesti libri sulla musica, <br>\r\ndi tutte \r\nle interviste, di tutte le riviste <br>\r\ndi \r\ntutti gli arrivisti, gli arrivisti,\r\ngli arrivisti <br>\r\nsi ma chi se ne frega \r\ndella musica <br>\r\nora che tutti parlano \r\ndi musica <br>\r\ndi tutti i mercenari della \r\nmusica <br>\r\nin queste trasmissioni sulla \r\nmusica <br>\r\ndi tutti questi artisti, <br>\r\ndella \r\nPizzi, di Battisti <br>\r\ndi Zanicchi, di \r\nStravinskij <br>\r\nThin Lizzy, Limp Bizkin <br>\r\ndei \r\nBeastie, degli Extreme \r\ndei Lipps inc, <br>\r\ndi Springsteen <br>\r\nma si.. Chi se ne frega \r\ndella musica!', 1.20),
+(1, 'Il Sogno Eretico', 'Chi se ne frega della musica', 'Caparezza', 3, '2011', 'Alternative Rap', 'Tracce/Caparezza/Chi Se Ne Frega Della Musica.mp3', 'Copertine/Il Sogno Eretico.jpg', 'E chi se ne frega della musica, <br>\ndi tutti \nquesti libri sulla musica, <br>\ndi tutte \nle interviste, di tutte le riviste, <br>\ndi \ntutti gli arrivisti, gli arrivisti, <br>\ngli arrivisti. <br> <br>\n \nIo con la musica non \nc''entro niente <br>\ncome il mio pene davanti \nal wc, a luci spente <br>\nmi contraddico \nfacilmente <br>\nma lo faccio cosi'' spesso \nche questo fa di me una persona coerente  <br> \ned \nho tanto da dire <br> perche'' ho poco da \nfare, \ntu mi invidi, sorridi, mi proponi \nun affare: <br>\ncominciare con i temi di \ncui parla Faber <br>\ne finire per un mese \nsull''isola a far la fame. <br>\nQualsiasi \ncosa faccia mi viene riconosciuta? <br>\nNo \ne'' la mia faccia che viene riconosciuta!<br> \nMolti \ndei mie fan che fanno la schiuma <br>\nhanno \nla doppia faccia come il barone Ashura! <br>\nParlano \ncon me come con un fratello grande \ne \nmi riprendono in mutande come nel Grande \nFratello. <br>\nIl video che mi fanno mentre \nlecco un orinale <br>\ne'' cliccato piu'' del \nvideo ufficiale della mia label <br> <br>\n\ne \nchi se ne frega della musica, \ndi tutti \nquesti libri sulla musica, <br>\ndi tutte \nle interviste, di tutte le riviste \ndi <br>\ntutti gli arrivisti gli arrivisti, \ngli arrivisti <br>\nsi ma chi se ne frega \ndella musica <br>\nora che tutti parlano \ndi musica, <br>\ndi tutti questi artisti, <br>\ndi tutti questi dischi <br>\ndi tutti questi \nfischi, questi fischi, questi fischi! \n<br><br>\n\nNon \nho mai capito questi social network <br>\nper \nme servono solo a fare i porci a letto. <br>\nOgni \nvolta che nasce una nuova piattaforma <br>\nmi \nfa l''effetto di un libro che ho gia'' \nletto <br>\ne poi non ho tutti sti amici \nma molti meno <br>\nmi danno affetto ma poi \nm''affettano come Ghemon. <br>\nTu! E'' due \nore che mi parli, io sono fan di Ghandi <br> \ned \ne'' solo per questo che non ti meno! <br>\nIl \nmio cellulare squilla ogni 2 minuti,<br> \ngente \nche mi assilla e mi chiede se ho 2 \nminuti, <br>\nassessori, collettivi, sindacati, \ngiornalisti, <br>\npassa un giorno e i miei \ntesticoli non sono piu'' minuti. <br>\nMi stupisco, <br>\npubblico un disco <br>\ne mi fanno le foto \nin pubblico, perche''? non capisco! <br>\nOh, \nnon vi interessano le note che registro<br> \nvi \ninteressano le mie note sul registro! <br><br>\n\ne \nchi se ne frega della musica... <br><br>\n\nIo \nnon faccio musica ma il cacchio che \nmi pare <br>\nfaccio rosicare chi ama il \ngenere musicale, <br>\nnon parlo male di \nun collega o di un presunto tale <br>\nma \nriciclo il suo cd come regalo di Natale.<br> \nNon \nmi faccio i flash come Syd Barret, <br>\nnon \nmi piacciono i flash sul red carpet <br>\ne \nme ne frego degli artisti veri, <br>\ntanto \ngli artisti veri sono veri come i muppet.. <br>\nIn \nquesto meccanismo che non posso inceppare <br>\nla \nrete non e'' Che Guevara anche se si \nfinge tale, <br>\nal primo posto nella classifica \ndigitale <br>\nche tu ci creda o meno c''e'' \nsolo chi vince i talent <br>\ned io non so \ncantare, gia'', ma soprattutto non so \npiangere <br>\nin pubblico per bucare lo schermo <br> \ntoglimi\ntutto questo che magari mi fermo <br>\ndi \ncerto non mi freddo in una stanza d''albergo <br> <br>\n\ne \nchi se ne frega della musica, <br>\ndi tutti \nquesti libri sulla musica, <br>\ndi tutte \nle interviste, di tutte le riviste <br>\ndi \ntutti gli arrivisti, gli arrivisti,\ngli arrivisti <br>\nsi ma chi se ne frega \ndella musica <br>\nora che tutti parlano \ndi musica <br>\ndi tutti i mercenari della \nmusica <br>\nin queste trasmissioni sulla \nmusica <br>\ndi tutti questi artisti, <br>\ndella \nPizzi, di Battisti <br>\ndi Zanicchi, di \nStravinskij <br>\nThin Lizzy, Limp Bizkin <br>\ndei \nBeastie, degli Extreme \ndei Lipps inc, <br>\ndi Springsteen <br>\nma si.. Chi se ne frega \ndella musica!', 2.10),
 (2, 'Il Sogno Eretico', 'La fine di Gaia', 'Caparezza', 9, '2011', 'Alternative Rap', 'Tracce/Caparezza/La Fine Di Gaia.mp3', 'Copertine/Il Sogno Eretico.jpg', 'Povera Gaia \r\nanche i Maya vogliono la tua taglia \r\npure la massaia lo sa, per la fifa tartaglia \r\ndecifra una sterpaglia di codici ma il 20-12 \r\nnon incide se non nei cinematografi. \r\nUomini retti che sono uomini rettili \r\ncon pupille da serpenti \r\npiù spille da sergenti \r\nvogliono la tua muta, Gaia \r\nti vogliono muta, Gaia \r\nla bomba è venuta a galla adesso esploderà. \r\n\r\nReti di rettiliani, andirivieni d'' alieni \r\nvelivoli di veleni, tutti in cerca di ripari ma \r\n\r\nLa fine di Gaia non arriverà \r\nla gente si sbaglia \r\nin fondo che ne sa. \r\nE'' un fuoco di paglia \r\nalla faccia dei Maya e di Cinecittà. \r\nLa fine di Gaia non arriverà! \r\nLa fine di Gaia non arriverà! \r\n\r\nAnche E.T. è qui, mamma che condanna! \r\nE'' un pervertito, ha rapito Gaia per fecondarla \r\ncon alieni adepti che scuoiano coniglietti \r\ne li mostrano alle TV spacciandoli per feti extraterrestri. \r\nC''è chi vuole farsi Gaia con fumi sparsi in aria \r\nda un aereo che la ingabbia come all''Asinara. \r\nSi narra che gaia sniffi, \r\nabbaia anche Brian Griffin. \r\nE'' Clyro come i Biffy che gaia Gaia non è. \r\nTra San Giovanni, Nostradamus e millennium bug \r\nsulla sua bara chiunque metterebbe una tag. \r\n\r\nMa la fine di Gaia non arriverà \r\nla gente si sbaglia \r\nin fondo che ne sa. \r\nE'' un fuoco di paglia \r\nalla faccia dei Maya e di Cinecittà. \r\nLa fine di Gaia non arriverà! \r\nLa fine di Gaia non arriverà! \r\n\r\nNé con i passi di Godzilla né coi passi della Bibbia, \r\nGaia sopravviverà \r\na questi cazzo di asteroidi che non hanno mai schiacciato \r\nneanche una farfalla. \r\nSei tu che tratti Gaia come una recluta a naja \r\nami il petrolio ma la baia non è una caldaia \r\nla tua mannaia lima l''aria mica l''Himalaia! \r\nGaia si salverà, chi salverà il soldato Ryan? \r\n\r\nNon i marziani ma te dovrò respingere \r\nnon i marziani ma te dovrò respingere e vedrai.. \r\n\r\nLa fine di Gaia non arriverà \r\nla gente si sbaglia \r\nin fondo che ne sa. \r\nE'' un fuoco di paglia \r\nalla faccia dei Maya e di Cinecittà. \r\nLa fine di Gaia non arriverà! \r\nLa fine di Gaia non arriverà! \r\nLa fine di Gaia non arriverà! \r\n2012: nemmeno un temporale!', 1.20),
-(4, 'Dark Horse', 'Something In Your Mouth', 'Nickelback', 1, '2008', 'Alternative Metal', 'Tracce/Nickelback/Something In Your Mouth.mp3', 'Copertine/dark horse.jpg', NULL, 1.20),
+(4, 'Dark Horse', 'Something In Your Mouth', 'Nickelback', 1, '2008', 'Alternative Metal', 'Tracce/Nickelback/Something In Your Mouth.mp3', 'Copertine/dark horse.jpg', NULL, 3.20),
 (5, 'A Rush Of Blood To The Head', 'The Scientist', 'Coldplay', 4, '2002', 'Alternative Rock', 'Tracce/Coldplay/The Scientist.mp3', 'Copertine/a rush of blood to the head.jpg', NULL, 1.20),
 (6, 'A Rush Of Blood To The Head', 'Clocks', 'Coldplay', 5, '2002', 'Alternative Rock', 'Tracce/Coldplay/Clocks.mp3', 'Copertine/a rush of blood to the head.jpg', NULL, 1.20),
 (7, 'American Idiot', 'American Idiot', 'Green Day', 1, '2004', 'Punk Rock', 'Tracce/Green Day/American Idiot.mp3', 'Copertine/american idiot.jpg', NULL, 1.20),
@@ -265,7 +237,8 @@ INSERT INTO `tracce` (`id_traccia`, `album`, `titolo`, `artista`, `num_traccia`,
 (129, 'Are You Experienced', 'Stone Free', 'Jimi Hendrix', 12, '1967', 'Blues Rock', 'Tracce/Jimi Hendrix/Stone Free.mp3', 'Copertine/jimi hendrix.jpg', NULL, 1.20),
 (130, 'Are You Experienced', '51st Anniversary*', 'Jimi Hendrix', 13, '1967', 'Blues Rock', NULL, 'Copertine/jimi hendrix.jpg', NULL, 1.20),
 (131, 'Are You Experienced', 'Highway Chile*', 'Jimi Hendrix', 14, '1967', 'Blues Rock', NULL, 'Copertine/jimi hendrix.jpg', NULL, 1.20),
-(133, 'Are You Experienced', 'Remember*', 'Jimi Hendrix', 15, '1967', 'Blues Rock', NULL, 'Copertine/jimi hendrix.jpg', NULL, 1.20);
+(133, 'Are You Experienced', 'Remember*', 'Jimi Hendrix', 15, '1967', 'Blues Rock', NULL, 'Copertine/jimi hendrix.jpg', NULL, 1.20),
+(136, 'Hypnotize', 'Hypnotize', 'System of a down', 4, '2005', 'Alternative Metal', 'Tracce/System of a down/Hypnotize/(04) Hypnotize.mp3', 'Copertine/System_Of_A_Down-Hypnotize.jpeg', 'Why don''t you ask the kids at Tiananmen square? \r\nWas Fashion the reason why they were there? \r\n\r\nThey disguise it, Hypnotize it \r\nTelevision made you buy it \r\n\r\nI''m just sitting in my car and waiting for my... \r\n\r\nShe''s scared that I will take her away from there \r\nDreams that her country left with no one there\r\n\r\nMezmerize the simple minded \r\nPropaganda leaves us blinded \r\n\r\nI''m just sitting in my car and waiting for my girl\r\nI''m just sitting in my car and waiting for my girl\r\n\r\nI''m just sitting in my car and waiting for my girl\r\nI''m just sitting in my car and waiting for my \r\n\r\nGirl', 5.70);
 
 -- --------------------------------------------------------
 
@@ -291,7 +264,10 @@ INSERT INTO `utenti` (`id`, `nome`, `cognome`, `email`, `password`, `admin`) VAL
 (2, 'Fabrizio', 'Di Benedetto', 'fabridbn@hotmail.it', 'asd', 0),
 (19, 'Silvio', 'Valenti', 'valenti1091@gmail.com', 'ciao', 0),
 (22, 'Andrea', 'Di Benedetto', 'andreadibenedetto92@gmail.com', 'ciao', 0),
-(23, 'Miguel Alberto Juan', 'De la Roca y Fernando Lorena y', 'email.email@email.email.com', 'Peto', 0);
+(23, 'Miguel Alberto Juan', 'De la Roca y Fernando Lorena y', 'email.email@email.email.com', 'Peto', 0),
+(24, 'Giovanni', 'Battisti', 'giova@mh.it', 'ciao', 0),
+(26, 'Marco', 'Pronni', 'pron@pronni.it', 'ciao', 0),
+(29, 'Gianna', 'Crasto', 'crasto@cra.it', 'crasto', 0);
 
 --
 -- Indexes for dumped tables
@@ -304,12 +280,6 @@ ALTER TABLE `acquisto`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_utente` (`id_utente`),
   ADD KEY `id_traccia` (`id_traccia`);
-
---
--- Indexes for table `artisti`
---
-ALTER TABLE `artisti`
-  ADD PRIMARY KEY (`id_artista`);
 
 --
 -- Indexes for table `carrello`
@@ -352,12 +322,7 @@ ALTER TABLE `utenti`
 -- AUTO_INCREMENT for table `acquisto`
 --
 ALTER TABLE `acquisto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
---
--- AUTO_INCREMENT for table `artisti`
---
-ALTER TABLE `artisti`
-  MODIFY `id_artista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 --
 -- AUTO_INCREMENT for table `commenti`
 --
@@ -367,17 +332,17 @@ ALTER TABLE `commenti`
 -- AUTO_INCREMENT for table `fattura`
 --
 ALTER TABLE `fattura`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 --
 -- AUTO_INCREMENT for table `tracce`
 --
 ALTER TABLE `tracce`
-  MODIFY `id_traccia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `id_traccia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=137;
 --
 -- AUTO_INCREMENT for table `utenti`
 --
 ALTER TABLE `utenti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
 -- Constraints for dumped tables
 --

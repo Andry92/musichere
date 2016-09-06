@@ -20,7 +20,9 @@
 			$errore=0; //variabile di controllo errori (se rimane a 0 non ci sono errori)
 
 			if($_POST['email']=="")
-				$errore=1;
+				echo "<script>alert('Errore: campo vuoto!');
+						window.location='recupero.php';
+				</script>";
 			else
 			{
 				$result=mysql_query("SELECT id,password FROM utenti WHERE email='".$_POST['email']."' limit 0,1",$conn);
@@ -42,7 +44,7 @@
 				}
 			}
 			else
-				echo "Email non esistente.";
+				echo "<script>alert('Email non esistente');</script>";
 		}
 	?>
 

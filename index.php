@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="js/lettore.js"></script>
 </head>
 
-<body bgcolor="#607D8B">
+<body bgcolor="#009688">
 	<div id="testata">
 		<div id="contenuto_testata">
 			<div id="link">
@@ -30,7 +30,7 @@
 						echo "<div id='logout'>";
 								include 'connessione.php';
 								$testo = $_SESSION['nome'];
-						      	echo "<a href='profilo.php' target='openlink'>$testo</a> | <a href='logout.php'>Logout</a>";
+						      	echo "<a href='profilo.php' target='openlink' style='color:'#536DFE''>$testo</a> | <a href='logout.php'>Logout</a>";
 								if($_SESSION['admin']==1){
 									echo "<a href='admin.php'> <img src='admin.png' title='Amministratore' width='40' height='40' style='margin: -15px -30px -10px 10px;';></a>";
 								}

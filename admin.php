@@ -7,9 +7,6 @@
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<meta content="utf-8" http-equiv="encoding">
 	<link rel="stylesheet" type="text/css" href="css/acquisto.css" />
-
-	<script type="text/javascript">
-	</script>
 </head>
 
 <body bgcolor="#607D8B">
@@ -56,7 +53,7 @@ elseif(isset($_POST['inserisci'])){
 	echo "<div id='inseriredati'>";
 	?>
 		<center>
-		<form action="upload.php" method="post">
+		<form action="upload.php" method="post" enctype="multipart/form-data">
 			<table id="pagamento" cellspacing="5">
 				<h2>Inserimento nuova traccia<h2>
 				<tr><td><h3>Album:</h3></td>
@@ -92,13 +89,33 @@ elseif(isset($_POST['inserisci'])){
 	echo"</div>";
 }
 else {
-	echo "<div id='modificaprezzo'>";
-	echo "SUUUUUUUUUUUUUUUUUUUUUUUUUUUUUCAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-	echo"</div>";
-	
+?>
+	<div id='modificaprezzo'>
+		<center>
+			<table id="pagamento">
+				<tr> <td><h1>Modifica prezzi</h1></td> </tr>
+				<form name='modifica_prezzo' action="modifica_prezzo.php" method="post">
+					<tr> 
+						<td><h3>Inserisci il nome della traccia</h3></td>
+						<td><input type="text" name="nome_traccia"></td> 
+					</tr>
+					<tr> 
+						<td><h3>Inserisci il nuovo prezzo</h3></td>
+						<td><input type="text" name="prezzo"></td> 
+					</tr>
+					<tr>
+						<td>
+							<button class='acquisto' type='submit'>
+								<b>Modifica Prezzo</b>
+							</button>
+						</td>
+					</tr>
+				</form>
+			</table>
+		</center>
+	</div>
+<?php
 }
-
-
 ?>
 
 </body>

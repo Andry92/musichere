@@ -32,17 +32,18 @@
 						{
 							if(mysql_query("UPDATE utenti SET password='".$_POST['new']."' WHERE id='$user' AND password='$password'",$conn))
 							{
-								echo "Password modificata ";
-								echo '<a href="login.php" style="color: blue">Effettua il login</a>';
+								echo "<script>alert('Password modificata. Effettua il login.');
+											window.location='login.php';
+								</script>";
 							}
 							else
 								echo "Database error";
 						}
 						else
-							echo "La nuova password non può essere vuota";
+							echo "<script>alert('La nuova password non può essere vuota');</script>";
 					}
 					else
-						echo "Password non coincidente.";
+						echo "<script>alert('Vecchia password non coincidente');</script>";
 				}
 			}
 			else

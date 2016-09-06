@@ -55,7 +55,8 @@
 	                    VALUES('$nome','$cognome','$email','$password')";
 	      	$result = mysql_query($query,$conn);
 	      	if($result)
-				echo "<center>Registrazione Effettuata! Effettua l'<a href='login.php'>Accesso!</a><center>";
+				echo "<script>alert('Registrazione effettuata! Effettua il login');
+					window.location='login.php';</script>";
 		    else
 		      	die("Errore nella query.");
 	    }

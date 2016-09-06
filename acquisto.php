@@ -18,7 +18,6 @@
         	$('#tipologia_pagamento').change(function()
         	{
 	            	$('.metodo').toggle();
-	            	//$('#' + $(this).val()).show();
 	            	if($('#Cartadicredito').is(":visible"))
 	            	{
 	            		msg="Devi inserire tutti i campi! Il codice della carta deve essere composto da 16 cifre e il CVC/CVV da 3 cifre.";
