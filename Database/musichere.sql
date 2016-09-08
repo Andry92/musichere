@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 06, 2016 at 07:30 
+-- Generation Time: Sep 08, 2016 at 03:15 
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.5.34
 
@@ -52,7 +52,10 @@ INSERT INTO `acquisto` (`id`, `id_utente`, `id_traccia`, `data`, `prezzo`) VALUE
 (36, 1, 102, '2016-09-05 08:08:15', 1.20),
 (37, 1, 103, '2016-09-05 08:08:15', 1.20),
 (38, 29, 113, '2016-09-06 10:58:08', 1.20),
-(39, 1, 136, '2016-09-06 03:13:21', 5.70);
+(39, 1, 136, '2016-09-06 03:13:21', 5.70),
+(41, 1, 138, '2016-09-07 05:41:19', 2.00),
+(42, 1, 109, '2016-09-08 09:40:09', 5.20),
+(43, 1, 130, '2016-09-08 02:47:58', 1.20);
 
 -- --------------------------------------------------------
 
@@ -74,7 +77,6 @@ INSERT INTO `carrello` (`id_utente`, `id_traccia`, `flag`) VALUES
 (1, 1, 1),
 (1, 2, 1),
 (1, 18, 1),
-(1, 90, 0),
 (1, 95, 1),
 (1, 96, 1),
 (1, 97, 1),
@@ -84,7 +86,10 @@ INSERT INTO `carrello` (`id_utente`, `id_traccia`, `flag`) VALUES
 (1, 101, 1),
 (1, 102, 1),
 (1, 103, 1),
+(1, 109, 1),
+(1, 130, 1),
 (1, 136, 1),
+(1, 138, 1),
 (29, 113, 1);
 
 -- --------------------------------------------------------
@@ -112,7 +117,8 @@ INSERT INTO `commenti` (`id`, `commento`, `data`, `ora`, `id_utente`) VALUES
 (39, 'jbubu', '2016/08/30', '08:54:24', 1),
 (40, 'Manca Nino D''Angelo\r\n', '2016/09/01', '10:30:07', 23),
 (41, 'Yo quiero El Nino D''Angelo. Â¿por quÃ© no estÃ¡s ahÃ­?', '2016/09/01', '10:31:36', 23),
-(42, 'No puedo ver la Fattura. Yo tengo un cuggino en la Policia!! VI DENUNCIO.', '2016/09/01', '10:39:07', 23);
+(42, 'No puedo ver la Fattura. Yo tengo un cuggino en la Policia!! VI DENUNCIO.', '2016/09/01', '10:39:07', 23),
+(43, 'HHHHHHHHMMMHHHH!!!', '2016/09/07', '05:57:19', 22);
 
 -- --------------------------------------------------------
 
@@ -138,7 +144,10 @@ INSERT INTO `fattura` (`id`, `id_utente`, `metodo`, `totale`, `data`, `cod_carta
 (129, 1, 'Paypal', 2.40, '2016-09-05 07:34:40', ''),
 (130, 1, 'Carta di credito', 10.80, '2016-09-05 08:08:15', '5675777777777777'),
 (131, 29, 'Paypal', 1.20, '2016-09-06 10:58:08', ''),
-(132, 1, 'Paypal', 5.70, '2016-09-06 03:13:21', '');
+(132, 1, 'Paypal', 5.70, '2016-09-06 03:13:21', ''),
+(133, 1, 'Carta di credito', 3.20, '2016-09-07 05:41:19', '3200939302930392'),
+(134, 1, 'Paypal', 5.20, '2016-09-08 09:40:09', ''),
+(135, 1, 'Carta di credito', 1.20, '2016-09-08 02:47:58', '5675777777777777');
 
 -- --------------------------------------------------------
 
@@ -154,7 +163,7 @@ CREATE TABLE `tracce` (
   `num_traccia` int(11) DEFAULT NULL,
   `anno` char(10) DEFAULT NULL,
   `genere` varchar(30) DEFAULT NULL,
-  `Canzoni` varchar(100) DEFAULT NULL,
+  `Canzoni` varchar(300) DEFAULT NULL,
   `copertina` varchar(90) DEFAULT NULL,
   `testo` text,
   `prezzo` float(3,2) DEFAULT NULL
@@ -196,13 +205,12 @@ INSERT INTO `tracce` (`id_traccia`, `album`, `titolo`, `artista`, `num_traccia`,
 (87, 'The Resistance', 'Resistance', 'Muse', 2, '2009', 'Progressive Rock', 'Tracce/Muse/resistance.mp3', 'Copertine/the resistance.jpg', NULL, 1.20),
 (88, 'Here And Now', 'This Means War', 'Nickelback', 1, '2011', 'Rock', 'Tracce/Nickelback/This Means War.mp3', 'Copertine/this means war.jpg', NULL, 1.20),
 (89, 'Here And Now', 'When We Stand Together', 'Nickelback', 3, '2011', 'Rock', 'Tracce/Nickelback/When We Stand Together.mp3', 'Copertine/this means war.jpg', NULL, 1.20),
-(90, 'Verità Supposte', 'Il Secondo Secondo me', 'Caparezza', 1, '2003', 'Alternative Rap', 'Tracce/Caparezza/Il secondo secondo me.mp3', 'Copertine/verita supposte.jpg', NULL, 1.20),
 (91, 'Viva La Vida or Death and All His Friends', 'Viva La Vida', 'Coldplay', 7, '2008', 'Alternative', 'Tracce/Coldplay/Viva La Vida.mp3', 'Copertine/viva la vida.jpg', NULL, 1.20),
 (92, 'Viva La Vida or Death and All His Friends', 'Violet Hill', 'Coldplay', 8, '2008', 'Alternative', 'Tracce/Coldplay/Violet Hill.mp3', 'Copertine/viva la vida.jpg', NULL, 1.20),
 (93, 'Warning', 'Warning', 'Green Day', 1, '2000', 'Rock', 'Tracce/Green Day/Warning.mp3', 'Copertine/warning.jpg', NULL, 1.20),
 (94, 'Warning', 'Waiting', 'Green Day', 10, '2000', 'Rock', 'Tracce/Green Day/Waiting.mp3', 'Copertine/warning.jpg', NULL, 1.20),
 (95, 'Dark Side Of The Moon', 'Speak To Me - Breathe', 'Pink Floyd', 1, '1973', 'Rock', 'Tracce/Pink Floyd/Dark Side Of The Moon/01 - Speak To Me - Breathe.mp3', 'Copertine/dark side of the moon.jpg', NULL, 1.20),
-(96, 'Dark Side Of The Moon', 'On The Run', 'Pink Floyd', 2, '1973', 'Rock', 'Tracce/Pink Floyd/Dark Side Of The Moon/02 - On The Run.mp3', 'Copertine/dark side of the moon.jpg', NULL, 1.20),
+(96, 'Dark Side Of The Moon', 'On The Run', 'Pink Floyd', 2, '1973', 'Rock', 'Tracce/Pink Floyd/Dark Side Of The Moon/02 - On The Run.mp3', 'Copertine/dark side of the moon.jpg', NULL, 4.00),
 (97, 'Dark Side Of The Moon', 'Time', 'Pink Floyd', 3, '1973', 'Rock', 'Tracce/Pink Floyd/Dark Side Of The Moon/03 - Time.mp3', 'Copertine/dark side of the moon.jpg', NULL, 1.20),
 (98, 'Dark Side Of The Moon', 'The Great Gig In The Sky', 'Pink Floyd', 4, '1973', 'Rock', 'Tracce/Pink Floyd/Dark Side Of The Moon/04 - The Great Gig In The Sky.mp3', 'Copertine/dark side of the moon.jpg', NULL, 1.20),
 (99, 'Dark Side Of The Moon', 'Money', 'Pink Floyd', 5, '1973', 'Rock', 'Tracce/Pink Floyd/Dark Side Of The Moon/05 - Money.mp3', 'Copertine/dark side of the moon.jpg', NULL, 1.20),
@@ -215,7 +223,7 @@ INSERT INTO `tracce` (`id_traccia`, `album`, `titolo`, `artista`, `num_traccia`,
 (106, 'The Wall', 'Another Brick In The Wall, Pt.1', 'Pink Floyd', 3, '1979', 'Rock', 'Tracce/Pink Floyd/The Wall/1 - 03 - Another Brick in the Wall, Pt.1.mp3', 'Copertine/the wall.jpg', NULL, 1.20),
 (107, 'The Wall', 'The Happiest Days Of Our Lives', 'Pink Floyd', 4, '1979', 'Rock', 'Tracce/Pink Floyd/The Wall/1 - 04 - The Happiest Days Of Our Lives.mp3', 'Copertine/the wall.jpg', NULL, 1.20),
 (108, 'The Wall', 'Another Brick In The Wall, Pt.2', 'Pink Floyd', 5, '1979', 'Rock', 'Tracce/Pink Floyd/The Wall/1 - 05 - Another Brick in the Wall, Pt.2.mp3', 'Copertine/the wall.jpg', 'We don''t need no education <br>\r\nWe don''t need no thought control <br> \r\nNo dark sarcasm in the classroom <br>\r\nTeachers leave the kids alone <br>\r\nHey teacher leave us kids alone <br>\r\nAll in all it''s just another brick in <br> the wall <br> \r\nAll in all you''re just another brick in <br> the wall <br>\r\n\r\nWe don''t need no education <br>\r\nWe don''t need no thought control <br> \r\nNo dark sarcasm in the classroom <br>\r\nTeachers leave the kids alone <br>\r\nHey teacher leave us kids alone <br>\r\nAll in all you''re just another brick in <br> the wall <br> \r\nAll in all you''re just another brick in <br> the wall. <br>', 1.20),
-(109, 'The Wall', 'Mother', 'Pink Floyd', 6, '1979', 'Rock', 'Tracce/Pink Floyd/The Wall/1 - 06 - Mother.mp3', 'Copertine/the wall.jpg', NULL, 1.20),
+(109, 'The Wall', 'Mother', 'Pink Floyd', 6, '1979', 'Rock', 'Tracce/Pink Floyd/The Wall/1 - 06 - Mother.mp3', 'Copertine/the wall.jpg', NULL, 5.20),
 (110, 'The Wall', 'Goodbye Blue Sky', 'Pink Floyd', 7, '1979', 'Rock', 'Tracce/Pink Floyd/The Wall/1 - 07 - Goodbye Blue Sky.mp3', 'Copertine/the wall.jpg', NULL, 1.20),
 (111, 'The Wall', 'Empty Spaces', 'Pink Floyd', 8, '1979', 'Rock', 'Tracce/Pink Floyd/The Wall/1 - 08 - Empty Spaces.mp3', 'Copertine/the wall.jpg', NULL, 1.20),
 (112, 'The Wall', 'Young Lust', 'Pink Floyd', 9, '1979', 'Rock', 'Tracce/Pink Floyd/The Wall/1 - 09 - Young Lust.mp3', 'Copertine/the wall.jpg', NULL, 1.20),
@@ -238,7 +246,8 @@ INSERT INTO `tracce` (`id_traccia`, `album`, `titolo`, `artista`, `num_traccia`,
 (130, 'Are You Experienced', '51st Anniversary*', 'Jimi Hendrix', 13, '1967', 'Blues Rock', NULL, 'Copertine/jimi hendrix.jpg', NULL, 1.20),
 (131, 'Are You Experienced', 'Highway Chile*', 'Jimi Hendrix', 14, '1967', 'Blues Rock', NULL, 'Copertine/jimi hendrix.jpg', NULL, 1.20),
 (133, 'Are You Experienced', 'Remember*', 'Jimi Hendrix', 15, '1967', 'Blues Rock', NULL, 'Copertine/jimi hendrix.jpg', NULL, 1.20),
-(136, 'Hypnotize', 'Hypnotize', 'System of a down', 4, '2005', 'Alternative Metal', 'Tracce/System of a down/Hypnotize/(04) Hypnotize.mp3', 'Copertine/System_Of_A_Down-Hypnotize.jpeg', 'Why don''t you ask the kids at Tiananmen square? \r\nWas Fashion the reason why they were there? \r\n\r\nThey disguise it, Hypnotize it \r\nTelevision made you buy it \r\n\r\nI''m just sitting in my car and waiting for my... \r\n\r\nShe''s scared that I will take her away from there \r\nDreams that her country left with no one there\r\n\r\nMezmerize the simple minded \r\nPropaganda leaves us blinded \r\n\r\nI''m just sitting in my car and waiting for my girl\r\nI''m just sitting in my car and waiting for my girl\r\n\r\nI''m just sitting in my car and waiting for my girl\r\nI''m just sitting in my car and waiting for my \r\n\r\nGirl', 5.70);
+(136, 'Hypnotize', 'Hypnotize', 'System of a down', 4, '2005', 'Alternative Metal', 'Tracce/System of a down/Hypnotize/(04) Hypnotize.mp3', 'Copertine/System_Of_A_Down-Hypnotize.jpeg', 'Why don''t you ask the kids at Tiananmen square? \r\nWas Fashion the reason why they were there? \r\n\r\nThey disguise it, Hypnotize it \r\nTelevision made you buy it \r\n\r\nI''m just sitting in my car and waiting for my... \r\n\r\nShe''s scared that I will take her away from there \r\nDreams that her country left with no one there\r\n\r\nMezmerize the simple minded \r\nPropaganda leaves us blinded \r\n\r\nI''m just sitting in my car and waiting for my girl\r\nI''m just sitting in my car and waiting for my girl\r\n\r\nI''m just sitting in my car and waiting for my girl\r\nI''m just sitting in my car and waiting for my \r\n\r\nGirl', 5.70),
+(138, 'Wednesday Morning, 3 A.M.', 'Sound of Silence', 'Simon & Garfunkel', 1, '1966', 'Folk Rock', 'Tracce/Simon & Garfunkel/Wednesday Morning, 3 A.M./The sound of silence - Paul Simon and Art Garfunkel.mp3', 'Copertine/Simon_&_Garfunkel,_Wednesday_Morning,_3_A.M._(1964).png', 'Hello darkness, my old friend\r\nI''ve come to talk with you again\r\nBecause a vision softly creeping\r\nLeft its seeds while I was sleeping\r\nAnd the vision that was planted in my brain\r\nStill remains\r\nWithin the sound of silence\r\n\r\nIn restless dreams I walked alone\r\nNarrow streets of cobblestone\r\nâ€˜Neath the halo of a streetlamp\r\nI turned my collar to the cold and damp\r\nWhen my eyes were stabbed by the flash of a neon light\r\nThat split the night\r\nAnd touched the sound of silence\r\n\r\nAnd in the naked light I saw\r\nTen thousand people, maybe more\r\nPeople talking without speaking\r\nPeople hearing without listening\r\nPeople writing songs that voices never share\r\nNo one dare\r\nDisturb the sound of silence\r\n\r\nâ€œFoolsâ€ said I, â€œYou do not know\r\nSilence like a cancer grows\r\nHear my words that I might teach you\r\nTake my arms that I might reach youâ€\r\nBut my words like silent raindrops fell\r\nAnd echoed in the wells of silence\r\n\r\nAnd the people bowed and prayed\r\nTo the neon god they made\r\nAnd the sign flashed out its warning\r\nIn the words that it was forming\r\nAnd the sign said â€œThe words of the prophets\r\nAre written on subway walls\r\nAnd tenement halls\r\nAnd whispered in the sounds of silenceâ€', 2.50);
 
 -- --------------------------------------------------------
 
@@ -262,10 +271,10 @@ CREATE TABLE `utenti` (
 INSERT INTO `utenti` (`id`, `nome`, `cognome`, `email`, `password`, `admin`) VALUES
 (1, 'Andrea', 'Di Benedetto', 'andrydbn@hotmail.it', 'ciao', 1),
 (2, 'Fabrizio', 'Di Benedetto', 'fabridbn@hotmail.it', 'asd', 0),
-(19, 'Silvio', 'Valenti', 'valenti1091@gmail.com', 'ciao', 0),
+(19, 'Silvio', 'Valenti', 'valenti1091@gmail.com', 'ciao', 1),
 (22, 'Andrea', 'Di Benedetto', 'andreadibenedetto92@gmail.com', 'ciao', 0),
 (23, 'Miguel Alberto Juan', 'De la Roca y Fernando Lorena y', 'email.email@email.email.com', 'Peto', 0),
-(24, 'Giovanni', 'Battisti', 'giova@mh.it', 'ciao', 0),
+(24, 'Giovanni', 'Battisti', 'giova@mh.it', 'ciao', 1),
 (26, 'Marco', 'Pronni', 'pron@pronni.it', 'ciao', 0),
 (29, 'Gianna', 'Crasto', 'crasto@cra.it', 'crasto', 0);
 
@@ -322,22 +331,22 @@ ALTER TABLE `utenti`
 -- AUTO_INCREMENT for table `acquisto`
 --
 ALTER TABLE `acquisto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT for table `commenti`
 --
 ALTER TABLE `commenti`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT for table `fattura`
 --
 ALTER TABLE `fattura`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
 --
 -- AUTO_INCREMENT for table `tracce`
 --
 ALTER TABLE `tracce`
-  MODIFY `id_traccia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=137;
+  MODIFY `id_traccia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
 --
 -- AUTO_INCREMENT for table `utenti`
 --

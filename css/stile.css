@@ -80,7 +80,7 @@ font:Calibri;
    width:673px; /*810*/
    height:512px;
    float:left;
-   background:#00c6af;
+   background:#f0f2ff;
    border-radius:20px;
    margin-top:15px;
 }
@@ -96,7 +96,7 @@ font:Calibri;
 #menu {
    width:300px;
    height:58px;
-   background:#00c6af;
+   background:#f0f2ff;
    border-radius:20px;
    margin-top: 30px;
    float:right;
@@ -115,7 +115,7 @@ font:Calibri;
    width:300px;
    height:447px;
    float:right;
-   background:#00c6af;
+   background:#f0f2ff;
    border-radius:20px;
    margin-top:7px;
 }
@@ -124,7 +124,7 @@ font:Calibri;
 #footer {
    width:1000px;
    height:20px;
-   background:#00796b;
+   background:#f0f2ff;
    padding:5px;
    text-align: center;
    border-radius:10px;

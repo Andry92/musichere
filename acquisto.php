@@ -61,7 +61,7 @@
 	</script>
 </head>
 
-<body bgcolor="#607D8B">
+<body bgcolor="#009688">
 
 	<div id="testata">
 		<div id="contenuto_testata">

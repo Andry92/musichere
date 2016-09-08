@@ -6,7 +6,7 @@
           echo('Errore: non riesco a eseguire la query');
 
      while($array = mysql_fetch_array($query))
-         echo "<strong> <font color='#536DFE'>\n".$array['commento']."</font> </strong> <br>
+         echo "<strong> <font color='#00796b'>\n".$array['commento']."</font> </strong> <br>
           <strong>".$array['nome']."</strong> - ".$array['data']." - ".$array['ora']." <br><br>"; 
 
      mysql_close($conn); 

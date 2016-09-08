@@ -1,8 +1,10 @@
 <?php
 	session_start();
 	include 'connessione.php';
-
+				
+if(isset($_SESSION['user']))
 	$user=$_SESSION['user'];
+
 	$id=$_POST['id'];
 
 	// effettuiamo la query per prelevare l'id della canzone scelta dall'utente

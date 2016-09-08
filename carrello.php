@@ -19,8 +19,6 @@ if(isset($_SESSION['user']))     // se l'utente ha effettuato il login
 	$riga=mysql_fetch_array($ricerca);
 	if($riga)
 	{
- 		echo "<div id='sfondo'><img src='".$riga['copertina']."'></div>";
-
 	 		echo "<table id='discografia' cellspacing='3'>";
 				echo "<caption>  
 						<th></th>

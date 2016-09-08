@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/acquisto.css" />
 </head>
 
-<body bgcolor="#607D8B">
+<body bgcolor="#009688">
 
 <div id="testata">
 		<div id="contenuto_testata">
@@ -32,7 +32,7 @@
 	</div>
 
 <?php 
-if(!isset($_POST['inserisci']) && !isset($_POST['modifica'])){
+if(!isset($_POST['inserisci']) && !isset($_POST['modifica']) && !isset($_POST['privilegi'])){
 ?>
 
 	<div id="inserisci_e_modifica">
@@ -43,6 +43,9 @@ if(!isset($_POST['inserisci']) && !isset($_POST['modifica'])){
 						<br>
 						<tr><td><button class='acquisto' type='submit' name='modifica'>
 						<b>Modifica il prezzo di una traccia</b></button></td></tr>
+						<br>
+						<tr><td><button class='acquisto' type='submit' name='privilegi'>
+						<b>Assegna privilegi Amministratore</b></button></td></tr>
 						</form>
 				</center>
 			</div>
@@ -50,12 +53,12 @@ if(!isset($_POST['inserisci']) && !isset($_POST['modifica'])){
 <?php 
 }
 elseif(isset($_POST['inserisci'])){
-	echo "<div id='inseriredati'>";
-	?>
+?>
+	<div id='inseriredati'>
 		<center>
+		<h2>Inserimento nuova traccia<h2>
 		<form action="upload.php" method="post" enctype="multipart/form-data">
 			<table id="pagamento" cellspacing="5">
-				<h2>Inserimento nuova traccia<h2>
 				<tr><td><h3>Album:</h3></td>
 				<td><input type="text" name="album"></td></tr>
 				<tr><td><h3>Titolo:</h3></td>
@@ -85,15 +88,15 @@ elseif(isset($_POST['inserisci'])){
 			<b>Ritorna alla home admin</b></button></td></tr>
 		</form>
 		</center>
-	<?php
-	echo"</div>";
+	</div>
+<?php
 }
-else {
+elseif(isset($_POST['modifica'])){
 ?>
 	<div id='modificaprezzo'>
 		<center>
+			<h1>Modifica prezzi</h1>
 			<table id="pagamento">
-				<tr> <td><h1>Modifica prezzi</h1></td> </tr>
 				<form name='modifica_prezzo' action="modifica_prezzo.php" method="post">
 					<tr> 
 						<td><h3>Inserisci il nome della traccia</h3></td>
@@ -116,7 +119,31 @@ else {
 	</div>
 <?php
 }
+else
+{
 ?>
-
+	<div id='privilegi'>
+		<center>
+			<h1>Assegna Privilegi Amministratore</h1>
+			<table>
+				<form name='modifica_prezzo' action="assegna_privilegi.php" method="post">
+					<tr> 
+						<td><h3>Inserisci l'email dell'utente</h3></td>
+						<td><input type="text" name="email_utente"></td> 
+					</tr>
+					<tr>
+						<td>
+							<button class='acquisto' type='submit'>
+								<b>Assegna privilegi</b>
+							</button>
+						</td>
+					</tr>
+				</form>
+			</table>
+		</center>
+	</div>
+<?php
+}
+?>
 </body>
 </html>
