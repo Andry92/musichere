@@ -19,7 +19,6 @@ else
 						<b>Torna ai commenti</b></button>";
 	echo "</form>";
 
-	//echo "<a href='stampa_commenti.php'>Torna ai commenti</a><br>";
 	echo $riga['testo'];
 }
 

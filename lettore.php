@@ -34,8 +34,6 @@ if(isset($_SESSION['user']))
 				{
 					audio.pause();
 					audio.currentTime=0;
-					//alert('Acquista la canzone!');
-					//_stop.addEventListener();
 				}
 			});
 		  </script>";

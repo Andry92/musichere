@@ -10,7 +10,7 @@
 </head>
 
 <body bgcolor="#607D8B">
-	<center><img src="logo2.png" width="350" height="210"></center>
+	<center> <a href="index.php"><img src="logo2.png" title="Torna all'index" width="350" height="210"></a> </center>
 	<?php
 		session_start();
 	    if(!isset($_POST['submit']))

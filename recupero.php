@@ -10,7 +10,7 @@
 </head>
 
 <body bgcolor="#607D8B">
-	<center><img src="logo2.png" width="350" height="210"></center>
+	<center> <a href="index.php"><img src="logo2.png" title="Torna all'index" width="350" height="210"></a> </center>
 	<?php
 		include 'connessione.php';
 
@@ -25,7 +25,7 @@
 				</script>";
 			else
 			{
-				$result=mysql_query("SELECT id,password FROM utenti WHERE email='".$_POST['email']."' limit 0,1",$conn);
+				$result=mysql_query("SELECT id,password FROM utenti WHERE email='".$_POST['email']."' LIMIT 0,1",$conn);
 
 				if(mysql_num_rows($result)>0)
 					$row=mysql_fetch_array($result);

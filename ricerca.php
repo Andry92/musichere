@@ -83,7 +83,6 @@ if($cerca=='2')  // ricerca per album
 	else
 	{
 		$copertina=$riga['copertina'];
-		echo "<div id='sfondo'><img src='".$riga['copertina']."'></div>";
 		echo'<div id="lettore"></div>';
 			echo "<table id='discografia' cellspacing='3'>";
 			echo "<caption>  
@@ -135,7 +134,7 @@ if($cerca=='2')  // ricerca per album
 
 			if($check==0)
 			{
-				echo "<b>Aggiungi l'album al  carrello!</b>";
+				echo "<b>Aggiungi l'album al carrello!</b>";
 				echo ' <img src="carrello.png" title="Aggiungi album al carrello!" id="img_carrello" 
 			    		onclick="aggiungi_album(\''.$testo.'\','.$user.');"> ';	// i caratteri di escape servono per il passaggio del parametro di tipo stringa
 			}
@@ -150,7 +149,6 @@ if($cerca=='3') // ricerca per traccia
 	else 
 	{
 		$copertina=$riga['copertina'];
-		echo "<div id='sfondo'><img src='".$riga['copertina']."'></div>";
 		echo'<div id="lettore"></div>';
 			echo "<table id='discografia' cellspacing='3'>";
 			echo "<caption>

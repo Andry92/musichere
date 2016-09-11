@@ -28,6 +28,8 @@
 		}
 	}
 	else
+	{
 		echo "Devi effettuare il login per commentare.";
 		header("Refresh:3; url=stampa_commenti.php");
+	}
 ?>

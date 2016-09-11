@@ -29,15 +29,7 @@
 	$userfile_name = $_FILES['canzoni']['name'];
 
 	//copio il file dalla sua posizione temporanea alla mia cartella upload
-	if (move_uploaded_file($userfile_tmp, $url . $userfile_name))
-	{
-	  //Se l'operazione è andata a buon fine...
-	  echo "<script>alert('File inviato con successo!');</script>";
-	}else
-	{
- 		 //Se l'operazione è fallta...
- 		 echo "<script>alert('Upload non valido!');</script>"; 
-	}	
+	move_uploaded_file($userfile_tmp, $url . $userfile_name)
 
 
 	$url2="Copertine/";
@@ -49,15 +41,7 @@
 	$userfile_name2 = $_FILES['copertina']['name'];
 
 	//copio il file dalla sua posizione temporanea alla mia cartella upload
-	if (move_uploaded_file($userfile_tmp2, $url2 . $userfile_name2))
-	{
-	  //Se l'operazione è andata a buon fine...
-	  echo "<script>alert('File inviato con successo!');</script>";
-	}else
-	{
- 		 //Se l'operazione è fallta...
- 		 echo "<script>alert('Upload non valido!');</script>"; 
-	}	
+	move_uploaded_file($userfile_tmp2, $url2 . $userfile_name2)
 
 	$url=$url.$_FILES['canzoni']['name'];
 	$url2=$url2.$_FILES['copertina']['name'];

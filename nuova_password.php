@@ -20,7 +20,7 @@
 		$password = $_SESSION ['password'];
 
 
-		$result=mysql_query("SELECT email FROM utenti WHERE id='$user' AND password='$password' limit 0,1",$conn);
+		$result=mysql_query("SELECT email FROM utenti WHERE id='$user' AND password='$password' LIMIT 0,1",$conn);
 
 		   	if(mysql_num_rows($result) == 1)
 			{

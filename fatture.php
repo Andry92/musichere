@@ -28,8 +28,8 @@
 		echo "</table>";
 		
 		$query=mysql_query("SELECT album,num_traccia,titolo,anno,acquisto.prezzo 
-			FROM tracce JOIN carrello JOIN acquisto JOIN fattura 
-			WHERE acquisto.id_utente=fattura.id_utente AND fattura.id_utente='$user' AND carrello.id_utente='$user' AND acquisto.id_traccia=carrello.id_traccia AND carrello.id_traccia=tracce.id_traccia AND fattura.id='$id_fattura' AND acquisto.data=fattura.data 
+			FROM tracce JOIN acquisto JOIN fattura 
+			WHERE acquisto.id_utente=fattura.id_utente AND fattura.id_utente='$user' AND acquisto.id_traccia=tracce.id_traccia AND fattura.id='$id_fattura' AND acquisto.data=fattura.data
 			ORDER BY album,num_traccia asc");
 			
 		$riga=mysql_fetch_array($query);			

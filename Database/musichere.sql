@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 08, 2016 at 03:15 
+-- Generation Time: Sep 11, 2016 at 06:10 
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.5.34
 
@@ -53,9 +53,42 @@ INSERT INTO `acquisto` (`id`, `id_utente`, `id_traccia`, `data`, `prezzo`) VALUE
 (37, 1, 103, '2016-09-05 08:08:15', 1.20),
 (38, 29, 113, '2016-09-06 10:58:08', 1.20),
 (39, 1, 136, '2016-09-06 03:13:21', 5.70),
-(41, 1, 138, '2016-09-07 05:41:19', 2.00),
 (42, 1, 109, '2016-09-08 09:40:09', 5.20),
-(43, 1, 130, '2016-09-08 02:47:58', 1.20);
+(43, 1, 130, '2016-09-08 02:47:58', 1.20),
+(44, 30, 95, '2016-09-11 01:02:27', 1.20),
+(45, 30, 96, '2016-09-11 01:02:27', 4.00),
+(46, 30, 97, '2016-09-11 01:02:27', 1.20),
+(47, 30, 98, '2016-09-11 01:02:27', 1.20),
+(48, 30, 99, '2016-09-11 01:02:27', 1.20),
+(49, 30, 100, '2016-09-11 01:02:27', 1.20),
+(50, 30, 101, '2016-09-11 01:02:27', 1.20),
+(51, 30, 102, '2016-09-11 01:02:27', 1.20),
+(52, 30, 103, '2016-09-11 01:02:27', 1.20),
+(59, 30, 1, '2016-09-11 01:04:11', 2.10),
+(60, 30, 2, '2016-09-11 01:04:11', 1.20),
+(62, 30, 14, '2016-09-11 01:11:33', 1.20),
+(63, 30, 15, '2016-09-11 01:11:33', 1.20),
+(64, 30, 22, '2016-09-11 01:11:33', 1.20),
+(65, 30, 93, '2016-09-11 01:11:33', 1.20),
+(69, 22, 9, '2016-09-11 03:52:16', 1.20),
+(70, 22, 87, '2016-09-11 03:52:16', 1.20),
+(72, 22, 86, '2016-09-11 03:53:34', 1.20),
+(73, 1, 139, '2016-09-11 04:02:35', 2.00),
+(74, 22, 11, '2016-09-11 04:15:37', 1.20),
+(75, 22, 71, '2016-09-11 04:15:37', 1.20),
+(77, 24, 1, '2016-09-11 04:19:35', 2.10),
+(78, 24, 2, '2016-09-11 04:19:35', 1.30),
+(80, 19, 95, '2016-09-11 04:35:28', 1.20),
+(81, 19, 96, '2016-09-11 04:35:28', 5.70),
+(82, 19, 97, '2016-09-11 04:35:28', 1.20),
+(83, 19, 98, '2016-09-11 04:35:28', 1.20),
+(84, 19, 99, '2016-09-11 04:35:28', 1.20),
+(85, 19, 100, '2016-09-11 04:35:28', 1.20),
+(86, 19, 101, '2016-09-11 04:35:28', 1.20),
+(87, 19, 102, '2016-09-11 04:35:28', 1.20),
+(88, 19, 103, '2016-09-11 04:35:28', 1.20),
+(95, 19, 14, '2016-09-11 04:36:39', 1.20),
+(96, 19, 15, '2016-09-11 04:36:39', 1.20);
 
 -- --------------------------------------------------------
 
@@ -66,7 +99,7 @@ INSERT INTO `acquisto` (`id`, `id_utente`, `id_traccia`, `data`, `prezzo`) VALUE
 CREATE TABLE `carrello` (
   `id_utente` int(2) NOT NULL,
   `id_traccia` int(2) NOT NULL,
-  `flag` int(1) NOT NULL
+  `flag` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -89,8 +122,41 @@ INSERT INTO `carrello` (`id_utente`, `id_traccia`, `flag`) VALUES
 (1, 109, 1),
 (1, 130, 1),
 (1, 136, 1),
-(1, 138, 1),
-(29, 113, 1);
+(1, 139, 1),
+(19, 14, 1),
+(19, 15, 1),
+(19, 95, 1),
+(19, 96, 1),
+(19, 97, 1),
+(19, 98, 1),
+(19, 99, 1),
+(19, 100, 1),
+(19, 101, 1),
+(19, 102, 1),
+(19, 103, 1),
+(22, 9, 1),
+(22, 11, 1),
+(22, 71, 1),
+(22, 86, 1),
+(22, 87, 1),
+(24, 1, 1),
+(24, 2, 1),
+(29, 113, 1),
+(30, 1, 1),
+(30, 2, 1),
+(30, 14, 1),
+(30, 15, 1),
+(30, 22, 1),
+(30, 93, 1),
+(30, 95, 1),
+(30, 96, 1),
+(30, 97, 1),
+(30, 98, 1),
+(30, 99, 1),
+(30, 100, 1),
+(30, 101, 1),
+(30, 102, 1),
+(30, 103, 1);
 
 -- --------------------------------------------------------
 
@@ -118,7 +184,9 @@ INSERT INTO `commenti` (`id`, `commento`, `data`, `ora`, `id_utente`) VALUES
 (40, 'Manca Nino D''Angelo\r\n', '2016/09/01', '10:30:07', 23),
 (41, 'Yo quiero El Nino D''Angelo. Â¿por quÃ© no estÃ¡s ahÃ­?', '2016/09/01', '10:31:36', 23),
 (42, 'No puedo ver la Fattura. Yo tengo un cuggino en la Policia!! VI DENUNCIO.', '2016/09/01', '10:39:07', 23),
-(43, 'HHHHHHHHMMMHHHH!!!', '2016/09/07', '05:57:19', 22);
+(43, 'HHHHHHHHMMMHHHH!!!', '2016/09/07', '05:57:19', 22),
+(44, 'CIAAAAOOO', '2016/09/11', '01:13:24', 30),
+(45, 'CIAAAAOOO', '2016/09/11', '01:13:35', 30);
 
 -- --------------------------------------------------------
 
@@ -147,7 +215,17 @@ INSERT INTO `fattura` (`id`, `id_utente`, `metodo`, `totale`, `data`, `cod_carta
 (132, 1, 'Paypal', 5.70, '2016-09-06 03:13:21', ''),
 (133, 1, 'Carta di credito', 3.20, '2016-09-07 05:41:19', '3200939302930392'),
 (134, 1, 'Paypal', 5.20, '2016-09-08 09:40:09', ''),
-(135, 1, 'Carta di credito', 1.20, '2016-09-08 02:47:58', '5675777777777777');
+(135, 1, 'Carta di credito', 1.20, '2016-09-08 02:47:58', '5675777777777777'),
+(136, 30, 'Carta di credito', 13.60, '2016-09-11 01:02:27', '5675777777777777'),
+(137, 30, 'Paypal', 3.30, '2016-09-11 01:04:11', ''),
+(138, 30, 'Paypal', 4.80, '2016-09-11 01:11:33', ''),
+(139, 22, 'Carta di credito', 2.40, '2016-09-11 03:52:16', '6668688668686868'),
+(140, 22, 'Paypal', 1.20, '2016-09-11 03:53:34', ''),
+(141, 1, 'Carta di credito', 2.00, '2016-09-11 04:02:35', '4464644647476774'),
+(142, 22, 'Carta di credito', 2.40, '2016-09-11 04:15:37', '5675777777777777'),
+(143, 24, 'Carta di credito', 3.40, '2016-09-11 04:19:35', '5675777777777777'),
+(144, 19, 'Paypal', 15.30, '2016-09-11 04:35:28', ''),
+(145, 19, 'Carta di credito', 2.40, '2016-09-11 04:36:39', '5675777777777777');
 
 -- --------------------------------------------------------
 
@@ -175,7 +253,7 @@ CREATE TABLE `tracce` (
 
 INSERT INTO `tracce` (`id_traccia`, `album`, `titolo`, `artista`, `num_traccia`, `anno`, `genere`, `Canzoni`, `copertina`, `testo`, `prezzo`) VALUES
 (1, 'Il Sogno Eretico', 'Chi se ne frega della musica', 'Caparezza', 3, '2011', 'Alternative Rap', 'Tracce/Caparezza/Chi Se Ne Frega Della Musica.mp3', 'Copertine/Il Sogno Eretico.jpg', 'E chi se ne frega della musica, <br>\ndi tutti \nquesti libri sulla musica, <br>\ndi tutte \nle interviste, di tutte le riviste, <br>\ndi \ntutti gli arrivisti, gli arrivisti, <br>\ngli arrivisti. <br> <br>\n \nIo con la musica non \nc''entro niente <br>\ncome il mio pene davanti \nal wc, a luci spente <br>\nmi contraddico \nfacilmente <br>\nma lo faccio cosi'' spesso \nche questo fa di me una persona coerente  <br> \ned \nho tanto da dire <br> perche'' ho poco da \nfare, \ntu mi invidi, sorridi, mi proponi \nun affare: <br>\ncominciare con i temi di \ncui parla Faber <br>\ne finire per un mese \nsull''isola a far la fame. <br>\nQualsiasi \ncosa faccia mi viene riconosciuta? <br>\nNo \ne'' la mia faccia che viene riconosciuta!<br> \nMolti \ndei mie fan che fanno la schiuma <br>\nhanno \nla doppia faccia come il barone Ashura! <br>\nParlano \ncon me come con un fratello grande \ne \nmi riprendono in mutande come nel Grande \nFratello. <br>\nIl video che mi fanno mentre \nlecco un orinale <br>\ne'' cliccato piu'' del \nvideo ufficiale della mia label <br> <br>\n\ne \nchi se ne frega della musica, \ndi tutti \nquesti libri sulla musica, <br>\ndi tutte \nle interviste, di tutte le riviste \ndi <br>\ntutti gli arrivisti gli arrivisti, \ngli arrivisti <br>\nsi ma chi se ne frega \ndella musica <br>\nora che tutti parlano \ndi musica, <br>\ndi tutti questi artisti, <br>\ndi tutti questi dischi <br>\ndi tutti questi \nfischi, questi fischi, questi fischi! \n<br><br>\n\nNon \nho mai capito questi social network <br>\nper \nme servono solo a fare i porci a letto. <br>\nOgni \nvolta che nasce una nuova piattaforma <br>\nmi \nfa l''effetto di un libro che ho gia'' \nletto <br>\ne poi non ho tutti sti amici \nma molti meno <br>\nmi danno affetto ma poi \nm''affettano come Ghemon. <br>\nTu! E'' due \nore che mi parli, io sono fan di Ghandi <br> \ned \ne'' solo per questo che non ti meno! <br>\nIl \nmio cellulare squilla ogni 2 minuti,<br> \ngente \nche mi assilla e mi chiede se ho 2 \nminuti, <br>\nassessori, collettivi, sindacati, \ngiornalisti, <br>\npassa un giorno e i miei \ntesticoli non sono piu'' minuti. <br>\nMi stupisco, <br>\npubblico un disco <br>\ne mi fanno le foto \nin pubblico, perche''? non capisco! <br>\nOh, \nnon vi interessano le note che registro<br> \nvi \ninteressano le mie note sul registro! <br><br>\n\ne \nchi se ne frega della musica... <br><br>\n\nIo \nnon faccio musica ma il cacchio che \nmi pare <br>\nfaccio rosicare chi ama il \ngenere musicale, <br>\nnon parlo male di \nun collega o di un presunto tale <br>\nma \nriciclo il suo cd come regalo di Natale.<br> \nNon \nmi faccio i flash come Syd Barret, <br>\nnon \nmi piacciono i flash sul red carpet <br>\ne \nme ne frego degli artisti veri, <br>\ntanto \ngli artisti veri sono veri come i muppet.. <br>\nIn \nquesto meccanismo che non posso inceppare <br>\nla \nrete non e'' Che Guevara anche se si \nfinge tale, <br>\nal primo posto nella classifica \ndigitale <br>\nche tu ci creda o meno c''e'' \nsolo chi vince i talent <br>\ned io non so \ncantare, gia'', ma soprattutto non so \npiangere <br>\nin pubblico per bucare lo schermo <br> \ntoglimi\ntutto questo che magari mi fermo <br>\ndi \ncerto non mi freddo in una stanza d''albergo <br> <br>\n\ne \nchi se ne frega della musica, <br>\ndi tutti \nquesti libri sulla musica, <br>\ndi tutte \nle interviste, di tutte le riviste <br>\ndi \ntutti gli arrivisti, gli arrivisti,\ngli arrivisti <br>\nsi ma chi se ne frega \ndella musica <br>\nora che tutti parlano \ndi musica <br>\ndi tutti i mercenari della \nmusica <br>\nin queste trasmissioni sulla \nmusica <br>\ndi tutti questi artisti, <br>\ndella \nPizzi, di Battisti <br>\ndi Zanicchi, di \nStravinskij <br>\nThin Lizzy, Limp Bizkin <br>\ndei \nBeastie, degli Extreme \ndei Lipps inc, <br>\ndi Springsteen <br>\nma si.. Chi se ne frega \ndella musica!', 2.10),
-(2, 'Il Sogno Eretico', 'La fine di Gaia', 'Caparezza', 9, '2011', 'Alternative Rap', 'Tracce/Caparezza/La Fine Di Gaia.mp3', 'Copertine/Il Sogno Eretico.jpg', 'Povera Gaia \r\nanche i Maya vogliono la tua taglia \r\npure la massaia lo sa, per la fifa tartaglia \r\ndecifra una sterpaglia di codici ma il 20-12 \r\nnon incide se non nei cinematografi. \r\nUomini retti che sono uomini rettili \r\ncon pupille da serpenti \r\npiù spille da sergenti \r\nvogliono la tua muta, Gaia \r\nti vogliono muta, Gaia \r\nla bomba è venuta a galla adesso esploderà. \r\n\r\nReti di rettiliani, andirivieni d'' alieni \r\nvelivoli di veleni, tutti in cerca di ripari ma \r\n\r\nLa fine di Gaia non arriverà \r\nla gente si sbaglia \r\nin fondo che ne sa. \r\nE'' un fuoco di paglia \r\nalla faccia dei Maya e di Cinecittà. \r\nLa fine di Gaia non arriverà! \r\nLa fine di Gaia non arriverà! \r\n\r\nAnche E.T. è qui, mamma che condanna! \r\nE'' un pervertito, ha rapito Gaia per fecondarla \r\ncon alieni adepti che scuoiano coniglietti \r\ne li mostrano alle TV spacciandoli per feti extraterrestri. \r\nC''è chi vuole farsi Gaia con fumi sparsi in aria \r\nda un aereo che la ingabbia come all''Asinara. \r\nSi narra che gaia sniffi, \r\nabbaia anche Brian Griffin. \r\nE'' Clyro come i Biffy che gaia Gaia non è. \r\nTra San Giovanni, Nostradamus e millennium bug \r\nsulla sua bara chiunque metterebbe una tag. \r\n\r\nMa la fine di Gaia non arriverà \r\nla gente si sbaglia \r\nin fondo che ne sa. \r\nE'' un fuoco di paglia \r\nalla faccia dei Maya e di Cinecittà. \r\nLa fine di Gaia non arriverà! \r\nLa fine di Gaia non arriverà! \r\n\r\nNé con i passi di Godzilla né coi passi della Bibbia, \r\nGaia sopravviverà \r\na questi cazzo di asteroidi che non hanno mai schiacciato \r\nneanche una farfalla. \r\nSei tu che tratti Gaia come una recluta a naja \r\nami il petrolio ma la baia non è una caldaia \r\nla tua mannaia lima l''aria mica l''Himalaia! \r\nGaia si salverà, chi salverà il soldato Ryan? \r\n\r\nNon i marziani ma te dovrò respingere \r\nnon i marziani ma te dovrò respingere e vedrai.. \r\n\r\nLa fine di Gaia non arriverà \r\nla gente si sbaglia \r\nin fondo che ne sa. \r\nE'' un fuoco di paglia \r\nalla faccia dei Maya e di Cinecittà. \r\nLa fine di Gaia non arriverà! \r\nLa fine di Gaia non arriverà! \r\nLa fine di Gaia non arriverà! \r\n2012: nemmeno un temporale!', 1.20),
+(2, 'Il Sogno Eretico', 'La fine di Gaia', 'Caparezza', 9, '2011', 'Alternative Rap', 'Tracce/Caparezza/La Fine Di Gaia.mp3', 'Copertine/Il Sogno Eretico.jpg', 'Povera Gaia \r\nanche i Maya vogliono la tua taglia \r\npure la massaia lo sa, per la fifa tartaglia \r\ndecifra una sterpaglia di codici ma il 20-12 \r\nnon incide se non nei cinematografi. \r\nUomini retti che sono uomini rettili \r\ncon pupille da serpenti \r\npiù spille da sergenti \r\nvogliono la tua muta, Gaia \r\nti vogliono muta, Gaia \r\nla bomba è venuta a galla adesso esploderà. \r\n\r\nReti di rettiliani, andirivieni d'' alieni \r\nvelivoli di veleni, tutti in cerca di ripari ma \r\n\r\nLa fine di Gaia non arriverà \r\nla gente si sbaglia \r\nin fondo che ne sa. \r\nE'' un fuoco di paglia \r\nalla faccia dei Maya e di Cinecittà. \r\nLa fine di Gaia non arriverà! \r\nLa fine di Gaia non arriverà! \r\n\r\nAnche E.T. è qui, mamma che condanna! \r\nE'' un pervertito, ha rapito Gaia per fecondarla \r\ncon alieni adepti che scuoiano coniglietti \r\ne li mostrano alle TV spacciandoli per feti extraterrestri. \r\nC''è chi vuole farsi Gaia con fumi sparsi in aria \r\nda un aereo che la ingabbia come all''Asinara. \r\nSi narra che gaia sniffi, \r\nabbaia anche Brian Griffin. \r\nE'' Clyro come i Biffy che gaia Gaia non è. \r\nTra San Giovanni, Nostradamus e millennium bug \r\nsulla sua bara chiunque metterebbe una tag. \r\n\r\nMa la fine di Gaia non arriverà \r\nla gente si sbaglia \r\nin fondo che ne sa. \r\nE'' un fuoco di paglia \r\nalla faccia dei Maya e di Cinecittà. \r\nLa fine di Gaia non arriverà! \r\nLa fine di Gaia non arriverà! \r\n\r\nNé con i passi di Godzilla né coi passi della Bibbia, \r\nGaia sopravviverà \r\na questi cazzo di asteroidi che non hanno mai schiacciato \r\nneanche una farfalla. \r\nSei tu che tratti Gaia come una recluta a naja \r\nami il petrolio ma la baia non è una caldaia \r\nla tua mannaia lima l''aria mica l''Himalaia! \r\nGaia si salverà, chi salverà il soldato Ryan? \r\n\r\nNon i marziani ma te dovrò respingere \r\nnon i marziani ma te dovrò respingere e vedrai.. \r\n\r\nLa fine di Gaia non arriverà \r\nla gente si sbaglia \r\nin fondo che ne sa. \r\nE'' un fuoco di paglia \r\nalla faccia dei Maya e di Cinecittà. \r\nLa fine di Gaia non arriverà! \r\nLa fine di Gaia non arriverà! \r\nLa fine di Gaia non arriverà! \r\n2012: nemmeno un temporale!', 1.30),
 (4, 'Dark Horse', 'Something In Your Mouth', 'Nickelback', 1, '2008', 'Alternative Metal', 'Tracce/Nickelback/Something In Your Mouth.mp3', 'Copertine/dark horse.jpg', NULL, 3.20),
 (5, 'A Rush Of Blood To The Head', 'The Scientist', 'Coldplay', 4, '2002', 'Alternative Rock', 'Tracce/Coldplay/The Scientist.mp3', 'Copertine/a rush of blood to the head.jpg', NULL, 1.20),
 (6, 'A Rush Of Blood To The Head', 'Clocks', 'Coldplay', 5, '2002', 'Alternative Rock', 'Tracce/Coldplay/Clocks.mp3', 'Copertine/a rush of blood to the head.jpg', NULL, 1.20),
@@ -207,10 +285,10 @@ INSERT INTO `tracce` (`id_traccia`, `album`, `titolo`, `artista`, `num_traccia`,
 (89, 'Here And Now', 'When We Stand Together', 'Nickelback', 3, '2011', 'Rock', 'Tracce/Nickelback/When We Stand Together.mp3', 'Copertine/this means war.jpg', NULL, 1.20),
 (91, 'Viva La Vida or Death and All His Friends', 'Viva La Vida', 'Coldplay', 7, '2008', 'Alternative', 'Tracce/Coldplay/Viva La Vida.mp3', 'Copertine/viva la vida.jpg', NULL, 1.20),
 (92, 'Viva La Vida or Death and All His Friends', 'Violet Hill', 'Coldplay', 8, '2008', 'Alternative', 'Tracce/Coldplay/Violet Hill.mp3', 'Copertine/viva la vida.jpg', NULL, 1.20),
-(93, 'Warning', 'Warning', 'Green Day', 1, '2000', 'Rock', 'Tracce/Green Day/Warning.mp3', 'Copertine/warning.jpg', NULL, 1.20),
+(93, 'Warning', 'Warning', 'Green Day', 1, '2000', 'Rock', 'Tracce/Green Day/Warning.mp3', 'Copertine/warning.jpg', NULL, 2.40),
 (94, 'Warning', 'Waiting', 'Green Day', 10, '2000', 'Rock', 'Tracce/Green Day/Waiting.mp3', 'Copertine/warning.jpg', NULL, 1.20),
 (95, 'Dark Side Of The Moon', 'Speak To Me - Breathe', 'Pink Floyd', 1, '1973', 'Rock', 'Tracce/Pink Floyd/Dark Side Of The Moon/01 - Speak To Me - Breathe.mp3', 'Copertine/dark side of the moon.jpg', NULL, 1.20),
-(96, 'Dark Side Of The Moon', 'On The Run', 'Pink Floyd', 2, '1973', 'Rock', 'Tracce/Pink Floyd/Dark Side Of The Moon/02 - On The Run.mp3', 'Copertine/dark side of the moon.jpg', NULL, 4.00),
+(96, 'Dark Side Of The Moon', 'On The Run', 'Pink Floyd', 2, '1973', 'Rock', 'Tracce/Pink Floyd/Dark Side Of The Moon/02 - On The Run.mp3', 'Copertine/dark side of the moon.jpg', NULL, 5.70),
 (97, 'Dark Side Of The Moon', 'Time', 'Pink Floyd', 3, '1973', 'Rock', 'Tracce/Pink Floyd/Dark Side Of The Moon/03 - Time.mp3', 'Copertine/dark side of the moon.jpg', NULL, 1.20),
 (98, 'Dark Side Of The Moon', 'The Great Gig In The Sky', 'Pink Floyd', 4, '1973', 'Rock', 'Tracce/Pink Floyd/Dark Side Of The Moon/04 - The Great Gig In The Sky.mp3', 'Copertine/dark side of the moon.jpg', NULL, 1.20),
 (99, 'Dark Side Of The Moon', 'Money', 'Pink Floyd', 5, '1973', 'Rock', 'Tracce/Pink Floyd/Dark Side Of The Moon/05 - Money.mp3', 'Copertine/dark side of the moon.jpg', NULL, 1.20),
@@ -247,7 +325,7 @@ INSERT INTO `tracce` (`id_traccia`, `album`, `titolo`, `artista`, `num_traccia`,
 (131, 'Are You Experienced', 'Highway Chile*', 'Jimi Hendrix', 14, '1967', 'Blues Rock', NULL, 'Copertine/jimi hendrix.jpg', NULL, 1.20),
 (133, 'Are You Experienced', 'Remember*', 'Jimi Hendrix', 15, '1967', 'Blues Rock', NULL, 'Copertine/jimi hendrix.jpg', NULL, 1.20),
 (136, 'Hypnotize', 'Hypnotize', 'System of a down', 4, '2005', 'Alternative Metal', 'Tracce/System of a down/Hypnotize/(04) Hypnotize.mp3', 'Copertine/System_Of_A_Down-Hypnotize.jpeg', 'Why don''t you ask the kids at Tiananmen square? \r\nWas Fashion the reason why they were there? \r\n\r\nThey disguise it, Hypnotize it \r\nTelevision made you buy it \r\n\r\nI''m just sitting in my car and waiting for my... \r\n\r\nShe''s scared that I will take her away from there \r\nDreams that her country left with no one there\r\n\r\nMezmerize the simple minded \r\nPropaganda leaves us blinded \r\n\r\nI''m just sitting in my car and waiting for my girl\r\nI''m just sitting in my car and waiting for my girl\r\n\r\nI''m just sitting in my car and waiting for my girl\r\nI''m just sitting in my car and waiting for my \r\n\r\nGirl', 5.70),
-(138, 'Wednesday Morning, 3 A.M.', 'Sound of Silence', 'Simon & Garfunkel', 1, '1966', 'Folk Rock', 'Tracce/Simon & Garfunkel/Wednesday Morning, 3 A.M./The sound of silence - Paul Simon and Art Garfunkel.mp3', 'Copertine/Simon_&_Garfunkel,_Wednesday_Morning,_3_A.M._(1964).png', 'Hello darkness, my old friend\r\nI''ve come to talk with you again\r\nBecause a vision softly creeping\r\nLeft its seeds while I was sleeping\r\nAnd the vision that was planted in my brain\r\nStill remains\r\nWithin the sound of silence\r\n\r\nIn restless dreams I walked alone\r\nNarrow streets of cobblestone\r\nâ€˜Neath the halo of a streetlamp\r\nI turned my collar to the cold and damp\r\nWhen my eyes were stabbed by the flash of a neon light\r\nThat split the night\r\nAnd touched the sound of silence\r\n\r\nAnd in the naked light I saw\r\nTen thousand people, maybe more\r\nPeople talking without speaking\r\nPeople hearing without listening\r\nPeople writing songs that voices never share\r\nNo one dare\r\nDisturb the sound of silence\r\n\r\nâ€œFoolsâ€ said I, â€œYou do not know\r\nSilence like a cancer grows\r\nHear my words that I might teach you\r\nTake my arms that I might reach youâ€\r\nBut my words like silent raindrops fell\r\nAnd echoed in the wells of silence\r\n\r\nAnd the people bowed and prayed\r\nTo the neon god they made\r\nAnd the sign flashed out its warning\r\nIn the words that it was forming\r\nAnd the sign said â€œThe words of the prophets\r\nAre written on subway walls\r\nAnd tenement halls\r\nAnd whispered in the sounds of silenceâ€', 2.50);
+(139, 'Wednesday Morning, 3 A.M.', 'Sound of Silence', 'Simon & Garfunkel', 1, '1966', 'Folk Rock', 'Tracce/Simon & Garfunkel/Wednesday Morning, 3 A.M./The sound of silence - Paul Simon and Art Garfunkel.mp3', 'Copertine/Simon_&_Garfunkel,_Wednesday_Morning,_3_A.M._(1964).png', 'Hello darkness, my old friend\r\nI''ve come to talk with you again\r\nBecause a vision softly creeping\r\nLeft its seeds while I was sleeping\r\nAnd the vision that was planted in my brain\r\nStill remains\r\nWithin the sound of silence\r\n\r\nIn restless dreams I walked alone\r\nNarrow streets of cobblestone\r\nâ€˜Neath the halo of a streetlamp\r\nI turned my collar to the cold and damp\r\nWhen my eyes were stabbed by the flash of a neon light\r\nThat split the night\r\nAnd touched the sound of silence\r\n\r\nAnd in the naked light I saw\r\nTen thousand people, maybe more\r\nPeople talking without speaking\r\nPeople hearing without listening\r\nPeople writing songs that voices never share\r\nNo one dare\r\nDisturb the sound of silence\r\n\r\nâ€œFoolsâ€ said I, â€œYou do not know\r\nSilence like a cancer grows\r\nHear my words that I might teach you\r\nTake my arms that I might reach youâ€\r\nBut my words like silent raindrops fell\r\nAnd echoed in the wells of silence\r\n\r\nAnd the people bowed and prayed\r\nTo the neon god they made\r\nAnd the sign flashed out its warning\r\nIn the words that it was forming\r\nAnd the sign said â€œThe words of the prophets\r\nAre written on subway walls\r\nAnd tenement halls\r\nAnd whispered in the sounds of silenceâ€', 4.00);
 
 -- --------------------------------------------------------
 
@@ -261,7 +339,7 @@ CREATE TABLE `utenti` (
   `cognome` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
-  `admin` int(11) NOT NULL DEFAULT '0'
+  `admin` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -276,7 +354,8 @@ INSERT INTO `utenti` (`id`, `nome`, `cognome`, `email`, `password`, `admin`) VAL
 (23, 'Miguel Alberto Juan', 'De la Roca y Fernando Lorena y', 'email.email@email.email.com', 'Peto', 0),
 (24, 'Giovanni', 'Battisti', 'giova@mh.it', 'ciao', 1),
 (26, 'Marco', 'Pronni', 'pron@pronni.it', 'ciao', 0),
-(29, 'Gianna', 'Crasto', 'crasto@cra.it', 'crasto', 0);
+(29, 'Gianna', 'Crasto', 'crasto@cra.it', 'crasto', 0),
+(30, 'Giorgianna', 'Mh', 'mh@mh.mh', 'mh', 1);
 
 --
 -- Indexes for dumped tables
@@ -331,27 +410,27 @@ ALTER TABLE `utenti`
 -- AUTO_INCREMENT for table `acquisto`
 --
 ALTER TABLE `acquisto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 --
 -- AUTO_INCREMENT for table `commenti`
 --
 ALTER TABLE `commenti`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 --
 -- AUTO_INCREMENT for table `fattura`
 --
 ALTER TABLE `fattura`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
 --
 -- AUTO_INCREMENT for table `tracce`
 --
 ALTER TABLE `tracce`
-  MODIFY `id_traccia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
+  MODIFY `id_traccia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
 --
 -- AUTO_INCREMENT for table `utenti`
 --
 ALTER TABLE `utenti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- Constraints for dumped tables
 --
@@ -360,7 +439,7 @@ ALTER TABLE `utenti`
 -- Constraints for table `acquisto`
 --
 ALTER TABLE `acquisto`
-  ADD CONSTRAINT `acquisto_ibfk_1` FOREIGN KEY (`id_traccia`) REFERENCES `carrello` (`id_traccia`),
+  ADD CONSTRAINT `acquisto_ibfk_1` FOREIGN KEY (`id_traccia`) REFERENCES `tracce` (`id_traccia`),
   ADD CONSTRAINT `acquisto_ibfk_2` FOREIGN KEY (`id_utente`) REFERENCES `fattura` (`id_utente`);
 
 --
